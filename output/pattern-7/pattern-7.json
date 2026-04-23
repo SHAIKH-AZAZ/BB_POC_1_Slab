@@ -1,0 +1,565 @@
+{
+  "slabs": [
+    {
+      "slab_id": "S1",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "140 C/C",
+          "180 C/C",
+          "200 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S2",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "110 C/C",
+          "200 C/C",
+          "220 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S3",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "190 C/C",
+          "200 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S4",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "130 C/C",
+          "160 C/C",
+          "170 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S5",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "190 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S6",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "250 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S7",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "210 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S8",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S9",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S10",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S11",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S12",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S13",
+      "thickness": 175,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "120 C/C",
+          "130 C/C",
+          "150 C/C",
+          "230 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S14",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "110 C/C",
+          "210 C/C",
+          "220 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S15",
+      "thickness": 225,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "120 C/C",
+          "140 C/C",
+          "150 C/C",
+          "180 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S16",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S17",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S18",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "190 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S19",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "160 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S20",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "240 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S21",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S22",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S23",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "190 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S24",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S25",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S26",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S27",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S28",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "250 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S29",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "110 C/C",
+          "130 C/C",
+          "160 C/C",
+          "230 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S30",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "120 C/C",
+          "130 C/C",
+          "250 C/C",
+          "260 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S31",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "120 C/C",
+          "250 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S32",
+      "thickness": 150,
+      "type": "TWO WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "110 C/C",
+          "150 C/C",
+          "220 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S33",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "230 C/C",
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S34",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S35",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S36",
+      "thickness": 150,
+      "type": "ONE WAY",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "270 C/C"
+        ]
+      }
+    }
+  ]
+}

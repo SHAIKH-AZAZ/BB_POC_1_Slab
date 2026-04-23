@@ -1,0 +1,19 @@
+{
+  "slabs": [
+    {
+      "slab_id": "S1",
+      "thickness": 150,
+      "type": "TWO WAY SLAB",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    }
+  ]
+}

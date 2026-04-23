@@ -1,0 +1,88 @@
+You are an expert structural drawing data extractor specialized in RCC slab schedules.
+
+Extract slab information from the provided drawing image.
+
+Return output STRICTLY in the following JSON format:
+
+{
+  "slabs": [
+    {
+      "slab_id": "",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [],
+        "spacing": []
+      }
+    }
+  ]
+}
+
+=========================
+PATTERN-3 STRUCTURE
+=========================
+
+Columns:
+- SLAB MARKED
+- THICK.
+- TYPE
+- SHORT BAR
+- LONG BAR
+- REMARKS
+
+=========================
+EXTRACTION RULES
+=========================
+
+SLAB ID:
+- Take value from SLAB MARKED column.
+- Keep exactly as written (S2, S3, S4, S5, S6, S7, ST, etc).
+- Include every visible slab row.
+
+THICKNESS:
+- Extract number only.
+- If missing → null.
+
+TYPE:
+- Extract exactly as written:
+  ONE WAY
+  TWO WAY
+- Do not modify text.
+
+REINFORCEMENT:
+
+Extract from BOTH:
+- SHORT BAR column
+- LONG BAR column
+
+Rules:
+
+1. Text before "@" → diameter (example: T10)
+2. Text after "@" → spacing
+3. Format spacing strictly as:
+   "100 C/C"
+
+4. Remove extra bracket text:
+   (ALT. BENT UP)
+   (ALL STRAIGHT)
+   (DIST.)
+   (MAIN)
+
+5. Remove duplicates.
+6. Keep only diameter and spacing.
+
+If no reinforcement → empty arrays.
+
+MIX:
+- If not visible → ""
+
+=========================
+GENERAL
+=========================
+
+1. Return valid JSON only.
+2. No explanation.
+3. No markdown.
+4. Do not guess values.
+5. Extract only what is visible.

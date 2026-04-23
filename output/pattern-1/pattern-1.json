@@ -1,0 +1,125 @@
+{
+  "slabs": [
+    {
+      "slab_id": "S1",
+      "thickness": 225,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T12",
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "175 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S2",
+      "thickness": 200,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T12",
+          "T8"
+        ],
+        "spacing": [
+          "125 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S3",
+      "thickness": 150,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S4",
+      "thickness": 125,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "175 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S5",
+      "thickness": 150,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S6",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [],
+        "spacing": []
+      }
+    },
+    {
+      "slab_id": "S7",
+      "thickness": 225,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T12",
+          "T16",
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "S8",
+      "thickness": 150,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "T10",
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "200 C/C"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "slabs": [
+    {
+      "slab_id": "A",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "8T"
+        ],
+        "spacing": [
+          "175 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "B",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "8T"
+        ],
+        "spacing": [
+          "350 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "C",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "8T"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "D",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "8T"
+        ],
+        "spacing": [
+          "250 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "E",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "8T"
+        ],
+        "spacing": [
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "slab_id": "CS1",
+      "thickness": null,
+      "type": "",
+      "mix": "",
+      "reinforcement": {
+        "dia": [
+          "8T"
+        ],
+        "spacing": [
+          "150 C/C"
+        ]
+      }
+    }
+  ]
+}
