@@ -1,0 +1,305 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-5",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-5\\page_1.png",
+      "generated_at": "2026-05-28T15:43:11.292886+00:00",
+      "think": {
+        "image_quality": "high",
+        "table_bounds": {
+          "x1": 0,
+          "y1": 600,
+          "x2": 960,
+          "y2": 900
+        },
+        "table_columns": [
+          "BAR MARKED",
+          "DIA",
+          "SPACING",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "CS1"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [],
+        "expected_count": 6,
+        "zoom_plan": [
+          {
+            "region_id": "r1",
+            "purpose": "row_label",
+            "target": "A",
+            "reason": "Extract slab ID A"
+          },
+          {
+            "region_id": "r2",
+            "purpose": "data_cell",
+            "target": "8T",
+            "reason": "Extract DIA for slab A"
+          },
+          {
+            "region_id": "r3",
+            "purpose": "data_cell",
+            "target": "@ 175c/c",
+            "reason": "Extract SPACING for slab A"
+          },
+          {
+            "region_id": "r4",
+            "purpose": "row_label",
+            "target": "B",
+            "reason": "Extract slab ID B"
+          },
+          {
+            "region_id": "r5",
+            "purpose": "data_cell",
+            "target": "8T",
+            "reason": "Extract DIA for slab B"
+          },
+          {
+            "region_id": "r6",
+            "purpose": "data_cell",
+            "target": "@ 350c/c",
+            "reason": "Extract SPACING for slab B"
+          },
+          {
+            "region_id": "r7",
+            "purpose": "row_label",
+            "target": "C",
+            "reason": "Extract slab ID C"
+          },
+          {
+            "region_id": "r8",
+            "purpose": "data_cell",
+            "target": "8T",
+            "reason": "Extract DIA for slab C"
+          },
+          {
+            "region_id": "r9",
+            "purpose": "data_cell",
+            "target": "@ 125c/c",
+            "reason": "Extract SPACING for slab C"
+          },
+          {
+            "region_id": "r10",
+            "purpose": "row_label",
+            "target": "D",
+            "reason": "Extract slab ID D"
+          },
+          {
+            "region_id": "r11",
+            "purpose": "data_cell",
+            "target": "8T",
+            "reason": "Extract DIA for slab D"
+          },
+          {
+            "region_id": "r12",
+            "purpose": "data_cell",
+            "target": "@ 250c/c",
+            "reason": "Extract SPACING for slab D"
+          },
+          {
+            "region_id": "r13",
+            "purpose": "row_label",
+            "target": "E",
+            "reason": "Extract slab ID E"
+          },
+          {
+            "region_id": "r14",
+            "purpose": "data_cell",
+            "target": "8T",
+            "reason": "Extract DIA for slab E"
+          },
+          {
+            "region_id": "r15",
+            "purpose": "data_cell",
+            "target": "@ 200c/c",
+            "reason": "Extract SPACING for slab E"
+          },
+          {
+            "region_id": "r16",
+            "purpose": "row_label",
+            "target": "CS1",
+            "reason": "Extract slab ID CS1"
+          },
+          {
+            "region_id": "r17",
+            "purpose": "data_cell",
+            "target": "8T@ 150 c/c",
+            "reason": "Extract DIA and SPACING for slab CS1"
+          }
+        ],
+        "normalization_rules": [
+          "Remove '@' from spacing",
+          "Convert spacing to format 'number C/C'",
+          "Remove duplicates"
+        ],
+        "extraction_order": [
+          "BAR MARKED",
+          "DIA",
+          "SPACING",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "A",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "B",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "C",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "D",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "E",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "CS1",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          }
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "A",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "B",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "C",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "D",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "E",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "CS1",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        }
+      ],
+      "expected_count": 6,
+      "actual_count": 6,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 6,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

@@ -1,0 +1,1184 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-6",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-6\\page_1.png",
+      "generated_at": "2026-05-28T15:44:46.448229+00:00",
+      "think": {
+        "image_quality": "high",
+        "table_bounds": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 1920,
+          "y2": 1080
+        },
+        "table_columns": [
+          "SLAB MARKED",
+          "SLAB THICKNESS",
+          "BOTTOM REINFORCEMENT ALONG SHORT SPAN (MAIN REINF.)",
+          "BOTTOM REINFORCEMENT ALONG LONG SPAN (DISTRIBUTION REINF.)",
+          "TOP SUPPORT REINFORCEMENT ALONG SHORT SPAN",
+          "TOP SUPPORT REINFORCEMENT ALONG LONG SPAN",
+          "IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)",
+          "DISTRIBUTION",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26",
+          "S27",
+          "S28",
+          "S29",
+          "S30",
+          "S31",
+          "S32",
+          "S33",
+          "S34",
+          "S35",
+          "S36",
+          "S37",
+          "SG"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [],
+        "expected_count": 39,
+        "zoom_plan": [
+          {
+            "region_id": "r1",
+            "purpose": "data_cell",
+            "target": "S1 BOTTOM REINFORCEMENT ALONG SHORT SPAN",
+            "x1": 200,
+            "y1": 100,
+            "x2": 300,
+            "y2": 120,
+            "reason": "verify reinforcement text"
+          },
+          {
+            "region_id": "r2",
+            "purpose": "data_cell",
+            "target": "S1 REMARKS",
+            "x1": 900,
+            "y1": 100,
+            "x2": 1000,
+            "y2": 120,
+            "reason": "verify slab type text"
+          }
+        ],
+        "normalization_rules": [
+          "Normalize spacing to 'XXX C/C'",
+          "Remove duplicates",
+          "Extract diameter and spacing exactly as written",
+          "Ignore labels and dashes"
+        ],
+        "extraction_order": [
+          "SLAB MARKED",
+          "SLAB THICKNESS",
+          "BOTTOM REINFORCEMENT ALONG SHORT SPAN (MAIN REINF.)",
+          "BOTTOM REINFORCEMENT ALONG LONG SPAN (DISTRIBUTION REINF.)",
+          "TOP SUPPORT REINFORCEMENT ALONG SHORT SPAN",
+          "TOP SUPPORT REINFORCEMENT ALONG LONG SPAN",
+          "IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)",
+          "DISTRIBUTION",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "S1",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S2",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S3",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S4",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S5",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S6",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S7",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S8",
+          "thickness": 200,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S9",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S10",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S11",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S12",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S13",
+          "thickness": 200,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T12",
+              "T8",
+              "T10"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S14",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S15",
+          "thickness": 225,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S16",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S17",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S18",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S19",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S20",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S21",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S22",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S23",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S24",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S25",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S26",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S27",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S28",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S29",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S30",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S31",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S32",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S33",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S34",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S35",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S36",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S37",
+          "thickness": 200,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "SG",
+          "thickness": 150,
+          "type": "GRADE SLAB",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S3",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S4",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S5",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S6",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S7",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S8",
+            "thickness": 200,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S9",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S10",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S11",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S12",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S13",
+            "thickness": 200,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T12",
+                "T8",
+                "T10"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S14",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S15",
+            "thickness": 225,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S16",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S17",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S18",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S19",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S20",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S21",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S22",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S23",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S24",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S25",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S26",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S27",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S28",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S29",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S30",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S31",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S32",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S33",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S34",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S35",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S36",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S37",
+            "thickness": 200,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "SG",
+            "thickness": 150,
+            "type": "GRADE SLAB",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        }
+      ],
+      "expected_count": 39,
+      "actual_count": 38,
+      "warnings": [
+        "expected 39 record(s), collected 38"
+      ]
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 38,
+    "warning_count": 1,
+    "warnings": [
+      "expected 39 record(s), collected 38"
+    ]
+  }
+}

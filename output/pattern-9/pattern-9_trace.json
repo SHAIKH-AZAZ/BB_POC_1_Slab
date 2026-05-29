@@ -1,0 +1,473 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-9",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-9\\page_1.png",
+      "generated_at": "2026-05-28T15:47:16.472960+00:00",
+      "think": {
+        "image_quality": "high",
+        "table_bounds": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 1200,
+          "y2": 1200
+        },
+        "table_columns": [
+          "SLAB MARKED",
+          "SLAB THICKNESS",
+          "MAIN REINF.",
+          "DISTRIBUTION REINF.",
+          "MAIN REINF.",
+          "DISTRIBUTION REINF.",
+          "IN MID SPAN",
+          "DISTRIBUTION",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "ST1",
+          "ST2",
+          "ST3",
+          "ST4",
+          "ST5",
+          "ST6",
+          "ST7",
+          "ST8",
+          "ST9",
+          "ST10",
+          "ST11",
+          "ST12",
+          "SC1"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [
+          "ST3",
+          "ST4",
+          "ST10",
+          "ST11",
+          "ST12"
+        ],
+        "expected_count": 13,
+        "zoom_plan": [
+          {
+            "region_id": "r1",
+            "purpose": "row_label",
+            "target": "ST3",
+            "reason": "multi-line slab ID"
+          },
+          {
+            "region_id": "r2",
+            "purpose": "row_label",
+            "target": "ST4",
+            "reason": "multi-line slab ID"
+          },
+          {
+            "region_id": "r3",
+            "purpose": "row_label",
+            "target": "ST10",
+            "reason": "multi-line slab ID"
+          },
+          {
+            "region_id": "r4",
+            "purpose": "row_label",
+            "target": "ST11",
+            "reason": "multi-line slab ID"
+          },
+          {
+            "region_id": "r5",
+            "purpose": "row_label",
+            "target": "ST12",
+            "reason": "multi-line slab ID"
+          }
+        ],
+        "normalization_rules": [
+          "spacing always as 'XXX C/C'",
+          "remove duplicates",
+          "ignore '-' and '-------'",
+          "extract diameter exactly as written",
+          "combine multi-line slabs"
+        ],
+        "extraction_order": [
+          "SLAB MARKED",
+          "SLAB THICKNESS",
+          "MAIN REINF. BOTTOM",
+          "DISTRIBUTION REINF. BOTTOM",
+          "MAIN REINF. TOP",
+          "DISTRIBUTION REINF. TOP",
+          "IN MID SPAN",
+          "DISTRIBUTION",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "ST1",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST2",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST3",
+          "thickness": 225,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST4",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST5",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST6",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST7",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST8",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST9",
+          "thickness": 200,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST10",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST11",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "ST12",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "SC1",
+          "thickness": 150,
+          "type": "CANTILEVER SLAB",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "ST1",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST2",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST3",
+            "thickness": 225,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST4",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST5",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST6",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST7",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST8",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST9",
+            "thickness": 200,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST10",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST11",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST12",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "SC1",
+            "thickness": 150,
+            "type": "CANTILEVER SLAB",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": []
+        }
+      ],
+      "expected_count": 13,
+      "actual_count": 13,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 13,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

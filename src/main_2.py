@@ -4,7 +4,8 @@ from tqdm import tqdm
 
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
-from vision_extractor import extract_from_image
+from text_recovery import recover_and_merge
+from vision_extractor import extract_from_image, extract_with_tools
 
 
 # ==============================
@@ -61,7 +62,7 @@ def process_pdf(pdf_path):
 
     for img_path in tqdm(image_paths):
 
-        result = extract_from_image(img_path, prompt)
+        result = extract_with_tools(img_path, prompt)
 
         try:
             parsed = json.loads(result)
@@ -88,6 +89,10 @@ def process_pdf(pdf_path):
             existing["reinforcement"]["spacing"] += slab["reinforcement"].get("spacing", [])
 
             unique_slabs[slab_id] = existing
+
+    # Backstop: re-parse the PDF text layer to recover any spacing/dia
+    # the model may have dropped.
+    recover_and_merge(pdf_path, list(unique_slabs.values()))
 
     # Final cleanup
     final_slabs = []

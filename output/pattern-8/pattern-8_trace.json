@@ -1,0 +1,125 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-8",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-8\\page_1.png",
+      "generated_at": "2026-05-28T15:46:33.336476+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 20,
+          "y1": 600,
+          "x2": 1000,
+          "y2": 720
+        },
+        "table_columns": [
+          "NOS.",
+          "THK.",
+          "MAIN REINF.",
+          "DISTRIBUTION REINF.",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "S1"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [],
+        "expected_count": 1,
+        "zoom_plan": [
+          {
+            "region_id": "r1",
+            "purpose": "row_label",
+            "target": "S1",
+            "reason": "Confirm slab ID S1"
+          },
+          {
+            "region_id": "r2",
+            "purpose": "data_cell",
+            "target": "150",
+            "reason": "Confirm thickness 150"
+          },
+          {
+            "region_id": "r3",
+            "purpose": "data_cell",
+            "target": "T8-150",
+            "reason": "Confirm main reinforcement T8-150"
+          },
+          {
+            "region_id": "r4",
+            "purpose": "data_cell",
+            "target": "T8-200",
+            "reason": "Confirm distribution reinforcement T8-200"
+          },
+          {
+            "region_id": "r5",
+            "purpose": "data_cell",
+            "target": "TWO WAY SLAB",
+            "reason": "Confirm slab type TWO WAY SLAB"
+          }
+        ],
+        "normalization_rules": [
+          "Convert reinforcement spacing to 'XXX C/C' format",
+          "Ignore invalid reinforcement entries like '-' or empty",
+          "Remove duplicate reinforcement entries"
+        ],
+        "extraction_order": [
+          "NOS.",
+          "THK.",
+          "MAIN REINF.",
+          "DISTRIBUTION REINF.",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "S1",
+          "thickness": 150,
+          "type": "TWO WAY SLAB",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": 150,
+            "type": "TWO WAY SLAB",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": [
+            "r1",
+            "r2",
+            "r3",
+            "r4",
+            "r5"
+          ]
+        }
+      ],
+      "expected_count": 1,
+      "actual_count": 1,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 1,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

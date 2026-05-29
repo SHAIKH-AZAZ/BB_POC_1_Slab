@@ -4,7 +4,8 @@ from tqdm import tqdm
 
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
-from vision_extractor import extract_from_image
+from text_recovery import recover_and_merge
+from vision_extractor import extract_from_image, extract_with_tools
 
 
 # ==============================
@@ -21,16 +22,13 @@ def load_prompt():
 # ==============================
 
 def clean_slab(slab):
+    reinf = slab.setdefault("reinforcement", {"dia": [], "spacing": []})
 
-    # Deduplicate dia
-    slab["reinforcement"]["dia"] = sorted(
-        list(set(slab["reinforcement"].get("dia", [])))
-    )
+    # Deduplicate + sort dia
+    reinf["dia"] = sorted(set(reinf.get("dia") or []))
 
-    # Deduplicate spacing
-    slab["reinforcement"]["spacing"] = sorted(
-        list(set(slab["reinforcement"].get("spacing", [])))
-    )
+    # Deduplicate + sort spacing
+    reinf["spacing"] = sorted(set(reinf.get("spacing") or []))
 
     return slab
 
@@ -54,7 +52,7 @@ def process_pdf(pdf_path):
 
     for img_path in tqdm(image_paths):
 
-        result = extract_from_image(img_path, prompt)
+        result = extract_with_tools(img_path, prompt)
 
         try:
             parsed = json.loads(result)
@@ -63,10 +61,29 @@ def process_pdf(pdf_path):
         except:
             print("⚠ JSON parse failed")
 
-    cleaned_slabs = []
-
+    # Pattern-1 historically returned slab_type + along/across span arrays.
+    # Normalize to the canonical schema before recovery + cleanup.
+    normalized = []
     for slab in all_slabs:
-        cleaned_slabs.append(clean_slab(slab))
+        slab_id = slab.get("slab_id") or slab.get("slab_type") or ""
+        reinf = slab.get("reinforcement") or {}
+        normalized.append({
+            "slab_id": slab_id,
+            "thickness": slab.get("thickness"),
+            "type": slab.get("type") or "",
+            "mix": slab.get("mix") or "",
+            "reinforcement": {
+                "dia": list(reinf.get("dia") or []),
+                "spacing": list(reinf.get("spacing") or []),
+            },
+            "remarks": slab.get("remarks") or "",
+        })
+
+    # Backstop: re-parse the PDF's text layer to recover any spacing/dia
+    # the model may have dropped.
+    recover_and_merge(pdf_path, normalized)
+
+    cleaned_slabs = [clean_slab(s) for s in normalized]
 
     final_output = {"slabs": cleaned_slabs}
 

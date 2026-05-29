@@ -1,0 +1,518 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-2",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-2\\page_1.png",
+      "generated_at": "2026-05-28T15:41:13.966471+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 150,
+          "y1": 200,
+          "x2": 1700,
+          "y2": 900
+        },
+        "table_columns": [
+          "TYPE",
+          "THICKNESS",
+          "STEEL ALONG SHORT SPAN",
+          "STEEL ACROSS SHORT SPAN",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S3A",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [],
+        "expected_count": 13,
+        "zoom_plan": [],
+        "normalization_rules": [
+          "Remove words: ALT. BENT UP, DIST., DIST, ALL STR, TOP, BTM, EVERY",
+          "Format spacing as '150 C/C'",
+          "Remove duplicates"
+        ],
+        "extraction_order": [
+          "TYPE",
+          "THICKNESS",
+          "STEEL ALONG SHORT SPAN",
+          "STEEL ACROSS SHORT SPAN",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "S1",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S2",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "125 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S3",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "175 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S3A",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "100 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S4",
+          "thickness": 165,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S5",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "125 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "PROVIDE EOS AS SHOWN"
+        },
+        {
+          "slab_id": "S6",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S7",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S8",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S9",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S10",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S11",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S12",
+          "thickness": 200,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "175 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "-"
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "125 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S3",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "175 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S3A",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "100 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S4",
+            "thickness": 165,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S5",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "125 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "PROVIDE EOS AS SHOWN"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S6",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S7",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S8",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S9",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S10",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S11",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S12",
+            "thickness": 200,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "175 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": []
+        }
+      ],
+      "expected_count": 13,
+      "actual_count": 13,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 13,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

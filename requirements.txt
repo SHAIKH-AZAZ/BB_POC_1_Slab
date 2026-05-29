@@ -1,4 +1,9 @@
 openai
-pymupdf
+PyMuPDF
+pdfplumber
+pandas
+python-dotenv
 tqdm
 Pillow
+pydantic
+scipy

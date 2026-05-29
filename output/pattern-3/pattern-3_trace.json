@@ -1,0 +1,778 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-3",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-3\\page_1.png",
+      "generated_at": "2026-05-28T15:42:12.685709+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 40,
+          "y1": 400,
+          "x2": 1200,
+          "y2": 720
+        },
+        "table_columns": [
+          "SLAB MARKED",
+          "THICK.",
+          "TYPE",
+          "SHORT BAR",
+          "LONG BAR",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "ST"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [
+          "SHORT BAR",
+          "LONG BAR"
+        ],
+        "expected_count": 7,
+        "zoom_plan": [
+          {
+            "region_id": "header",
+            "purpose": "header",
+            "target": "SLAB MARKED",
+            "x1": 40,
+            "y1": 400,
+            "x2": 140,
+            "y2": 440,
+            "reason": "header identification"
+          },
+          {
+            "region_id": "header2",
+            "purpose": "header",
+            "target": "THICK.",
+            "x1": 140,
+            "y1": 400,
+            "x2": 220,
+            "y2": 440,
+            "reason": "header identification"
+          },
+          {
+            "region_id": "header3",
+            "purpose": "header",
+            "target": "TYPE",
+            "x1": 220,
+            "y1": 400,
+            "x2": 320,
+            "y2": 440,
+            "reason": "header identification"
+          },
+          {
+            "region_id": "header4",
+            "purpose": "header",
+            "target": "SHORT BAR",
+            "x1": 320,
+            "y1": 400,
+            "x2": 520,
+            "y2": 440,
+            "reason": "header identification"
+          },
+          {
+            "region_id": "header5",
+            "purpose": "header",
+            "target": "LONG BAR",
+            "x1": 520,
+            "y1": 400,
+            "x2": 720,
+            "y2": 440,
+            "reason": "header identification"
+          },
+          {
+            "region_id": "header6",
+            "purpose": "header",
+            "target": "REMARKS",
+            "x1": 720,
+            "y1": 400,
+            "x2": 900,
+            "y2": 440,
+            "reason": "header identification"
+          },
+          {
+            "region_id": "row_S2",
+            "purpose": "row_label",
+            "target": "S2",
+            "x1": 40,
+            "y1": 440,
+            "x2": 140,
+            "y2": 480,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_S2_thick",
+            "purpose": "data_cell",
+            "target": "175",
+            "x1": 140,
+            "y1": 440,
+            "x2": 220,
+            "y2": 480,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_S2_type",
+            "purpose": "data_cell",
+            "target": "TWO WAY",
+            "x1": 220,
+            "y1": 440,
+            "x2": 320,
+            "y2": 480,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_S2_short",
+            "purpose": "data_cell",
+            "target": "T10@100C/C (ALT. BENT UP)",
+            "x1": 320,
+            "y1": 440,
+            "x2": 520,
+            "y2": 480,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_S2_long",
+            "purpose": "data_cell",
+            "target": "T10@200C/C (ALT. BENT UP)",
+            "x1": 520,
+            "y1": 440,
+            "x2": 720,
+            "y2": 480,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_S2_remarks",
+            "purpose": "data_cell",
+            "target": "-",
+            "x1": 720,
+            "y1": 440,
+            "x2": 900,
+            "y2": 480,
+            "reason": "remarks data"
+          },
+          {
+            "region_id": "row_S3",
+            "purpose": "row_label",
+            "target": "S3",
+            "x1": 40,
+            "y1": 480,
+            "x2": 140,
+            "y2": 520,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_S3_thick",
+            "purpose": "data_cell",
+            "target": "125",
+            "x1": 140,
+            "y1": 480,
+            "x2": 220,
+            "y2": 520,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_S3_type",
+            "purpose": "data_cell",
+            "target": "TWO WAY",
+            "x1": 220,
+            "y1": 480,
+            "x2": 320,
+            "y2": 520,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_S3_short",
+            "purpose": "data_cell",
+            "target": "T8@150C/C (ALT. BENT UP)",
+            "x1": 320,
+            "y1": 480,
+            "x2": 520,
+            "y2": 520,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_S3_long",
+            "purpose": "data_cell",
+            "target": "T8@200C/C (ALT. BENT UP)",
+            "x1": 520,
+            "y1": 480,
+            "x2": 720,
+            "y2": 520,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_S3_remarks",
+            "purpose": "data_cell",
+            "target": "-",
+            "x1": 720,
+            "y1": 480,
+            "x2": 900,
+            "y2": 520,
+            "reason": "remarks data"
+          },
+          {
+            "region_id": "row_S4",
+            "purpose": "row_label",
+            "target": "S4",
+            "x1": 40,
+            "y1": 520,
+            "x2": 140,
+            "y2": 560,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_S4_thick",
+            "purpose": "data_cell",
+            "target": "125",
+            "x1": 140,
+            "y1": 520,
+            "x2": 220,
+            "y2": 560,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_S4_type",
+            "purpose": "data_cell",
+            "target": "ONE WAY",
+            "x1": 220,
+            "y1": 520,
+            "x2": 320,
+            "y2": 560,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_S4_short",
+            "purpose": "data_cell",
+            "target": "T8@100C/C (ALT. BENT UP)",
+            "x1": 320,
+            "y1": 520,
+            "x2": 520,
+            "y2": 560,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_S4_long",
+            "purpose": "data_cell",
+            "target": "T8@200C/C (ALT. BENT UP)",
+            "x1": 520,
+            "y1": 520,
+            "x2": 720,
+            "y2": 560,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_S4_remarks",
+            "purpose": "data_cell",
+            "target": "250MM SUNK SLAB",
+            "x1": 720,
+            "y1": 520,
+            "x2": 900,
+            "y2": 560,
+            "reason": "remarks data"
+          },
+          {
+            "region_id": "row_S5",
+            "purpose": "row_label",
+            "target": "S5",
+            "x1": 40,
+            "y1": 560,
+            "x2": 140,
+            "y2": 600,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_S5_thick",
+            "purpose": "data_cell",
+            "target": "115",
+            "x1": 140,
+            "y1": 560,
+            "x2": 220,
+            "y2": 600,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_S5_type",
+            "purpose": "data_cell",
+            "target": "ONE WAY",
+            "x1": 220,
+            "y1": 560,
+            "x2": 320,
+            "y2": 600,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_S5_short",
+            "purpose": "data_cell",
+            "target": "T8@150C/C (ALT. BENT UP)",
+            "x1": 320,
+            "y1": 560,
+            "x2": 520,
+            "y2": 600,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_S5_long",
+            "purpose": "data_cell",
+            "target": "T8@200C/C (ALT. BENT UP)",
+            "x1": 520,
+            "y1": 560,
+            "x2": 720,
+            "y2": 600,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_S5_remarks",
+            "purpose": "data_cell",
+            "target": "-",
+            "x1": 720,
+            "y1": 560,
+            "x2": 900,
+            "y2": 600,
+            "reason": "remarks data"
+          },
+          {
+            "region_id": "row_S6",
+            "purpose": "row_label",
+            "target": "S6",
+            "x1": 40,
+            "y1": 600,
+            "x2": 140,
+            "y2": 640,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_S6_thick",
+            "purpose": "data_cell",
+            "target": "115",
+            "x1": 140,
+            "y1": 600,
+            "x2": 220,
+            "y2": 640,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_S6_type",
+            "purpose": "data_cell",
+            "target": "ONE WAY",
+            "x1": 220,
+            "y1": 600,
+            "x2": 320,
+            "y2": 640,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_S6_short",
+            "purpose": "data_cell",
+            "target": "T8@150C/C (ALL STRAIGHT)",
+            "x1": 320,
+            "y1": 600,
+            "x2": 520,
+            "y2": 640,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_S6_long",
+            "purpose": "data_cell",
+            "target": "T8@200C/C (DIST.)",
+            "x1": 520,
+            "y1": 600,
+            "x2": 720,
+            "y2": 640,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_S6_remarks",
+            "purpose": "data_cell",
+            "target": "-",
+            "x1": 720,
+            "y1": 600,
+            "x2": 900,
+            "y2": 640,
+            "reason": "remarks data"
+          },
+          {
+            "region_id": "row_S7",
+            "purpose": "row_label",
+            "target": "S7",
+            "x1": 40,
+            "y1": 640,
+            "x2": 140,
+            "y2": 680,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_S7_thick",
+            "purpose": "data_cell",
+            "target": "175",
+            "x1": 140,
+            "y1": 640,
+            "x2": 220,
+            "y2": 680,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_S7_type",
+            "purpose": "data_cell",
+            "target": "TWO WAY",
+            "x1": 220,
+            "y1": 640,
+            "x2": 320,
+            "y2": 680,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_S7_short",
+            "purpose": "data_cell",
+            "target": "T10@150C/C (ALT. BENT UP)",
+            "x1": 320,
+            "y1": 640,
+            "x2": 520,
+            "y2": 680,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_S7_long",
+            "purpose": "data_cell",
+            "target": "T10@200C/C (ALT. BENT UP)",
+            "x1": 520,
+            "y1": 640,
+            "x2": 720,
+            "y2": 680,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_S7_remarks",
+            "purpose": "data_cell",
+            "target": "-",
+            "x1": 720,
+            "y1": 640,
+            "x2": 900,
+            "y2": 680,
+            "reason": "remarks data"
+          },
+          {
+            "region_id": "row_ST",
+            "purpose": "row_label",
+            "target": "ST",
+            "x1": 40,
+            "y1": 680,
+            "x2": 140,
+            "y2": 720,
+            "reason": "row label"
+          },
+          {
+            "region_id": "row_ST_thick",
+            "purpose": "data_cell",
+            "target": "225",
+            "x1": 140,
+            "y1": 680,
+            "x2": 220,
+            "y2": 720,
+            "reason": "thickness data"
+          },
+          {
+            "region_id": "row_ST_type",
+            "purpose": "data_cell",
+            "target": "ONE WAY",
+            "x1": 220,
+            "y1": 680,
+            "x2": 320,
+            "y2": 720,
+            "reason": "type data"
+          },
+          {
+            "region_id": "row_ST_short",
+            "purpose": "data_cell",
+            "target": "T12@100C/C (MAIN)",
+            "x1": 320,
+            "y1": 680,
+            "x2": 520,
+            "y2": 720,
+            "reason": "short bar data"
+          },
+          {
+            "region_id": "row_ST_long",
+            "purpose": "data_cell",
+            "target": "T12@200C/C (DIST.)",
+            "x1": 520,
+            "y1": 680,
+            "x2": 720,
+            "y2": 720,
+            "reason": "long bar data"
+          },
+          {
+            "region_id": "row_ST_remarks",
+            "purpose": "data_cell",
+            "target": "STAIRCASE SLAB",
+            "x1": 720,
+            "y1": 680,
+            "x2": 900,
+            "y2": 720,
+            "reason": "remarks data"
+          }
+        ],
+        "normalization_rules": [
+          "Remove extra bracket text: (ALT. BENT UP), (ALL STRAIGHT), (DIST.), (MAIN)",
+          "Format spacing as '100 C/C' with space",
+          "Remove duplicates in reinforcement",
+          "Keep only diameter and spacing"
+        ],
+        "extraction_order": [
+          "SLAB MARKED",
+          "THICK.",
+          "TYPE",
+          "SHORT BAR",
+          "LONG BAR",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "S2",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": []
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S3",
+          "thickness": 125,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S4",
+          "thickness": 125,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": "250MM SUNK SLAB"
+        },
+        {
+          "slab_id": "S5",
+          "thickness": 115,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S6",
+          "thickness": 115,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "S7",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": []
+          },
+          "remarks": "-"
+        },
+        {
+          "slab_id": "ST",
+          "thickness": 225,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T12"
+            ],
+            "spacing": []
+          },
+          "remarks": "STAIRCASE SLAB"
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": []
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": [
+            "row_S2_short",
+            "row_S2_long"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S3",
+            "thickness": 125,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": [
+            "row_S3_short",
+            "row_S3_long"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S4",
+            "thickness": 125,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": "250MM SUNK SLAB"
+          },
+          "source_region_ids": [
+            "row_S4_short",
+            "row_S4_long"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S5",
+            "thickness": 115,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": [
+            "row_S5_short",
+            "row_S5_long"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S6",
+            "thickness": 115,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": [
+            "row_S6_short",
+            "row_S6_long"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S7",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": []
+            },
+            "remarks": "-"
+          },
+          "source_region_ids": [
+            "row_S7_short",
+            "row_S7_long"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "ST",
+            "thickness": 225,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T12"
+              ],
+              "spacing": []
+            },
+            "remarks": "STAIRCASE SLAB"
+          },
+          "source_region_ids": [
+            "row_ST_short",
+            "row_ST_long"
+          ]
+        }
+      ],
+      "expected_count": 7,
+      "actual_count": 7,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 7,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

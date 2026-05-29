@@ -1,0 +1,634 @@
+{
+  "project": "slab",
+  "pdf_stem": "X-section",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\X-section\\page_1.png",
+      "generated_at": "2026-05-26T08:38:48.975107+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 0,
+          "y1": 0,
+          "x2": 1920,
+          "y2": 1080
+        },
+        "table_columns": [
+          "SLAB NO.",
+          "DEPTH",
+          "SHORTER SPAN",
+          "LONGER SPAN",
+          "SHORTER SPAN",
+          "LONGER SPAN"
+        ],
+        "slab_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [],
+        "expected_count": 3,
+        "zoom_plan": [
+          {
+            "region_id": "header",
+            "purpose": "header",
+            "x1": 100,
+            "y1": 100,
+            "x2": 1820,
+            "y2": 220,
+            "reason": "Table header with column titles"
+          },
+          {
+            "region_id": "row_label_S1",
+            "purpose": "row_label",
+            "x1": 100,
+            "y1": 220,
+            "x2": 200,
+            "y2": 280,
+            "reason": "Slab ID S1"
+          },
+          {
+            "region_id": "row_label_S2",
+            "purpose": "row_label",
+            "x1": 100,
+            "y1": 280,
+            "x2": 200,
+            "y2": 340,
+            "reason": "Slab ID S2"
+          },
+          {
+            "region_id": "row_label_S3",
+            "purpose": "row_label",
+            "x1": 100,
+            "y1": 340,
+            "x2": 200,
+            "y2": 400,
+            "reason": "Slab ID S3"
+          },
+          {
+            "region_id": "thickness_S1",
+            "purpose": "data_cell",
+            "x1": 200,
+            "y1": 220,
+            "x2": 300,
+            "y2": 280,
+            "reason": "Thickness for S1"
+          },
+          {
+            "region_id": "thickness_S2",
+            "purpose": "data_cell",
+            "x1": 200,
+            "y1": 280,
+            "x2": 300,
+            "y2": 340,
+            "reason": "Thickness for S2"
+          },
+          {
+            "region_id": "thickness_S3",
+            "purpose": "data_cell",
+            "x1": 200,
+            "y1": 340,
+            "x2": 300,
+            "y2": 400,
+            "reason": "Thickness for S3"
+          },
+          {
+            "region_id": "reinforcement_S1_shorter_span",
+            "purpose": "data_cell",
+            "x1": 300,
+            "y1": 220,
+            "x2": 700,
+            "y2": 280,
+            "reason": "Reinforcement shorter span for S1"
+          },
+          {
+            "region_id": "reinforcement_S1_longer_span",
+            "purpose": "data_cell",
+            "x1": 700,
+            "y1": 220,
+            "x2": 1100,
+            "y2": 280,
+            "reason": "Reinforcement longer span for S1"
+          },
+          {
+            "region_id": "reinforcement_S1_support_shorter_span",
+            "purpose": "data_cell",
+            "x1": 1100,
+            "y1": 220,
+            "x2": 1400,
+            "y2": 280,
+            "reason": "Support reinforcement shorter span for S1"
+          },
+          {
+            "region_id": "reinforcement_S1_support_longer_span",
+            "purpose": "data_cell",
+            "x1": 1400,
+            "y1": 220,
+            "x2": 1700,
+            "y2": 280,
+            "reason": "Support reinforcement longer span for S1"
+          },
+          {
+            "region_id": "reinforcement_S2_shorter_span",
+            "purpose": "data_cell",
+            "x1": 300,
+            "y1": 280,
+            "x2": 700,
+            "y2": 340,
+            "reason": "Reinforcement shorter span for S2"
+          },
+          {
+            "region_id": "reinforcement_S2_longer_span",
+            "purpose": "data_cell",
+            "x1": 700,
+            "y1": 280,
+            "x2": 1100,
+            "y2": 340,
+            "reason": "Reinforcement longer span for S2"
+          },
+          {
+            "region_id": "reinforcement_S2_support_shorter_span",
+            "purpose": "data_cell",
+            "x1": 1100,
+            "y1": 280,
+            "x2": 1400,
+            "y2": 340,
+            "reason": "Support reinforcement shorter span for S2"
+          },
+          {
+            "region_id": "reinforcement_S2_support_longer_span",
+            "purpose": "data_cell",
+            "x1": 1400,
+            "y1": 280,
+            "x2": 1700,
+            "y2": 340,
+            "reason": "Support reinforcement longer span for S2"
+          },
+          {
+            "region_id": "reinforcement_S3_shorter_span",
+            "purpose": "data_cell",
+            "x1": 300,
+            "y1": 340,
+            "x2": 700,
+            "y2": 400,
+            "reason": "Reinforcement shorter span for S3"
+          },
+          {
+            "region_id": "reinforcement_S3_longer_span",
+            "purpose": "data_cell",
+            "x1": 700,
+            "y1": 340,
+            "x2": 1100,
+            "y2": 400,
+            "reason": "Reinforcement longer span for S3"
+          },
+          {
+            "region_id": "reinforcement_S3_support_shorter_span",
+            "purpose": "data_cell",
+            "x1": 1100,
+            "y1": 340,
+            "x2": 1400,
+            "y2": 400,
+            "reason": "Support reinforcement shorter span for S3"
+          },
+          {
+            "region_id": "reinforcement_S3_support_longer_span",
+            "purpose": "data_cell",
+            "x1": 1400,
+            "y1": 340,
+            "x2": 1700,
+            "y2": 400,
+            "reason": "Support reinforcement longer span for S3"
+          }
+        ],
+        "normalization_rules": [
+          "Normalize spacing to 'XXX C/C' format",
+          "Remove duplicates in reinforcement",
+          "Extract diameter exactly as written",
+          "Ignore labels and dashes"
+        ],
+        "extraction_order": [
+          "header",
+          "row_label_S1",
+          "thickness_S1",
+          "reinforcement_S1_shorter_span",
+          "reinforcement_S1_longer_span",
+          "reinforcement_S1_support_shorter_span",
+          "reinforcement_S1_support_longer_span",
+          "row_label_S2",
+          "thickness_S2",
+          "reinforcement_S2_shorter_span",
+          "reinforcement_S2_longer_span",
+          "reinforcement_S2_support_shorter_span",
+          "reinforcement_S2_support_longer_span",
+          "row_label_S3",
+          "thickness_S3",
+          "reinforcement_S3_shorter_span",
+          "reinforcement_S3_longer_span",
+          "reinforcement_S3_support_shorter_span",
+          "reinforcement_S3_support_longer_span"
+        ]
+      },
+      "zoom_regions": [
+        {
+          "region_id": "header",
+          "purpose": "header",
+          "x1": 100.0,
+          "y1": 100.0,
+          "x2": 1820.0,
+          "y2": 220.0,
+          "reason": "Table header with column titles"
+        },
+        {
+          "region_id": "row_label_S1",
+          "purpose": "row_label",
+          "x1": 100.0,
+          "y1": 220.0,
+          "x2": 200.0,
+          "y2": 280.0,
+          "reason": "Slab ID S1"
+        },
+        {
+          "region_id": "thickness_S1",
+          "purpose": "data_cell",
+          "x1": 200.0,
+          "y1": 220.0,
+          "x2": 300.0,
+          "y2": 280.0,
+          "reason": "Thickness for S1"
+        },
+        {
+          "region_id": "reinforcement_S1_shorter_span",
+          "purpose": "data_cell",
+          "x1": 300.0,
+          "y1": 220.0,
+          "x2": 700.0,
+          "y2": 280.0,
+          "reason": "Reinforcement shorter span for S1"
+        },
+        {
+          "region_id": "reinforcement_S1_longer_span",
+          "purpose": "data_cell",
+          "x1": 700.0,
+          "y1": 220.0,
+          "x2": 1100.0,
+          "y2": 280.0,
+          "reason": "Reinforcement longer span for S1"
+        },
+        {
+          "region_id": "reinforcement_S1_support_shorter_span",
+          "purpose": "data_cell",
+          "x1": 1100.0,
+          "y1": 220.0,
+          "x2": 1400.0,
+          "y2": 280.0,
+          "reason": "Support reinforcement shorter span for S1"
+        },
+        {
+          "region_id": "reinforcement_S1_support_longer_span",
+          "purpose": "data_cell",
+          "x1": 1400.0,
+          "y1": 220.0,
+          "x2": 1700.0,
+          "y2": 280.0,
+          "reason": "Support reinforcement longer span for S1"
+        },
+        {
+          "region_id": "row_label_S2",
+          "purpose": "row_label",
+          "x1": 100.0,
+          "y1": 280.0,
+          "x2": 200.0,
+          "y2": 340.0,
+          "reason": "Slab ID S2"
+        },
+        {
+          "region_id": "thickness_S2",
+          "purpose": "data_cell",
+          "x1": 200.0,
+          "y1": 280.0,
+          "x2": 300.0,
+          "y2": 340.0,
+          "reason": "Thickness for S2"
+        },
+        {
+          "region_id": "reinforcement_S2_shorter_span",
+          "purpose": "data_cell",
+          "x1": 300.0,
+          "y1": 280.0,
+          "x2": 700.0,
+          "y2": 340.0,
+          "reason": "Reinforcement shorter span for S2"
+        },
+        {
+          "region_id": "reinforcement_S2_longer_span",
+          "purpose": "data_cell",
+          "x1": 700.0,
+          "y1": 280.0,
+          "x2": 1100.0,
+          "y2": 340.0,
+          "reason": "Reinforcement longer span for S2"
+        },
+        {
+          "region_id": "reinforcement_S2_support_shorter_span",
+          "purpose": "data_cell",
+          "x1": 1100.0,
+          "y1": 280.0,
+          "x2": 1400.0,
+          "y2": 340.0,
+          "reason": "Support reinforcement shorter span for S2"
+        },
+        {
+          "region_id": "reinforcement_S2_support_longer_span",
+          "purpose": "data_cell",
+          "x1": 1400.0,
+          "y1": 280.0,
+          "x2": 1700.0,
+          "y2": 340.0,
+          "reason": "Support reinforcement longer span for S2"
+        },
+        {
+          "region_id": "row_label_S3",
+          "purpose": "row_label",
+          "x1": 100.0,
+          "y1": 340.0,
+          "x2": 200.0,
+          "y2": 400.0,
+          "reason": "Slab ID S3"
+        },
+        {
+          "region_id": "thickness_S3",
+          "purpose": "data_cell",
+          "x1": 200.0,
+          "y1": 340.0,
+          "x2": 300.0,
+          "y2": 400.0,
+          "reason": "Thickness for S3"
+        },
+        {
+          "region_id": "reinforcement_S3_shorter_span",
+          "purpose": "data_cell",
+          "x1": 300.0,
+          "y1": 340.0,
+          "x2": 700.0,
+          "y2": 400.0,
+          "reason": "Reinforcement shorter span for S3"
+        },
+        {
+          "region_id": "reinforcement_S3_longer_span",
+          "purpose": "data_cell",
+          "x1": 700.0,
+          "y1": 340.0,
+          "x2": 1100.0,
+          "y2": 400.0,
+          "reason": "Reinforcement longer span for S3"
+        },
+        {
+          "region_id": "reinforcement_S3_support_shorter_span",
+          "purpose": "data_cell",
+          "x1": 1100.0,
+          "y1": 340.0,
+          "x2": 1400.0,
+          "y2": 400.0,
+          "reason": "Support reinforcement shorter span for S3"
+        },
+        {
+          "region_id": "reinforcement_S3_support_longer_span",
+          "purpose": "data_cell",
+          "x1": 1400.0,
+          "y1": 340.0,
+          "x2": 1700.0,
+          "y2": 400.0,
+          "reason": "Support reinforcement longer span for S3"
+        }
+      ],
+      "confirmed_reads": [
+        {
+          "region_id": "row_label_S1",
+          "text": "S1",
+          "confidence": "0.99",
+          "applies_to": "slab_id"
+        },
+        {
+          "region_id": "thickness_S1",
+          "text": "125",
+          "confidence": "0.99",
+          "applies_to": "thickness"
+        },
+        {
+          "region_id": "reinforcement_S1_shorter_span",
+          "text": "T8@125 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S1_longer_span",
+          "text": "T8@175 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S1_support_shorter_span",
+          "text": "T8@125 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S1_support_longer_span",
+          "text": "T8@175 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "row_label_S2",
+          "text": "S2",
+          "confidence": "0.99",
+          "applies_to": "slab_id"
+        },
+        {
+          "region_id": "thickness_S2",
+          "text": "125",
+          "confidence": "0.99",
+          "applies_to": "thickness"
+        },
+        {
+          "region_id": "reinforcement_S2_shorter_span",
+          "text": "T8@175 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S2_longer_span",
+          "text": "T8@200 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S2_support_shorter_span",
+          "text": "T8@175 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S2_support_longer_span",
+          "text": "T8@200 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "row_label_S3",
+          "text": "S3",
+          "confidence": "0.99",
+          "applies_to": "slab_id"
+        },
+        {
+          "region_id": "thickness_S3",
+          "text": "125",
+          "confidence": "0.99",
+          "applies_to": "thickness"
+        },
+        {
+          "region_id": "reinforcement_S3_shorter_span",
+          "text": "T8@200 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S3_longer_span",
+          "text": "T8@200 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S3_support_shorter_span",
+          "text": "T8@200 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        },
+        {
+          "region_id": "reinforcement_S3_support_longer_span",
+          "text": "T8@200 C/C",
+          "confidence": "0.98",
+          "applies_to": "reinforcement"
+        }
+      ],
+      "records": [
+        {
+          "slab_id": "S1",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S2",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        },
+        {
+          "slab_id": "S3",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          }
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": [
+            "row_label_S1",
+            "thickness_S1",
+            "reinforcement_S1_shorter_span",
+            "reinforcement_S1_longer_span",
+            "reinforcement_S1_support_shorter_span",
+            "reinforcement_S1_support_longer_span"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": [
+            "row_label_S2",
+            "thickness_S2",
+            "reinforcement_S2_shorter_span",
+            "reinforcement_S2_longer_span",
+            "reinforcement_S2_support_shorter_span",
+            "reinforcement_S2_support_longer_span"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S3",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            }
+          },
+          "source_region_ids": [
+            "row_label_S3",
+            "thickness_S3",
+            "reinforcement_S3_shorter_span",
+            "reinforcement_S3_longer_span",
+            "reinforcement_S3_support_shorter_span",
+            "reinforcement_S3_support_longer_span"
+          ]
+        }
+      ],
+      "expected_count": 3,
+      "actual_count": 3,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 3,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

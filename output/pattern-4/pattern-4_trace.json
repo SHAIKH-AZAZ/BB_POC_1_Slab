@@ -1,0 +1,249 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-4",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-4\\page_1.png",
+      "generated_at": "2026-05-28T15:42:44.946316+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 120,
+          "y1": 150,
+          "x2": 1100,
+          "y2": 350
+        },
+        "table_columns": [
+          "SLAB NO.",
+          "SLAB THK.",
+          "MIX",
+          "TYPE",
+          "11 TO SHORT SPAN",
+          "11 TO LONG SPAN",
+          "11 TO SHORT SPAN EX. TOP OVER SUPPORT",
+          "11 TO LONG SPAN EX. TOP OVER SUPPORT",
+          "DIST. STEEL"
+        ],
+        "slab_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [
+          "11 TO SHORT SPAN",
+          "11 TO LONG SPAN",
+          "11 TO SHORT SPAN EX. TOP OVER SUPPORT",
+          "11 TO LONG SPAN EX. TOP OVER SUPPORT"
+        ],
+        "expected_count": 4,
+        "zoom_plan": [
+          {
+            "region_id": "header",
+            "purpose": "header",
+            "x1": 120,
+            "y1": 150,
+            "x2": 1100,
+            "y2": 190,
+            "reason": "Table header"
+          },
+          {
+            "region_id": "row_S1",
+            "purpose": "row_label",
+            "x1": 120,
+            "y1": 190,
+            "x2": 1100,
+            "y2": 220,
+            "reason": "Row S1 data"
+          },
+          {
+            "region_id": "row_S2",
+            "purpose": "row_label",
+            "x1": 120,
+            "y1": 220,
+            "x2": 1100,
+            "y2": 250,
+            "reason": "Row S2 data"
+          },
+          {
+            "region_id": "row_S3",
+            "purpose": "row_label",
+            "x1": 120,
+            "y1": 250,
+            "x2": 1100,
+            "y2": 280,
+            "reason": "Row S3 data"
+          },
+          {
+            "region_id": "row_S4",
+            "purpose": "row_label",
+            "x1": 120,
+            "y1": 280,
+            "x2": 1100,
+            "y2": 310,
+            "reason": "Row S4 data"
+          }
+        ],
+        "normalization_rules": [
+          "Remove ALT. BENT UP",
+          "Remove DIST.",
+          "Remove extra text descriptions",
+          "Ignore '-' cells",
+          "Remove duplicates"
+        ],
+        "extraction_order": [
+          "SLAB NO.",
+          "SLAB THK.",
+          "MIX",
+          "TYPE",
+          "11 TO SHORT SPAN",
+          "11 TO LONG SPAN",
+          "11 TO SHORT SPAN EX. TOP OVER SUPPORT",
+          "11 TO LONG SPAN EX. TOP OVER SUPPORT",
+          "DIST. STEEL"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "S1",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "M25",
+          "reinforcement": {
+            "dia": [],
+            "spacing": [
+              "150 C/C",
+              "300 C/C"
+            ]
+          }
+        },
+        {
+          "slab_id": "S2",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "M25",
+          "reinforcement": {
+            "dia": [],
+            "spacing": [
+              "150 C/C",
+              "300 C/C"
+            ]
+          }
+        },
+        {
+          "slab_id": "S3",
+          "thickness": 150,
+          "type": "ONE WAY",
+          "mix": "M25",
+          "reinforcement": {
+            "dia": [],
+            "spacing": [
+              "100 C/C",
+              "200 C/C"
+            ]
+          }
+        },
+        {
+          "slab_id": "S4",
+          "thickness": 150,
+          "type": "TWO WAY",
+          "mix": "M25",
+          "reinforcement": {
+            "dia": [],
+            "spacing": [
+              "100 C/C",
+              "200 C/C"
+            ]
+          }
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "M25",
+            "reinforcement": {
+              "dia": [],
+              "spacing": [
+                "150 C/C",
+                "300 C/C"
+              ]
+            }
+          },
+          "source_region_ids": [
+            "row_S1"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "M25",
+            "reinforcement": {
+              "dia": [],
+              "spacing": [
+                "150 C/C",
+                "300 C/C"
+              ]
+            }
+          },
+          "source_region_ids": [
+            "row_S2"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S3",
+            "thickness": 150,
+            "type": "ONE WAY",
+            "mix": "M25",
+            "reinforcement": {
+              "dia": [],
+              "spacing": [
+                "100 C/C",
+                "200 C/C"
+              ]
+            }
+          },
+          "source_region_ids": [
+            "row_S3"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S4",
+            "thickness": 150,
+            "type": "TWO WAY",
+            "mix": "M25",
+            "reinforcement": {
+              "dia": [],
+              "spacing": [
+                "100 C/C",
+                "200 C/C"
+              ]
+            }
+          },
+          "source_region_ids": [
+            "row_S4"
+          ]
+        }
+      ],
+      "expected_count": 4,
+      "actual_count": 4,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 4,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

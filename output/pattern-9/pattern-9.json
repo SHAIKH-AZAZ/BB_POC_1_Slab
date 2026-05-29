@@ -39,7 +39,8 @@
       "mix": "",
       "reinforcement": {
         "dia": [
-          "T10"
+          "T10",
+          "T8"
         ],
         "spacing": [
           "100 C/C",
@@ -202,8 +203,12 @@
       "type": "CANTILEVER SLAB",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "275 C/C"
+        ]
       }
     }
   ]

@@ -7,8 +7,8 @@
       "mix": "M25",
       "reinforcement": {
         "dia": [
-          "10T",
-          "8T"
+          "T10",
+          "T8"
         ],
         "spacing": [
           "150 C/C",
@@ -24,7 +24,7 @@
       "mix": "M25",
       "reinforcement": {
         "dia": [
-          "10T"
+          "T10"
         ],
         "spacing": [
           "150 C/C",
@@ -39,8 +39,8 @@
       "mix": "M25",
       "reinforcement": {
         "dia": [
-          "10T",
-          "8T"
+          "T10",
+          "T8"
         ],
         "spacing": [
           "100 C/C",
@@ -55,10 +55,11 @@
       "mix": "M25",
       "reinforcement": {
         "dia": [
-          "10T"
+          "T10"
         ],
         "spacing": [
-          "100 C/C"
+          "100 C/C",
+          "200 C/C"
         ]
       }
     }

@@ -6,12 +6,8 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "8T"
-        ],
-        "spacing": [
-          "175 C/C"
-        ]
+        "dia": [],
+        "spacing": []
       }
     },
     {
@@ -20,12 +16,8 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "8T"
-        ],
-        "spacing": [
-          "350 C/C"
-        ]
+        "dia": [],
+        "spacing": []
       }
     },
     {
@@ -34,12 +26,8 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "8T"
-        ],
-        "spacing": [
-          "125 C/C"
-        ]
+        "dia": [],
+        "spacing": []
       }
     },
     {
@@ -48,12 +36,8 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "8T"
-        ],
-        "spacing": [
-          "250 C/C"
-        ]
+        "dia": [],
+        "spacing": []
       }
     },
     {
@@ -62,12 +46,8 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "8T"
-        ],
-        "spacing": [
-          "200 C/C"
-        ]
+        "dia": [],
+        "spacing": []
       }
     },
     {
@@ -76,12 +56,8 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "8T"
-        ],
-        "spacing": [
-          "150 C/C"
-        ]
+        "dia": [],
+        "spacing": []
       }
     }
   ]

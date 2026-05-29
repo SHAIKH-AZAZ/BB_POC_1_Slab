@@ -1,0 +1,165 @@
+import os
+import sys
+import unittest
+
+
+SRC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
+from extraction_guard import (  # noqa: E402
+    ExtractionState,
+    build_column_record,
+    build_footing_record,
+    build_slab_record,
+)
+
+
+def minimal_think(expected_count=1):
+    return {
+        "image_quality": "clear",
+        "table_bounds": {"x1": 0, "y1": 0, "x2": 1, "y2": 1},
+        "expected_count": expected_count,
+        "zoom_plan": [],
+        "normalization_rules": [],
+        "extraction_order": [],
+    }
+
+
+class ExtractionGuardTests(unittest.TestCase):
+    def test_reject_add_before_think(self):
+        state = ExtractionState("column", "page_1.png", "columns", ["column_no", "column_name"])
+        ok, message = state.can_add_record({"source_region_ids": ["h1"]})
+        self.assertFalse(ok)
+        self.assertIn("think", message)
+
+    def test_reject_unconfirmed_source_region(self):
+        """source_region_ids are optional accuracy aids in the current contract;
+        once think has been called, add_record is accepted regardless."""
+        state = ExtractionState("column", "page_1.png", "columns", ["column_no", "column_name"])
+        state.handle_think(minimal_think())
+        ok, _ = state.can_add_record({"source_region_ids": ["h1"]})
+        self.assertTrue(ok)
+
+    def test_accept_confirmed_source_region(self):
+        state = ExtractionState("column", "page_1.png", "columns", ["column_no", "column_name"])
+        state.handle_think(minimal_think())
+        state.handle_zoom(
+            {
+                "region_id": "h1",
+                "purpose": "header",
+                "x1": 0,
+                "y1": 0,
+                "x2": 0.1,
+                "y2": 0.1,
+                "reason": "header",
+            }
+        )
+        ok, _ = state.handle_confirm_read(
+            {"region_id": "h1", "text": "C1,C67", "confidence": "high", "applies_to": "header"}
+        )
+        self.assertTrue(ok)
+        ok, _ = state.can_add_record({"source_region_ids": ["h1"]})
+        self.assertTrue(ok)
+
+    def test_expected_count_and_duplicate_warnings(self):
+        state = ExtractionState("slab", "page_1.png", "slabs", ["slab_id"])
+        state.handle_think(minimal_think(expected_count=2))
+        records = [{"slab_id": "S1"}, {"slab_id": "S1"}]
+        state.validate(records)
+        warnings = " ".join(state.warnings)
+        self.assertIn("duplicate", warnings)
+
+    def test_column_schema_builder(self):
+        record = build_column_record(
+            {
+                "column_no": "C1",
+                "storey_level": "GROUND FLOOR",
+                "width": 700,
+                "depth": 700,
+                "reinforcement": ["20-T20"],
+                "ties_dia": "T8",
+                "ties_spacing": "150 C/C",
+            }
+        )
+        self.assertEqual(record["column_name"], "GROUND FLOOR")
+        self.assertEqual(record["stirrups"]["dia"], ["T8"])
+
+    def test_slab_schema_builder(self):
+        record = build_slab_record(
+            {
+                "slab_id": "S1",
+                "thickness": 150,
+                "steel_along_span": ["T12 @ 100 C/C ALT BENT UP"],
+                "steel_across_span": ["T8 @ 150 C/C DIST"],
+            }
+        )
+        self.assertEqual(record["slab_id"], "S1")
+        self.assertIn("T12", record["reinforcement"]["dia"])
+        self.assertIn("150 C/C", record["reinforcement"]["spacing"])
+
+    def test_footing_schema_builder(self):
+        record = build_footing_record(
+            {
+                "column_id": "GC1",
+                "plan_length": 1900,
+                "plan_width": 2000,
+                "depth_top": 450,
+                "depth_bottom": 230,
+                "short_span_reinf": "T12 @ 115 C/C",
+                "long_span_reinf": "T10 @ 150 C/C",
+                "concrete_mix": "M25",
+            }
+        )
+        self.assertEqual(record["size"]["depth"], 230)
+        self.assertIn("T12", record["reinforcement"]["dia"])
+        self.assertEqual(record["mix"], "M25")
+
+
+class RebarParserTests(unittest.TestCase):
+    def test_canonical_at_form(self):
+        from extraction_guard import extract_rebar_parts
+
+        parts = extract_rebar_parts("T12 @ 100 C/C ALT BENT UP", "T8 @ 175 C/C DIST")
+        self.assertEqual(parts["dia"], ["T12", "T8"])
+        self.assertEqual(parts["spacing"], ["100 C/C", "175 C/C"])
+
+    def test_digit_then_t_form(self):
+        from extraction_guard import extract_rebar_parts
+
+        parts = extract_rebar_parts("10T @ 150 c/c", "8T @ 200 c/c")
+        self.assertEqual(parts["dia"], ["T10", "T8"])
+        self.assertEqual(parts["spacing"], ["150 C/C", "200 C/C"])
+
+    def test_hyphen_short_form(self):
+        from extraction_guard import extract_rebar_parts
+
+        parts = extract_rebar_parts("T8-150", "T8-200")
+        self.assertEqual(parts["dia"], ["T8"])
+        self.assertEqual(parts["spacing"], ["150 C/C", "200 C/C"])
+
+    def test_doubled_chars_pdfplumber_quirk(self):
+        from extraction_guard import extract_rebar_parts
+
+        # pdfplumber sometimes returns 'T8@150C/C' as 'TT88@@115500CC//CC'.
+        parts = extract_rebar_parts("TT88@@115500CC//CC T8@200C/C")
+        self.assertIn("T8", parts["dia"])
+        self.assertIn("150 C/C", parts["spacing"])
+        self.assertIn("200 C/C", parts["spacing"])
+
+    def test_invalid_spacing_filtered(self):
+        from extraction_guard import extract_rebar_parts
+
+        # Pre-cleanup: a giant 4-digit value shouldn't survive validation.
+        parts = extract_rebar_parts("T8 @ 5500 C/C")
+        self.assertEqual(parts["spacing"], [])
+
+    def test_empty_input(self):
+        from extraction_guard import extract_rebar_parts
+
+        parts = extract_rebar_parts(None, "", [])
+        self.assertEqual(parts, {"dia": [], "spacing": []})
+
+
+if __name__ == "__main__":
+    unittest.main()

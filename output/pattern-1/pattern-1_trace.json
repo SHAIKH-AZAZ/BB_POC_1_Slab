@@ -1,0 +1,401 @@
+{
+  "project": "slab",
+  "pdf_stem": "pattern-1",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-1\\page_1.png",
+      "generated_at": "2026-05-28T15:40:35.148114+00:00",
+      "think": {
+        "image_quality": "high",
+        "table_bounds": {
+          "x1": 200,
+          "y1": 300,
+          "x2": 1800,
+          "y2": 900
+        },
+        "table_columns": [
+          "TYPE",
+          "THICKNESS",
+          "STEEL ALONG SPAN",
+          "STEEL ACROSS SPAN",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ],
+        "deleted_rows": [
+          "S6"
+        ],
+        "multi_line_cells": [
+          "S7_STEEL ALONG SPAN",
+          "S7_STEEL ACROSS SPAN",
+          "S8_STEEL ALONG SPAN"
+        ],
+        "expected_count": 8,
+        "zoom_plan": [
+          {
+            "region_id": "S7_STEEL_ALONG_SPAN",
+            "purpose": "data_cell",
+            "target": "S7 steel along span multi-line cell",
+            "x1": 600,
+            "y1": 740,
+            "x2": 1100,
+            "y2": 800,
+            "reason": "multi-line reinforcement text"
+          },
+          {
+            "region_id": "S7_STEEL_ACROSS_SPAN",
+            "purpose": "data_cell",
+            "target": "S7 steel across span multi-line cell",
+            "x1": 1100,
+            "y1": 740,
+            "x2": 1400,
+            "y2": 800,
+            "reason": "multi-line reinforcement text"
+          },
+          {
+            "region_id": "S8_STEEL_ALONG_SPAN",
+            "purpose": "data_cell",
+            "target": "S8 steel along span multi-line cell",
+            "x1": 600,
+            "y1": 800,
+            "x2": 1100,
+            "y2": 860,
+            "reason": "multi-line reinforcement text"
+          }
+        ],
+        "normalization_rules": [
+          "remove duplicate diameters and spacings",
+          "combine steel along and across span diameters and spacings",
+          "use null or empty for missing values",
+          "remarks='DELETED' for deleted rows"
+        ],
+        "extraction_order": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      "zoom_regions": [
+        {
+          "region_id": "S7_STEEL_ALONG_SPAN",
+          "purpose": "data_cell",
+          "x1": 600.0,
+          "y1": 740.0,
+          "x2": 1100.0,
+          "y2": 800.0,
+          "reason": "multi-line reinforcement text"
+        },
+        {
+          "region_id": "S7_STEEL_ACROSS_SPAN",
+          "purpose": "data_cell",
+          "x1": 1100.0,
+          "y1": 740.0,
+          "x2": 1400.0,
+          "y2": 800.0,
+          "reason": "multi-line reinforcement text"
+        },
+        {
+          "region_id": "S8_STEEL_ALONG_SPAN",
+          "purpose": "data_cell",
+          "x1": 600.0,
+          "y1": 800.0,
+          "x2": 1100.0,
+          "y2": 860.0,
+          "reason": "multi-line reinforcement text"
+        }
+      ],
+      "confirmed_reads": [
+        {
+          "region_id": "S7_STEEL_ALONG_SPAN",
+          "text": "T16 @ 100 C/C ALL STR @ BTM\nT12 @ 100 C/C ALL STR @ TOP",
+          "confidence": "high",
+          "applies_to": "S7 steel along span reinforcement"
+        },
+        {
+          "region_id": "S7_STEEL_ACROSS_SPAN",
+          "text": "T8 @ 200 C/C DIST\n@ TOP & BTM",
+          "confidence": "high",
+          "applies_to": "S7 steel across span reinforcement"
+        },
+        {
+          "region_id": "S8_STEEL_ALONG_SPAN",
+          "text": "T10 @ 100 C/C @ TOP & EVERY\nALT BAR BENT BACK ALONG BTM",
+          "confidence": "high",
+          "applies_to": "S8 steel along span reinforcement"
+        }
+      ],
+      "records": [
+        {
+          "slab_id": "S1",
+          "thickness": 225,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T12",
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S2",
+          "thickness": 200,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T12",
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S3",
+          "thickness": 150,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S4",
+          "thickness": 125,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S5",
+          "thickness": 150,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S6",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [],
+            "spacing": []
+          },
+          "remarks": "DELETED"
+        },
+        {
+          "slab_id": "S7",
+          "thickness": 225,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T16",
+              "T12",
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S8",
+          "thickness": 150,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10",
+              "T8"
+            ],
+            "spacing": []
+          },
+          "remarks": "CANTILEVER SLAB"
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": 225,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T12",
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": 200,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T12",
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S3",
+            "thickness": 150,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S4",
+            "thickness": 125,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S5",
+            "thickness": 150,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S6",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [],
+              "spacing": []
+            },
+            "remarks": "DELETED"
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S7",
+            "thickness": 225,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T16",
+                "T12",
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": ""
+          },
+          "source_region_ids": [
+            "S7_STEEL_ALONG_SPAN",
+            "S7_STEEL_ACROSS_SPAN"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S8",
+            "thickness": 150,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10",
+                "T8"
+              ],
+              "spacing": []
+            },
+            "remarks": "CANTILEVER SLAB"
+          },
+          "source_region_ids": [
+            "S8_STEEL_ALONG_SPAN"
+          ]
+        }
+      ],
+      "expected_count": 8,
+      "actual_count": 8,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 8,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

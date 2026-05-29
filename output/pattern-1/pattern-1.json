@@ -86,7 +86,8 @@
       "reinforcement": {
         "dia": [],
         "spacing": []
-      }
+      },
+      "remarks": "DELETED"
     },
     {
       "slab_id": "S7",
@@ -119,7 +120,8 @@
           "100 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "CANTILEVER SLAB"
     }
   ]
 }

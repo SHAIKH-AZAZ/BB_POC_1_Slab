@@ -7,13 +7,15 @@
       "mix": "",
       "reinforcement": {
         "dia": [
-          "T10"
+          "T10",
+          "T8"
         ],
         "spacing": [
-          "100 C/C",
+          "150 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S3",
@@ -25,10 +27,11 @@
           "T8"
         ],
         "spacing": [
-          "150 C/C",
+          "100 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S4",
@@ -40,10 +43,11 @@
           "T8"
         ],
         "spacing": [
-          "100 C/C",
+          "150 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "250MM SUNK SLAB"
     },
     {
       "slab_id": "S5",
@@ -58,7 +62,8 @@
           "150 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S6",
@@ -67,13 +72,15 @@
       "mix": "",
       "reinforcement": {
         "dia": [
+          "T10",
           "T8"
         ],
         "spacing": [
           "150 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S7",
@@ -82,13 +89,15 @@
       "mix": "",
       "reinforcement": {
         "dia": [
-          "T10"
+          "T10",
+          "T12"
         ],
         "spacing": [
-          "150 C/C",
+          "100 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "ST",
@@ -99,11 +108,9 @@
         "dia": [
           "T12"
         ],
-        "spacing": [
-          "100 C/C",
-          "200 C/C"
-        ]
-      }
+        "spacing": []
+      },
+      "remarks": "STAIRCASE SLAB"
     }
   ]
 }
