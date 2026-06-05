@@ -1,0 +1,38 @@
+==============================
+PATTERN-8 RULES
+==============================
+
+COLUMNS:
+- NOS. → slab_id
+- THK. → thickness
+- MAIN REINF. → reinforcement
+- DISTRIBUTION REINF. → reinforcement
+- REMARKS → TYPE
+
+SLAB ID:
+- Extract from NOS. (e.g. S1, S2).
+- Keep exactly as written.
+
+THICKNESS:
+- Extract number only. If missing → null.
+
+TYPE:
+- Extract from REMARKS (e.g. TWO WAY SLAB).
+- Keep exactly as written.
+
+MIX:
+- Not present → return "".
+
+REINFORCEMENT:
+Extract from:
+- MAIN REINF.
+- DISTRIBUTION REINF.
+
+Format in drawing: T8-150 / T10-200
+
+Rules:
+1. Split using "-": T8-150 → dia="T8", spacing="150 C/C".
+2. Diameter: keep exactly as written. DO NOT modify format.
+3. Spacing: always convert to "XXX C/C".
+4. Ignore: "-" / empty cells.
+5. Remove duplicates. If no reinforcement → empty arrays.

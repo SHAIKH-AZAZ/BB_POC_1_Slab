@@ -1,0 +1,11 @@
+$role
+
+Return STRICT JSON in exactly this shape:
+
+$json_schema
+
+$pattern_rules
+
+Return ONLY valid JSON.
+No explanation.
+No extra text.

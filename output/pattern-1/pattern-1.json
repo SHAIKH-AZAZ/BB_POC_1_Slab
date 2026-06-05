@@ -14,7 +14,8 @@
           "100 C/C",
           "175 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S2",
@@ -30,7 +31,8 @@
           "125 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S3",
@@ -45,7 +47,8 @@
           "150 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S4",
@@ -60,7 +63,8 @@
           "175 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S5",
@@ -76,7 +80,8 @@
           "100 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S6",
@@ -104,12 +109,13 @@
           "100 C/C",
           "200 C/C"
         ]
-      }
+      },
+      "remarks": "-"
     },
     {
       "slab_id": "S8",
       "thickness": 150,
-      "type": "",
+      "type": "CANTILEVER",
       "mix": "",
       "reinforcement": {
         "dia": [

@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-6\\page_1.png",
-      "generated_at": "2026-05-28T15:44:46.448229+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-6/page_1.png",
+      "generated_at": "2026-06-05T05:40:23.052690+00:00",
       "think": {
-        "image_quality": "high",
+        "image_quality": "good",
         "table_bounds": {
-          "x1": 0,
-          "y1": 0,
-          "x2": 1920,
-          "y2": 1080
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 1.0,
+          "y2": 1.0
         },
         "table_columns": [
           "SLAB MARKED",
@@ -67,45 +67,25 @@
         ],
         "deleted_rows": [],
         "multi_line_cells": [],
-        "expected_count": 39,
-        "zoom_plan": [
-          {
-            "region_id": "r1",
-            "purpose": "data_cell",
-            "target": "S1 BOTTOM REINFORCEMENT ALONG SHORT SPAN",
-            "x1": 200,
-            "y1": 100,
-            "x2": 300,
-            "y2": 120,
-            "reason": "verify reinforcement text"
-          },
-          {
-            "region_id": "r2",
-            "purpose": "data_cell",
-            "target": "S1 REMARKS",
-            "x1": 900,
-            "y1": 100,
-            "x2": 1000,
-            "y2": 120,
-            "reason": "verify slab type text"
-          }
-        ],
+        "concrete_grades": [],
+        "steel_grades": [],
+        "expected_count": 38,
+        "zoom_plan": [],
         "normalization_rules": [
-          "Normalize spacing to 'XXX C/C'",
-          "Remove duplicates",
-          "Extract diameter and spacing exactly as written",
-          "Ignore labels and dashes"
+          "Remove all dashes before spacing, normalize spacing as 'XXX C/C'",
+          "Remove label text from reinforcement cells",
+          "Remove duplicates in reinforcement lists"
         ],
         "extraction_order": [
           "SLAB MARKED",
           "SLAB THICKNESS",
+          "REMARKS",
           "BOTTOM REINFORCEMENT ALONG SHORT SPAN (MAIN REINF.)",
           "BOTTOM REINFORCEMENT ALONG LONG SPAN (DISTRIBUTION REINF.)",
           "TOP SUPPORT REINFORCEMENT ALONG SHORT SPAN",
           "TOP SUPPORT REINFORCEMENT ALONG LONG SPAN",
           "IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)",
-          "DISTRIBUTION",
-          "REMARKS"
+          "DISTRIBUTION"
         ]
       },
       "zoom_regions": [],
@@ -121,7 +101,13 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "140 C/C",
+              "120 C/C",
+              "170 C/C",
+              "160 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -134,7 +120,13 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C",
+              "130 C/C",
+              "190 C/C",
+              "170 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -147,7 +139,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "130 C/C",
+              "160 C/C",
+              "170 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -160,7 +157,13 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C",
+              "100 C/C",
+              "190 C/C",
+              "200 C/C",
+              "230 C/C"
+            ]
           }
         },
         {
@@ -172,7 +175,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -184,7 +190,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "210 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -196,7 +206,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "190 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -209,7 +223,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "200 C/C",
+              "120 C/C",
+              "250 C/C"
+            ]
           }
         },
         {
@@ -221,7 +240,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -233,7 +255,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -245,7 +270,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -257,7 +285,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -268,10 +299,16 @@
           "reinforcement": {
             "dia": [
               "T12",
-              "T8",
-              "T10"
+              "T10",
+              "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "130 C/C",
+              "100 C/C",
+              "170 C/C",
+              "250 C/C",
+              "200 C/C"
+            ]
           }
         },
         {
@@ -284,7 +321,13 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C",
+              "180 C/C",
+              "190 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -297,7 +340,13 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "130 C/C",
+              "150 C/C",
+              "250 C/C",
+              "180 C/C"
+            ]
           }
         },
         {
@@ -309,7 +358,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -321,7 +373,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "240 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -334,7 +390,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "130 C/C",
+              "150 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -346,7 +407,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "130 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -358,7 +423,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "210 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -370,7 +439,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -382,7 +454,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -394,7 +469,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "160 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -406,7 +485,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -418,7 +500,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -430,7 +515,9 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C"
+            ]
           }
         },
         {
@@ -442,7 +529,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -454,7 +544,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "200 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -467,7 +561,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "140 C/C",
+              "130 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -479,7 +578,12 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "220 C/C",
+              "210 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -492,7 +596,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "125 C/C",
+              "100 C/C",
+              "170 C/C",
+              "210 C/C"
+            ]
           }
         },
         {
@@ -505,7 +614,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C",
+              "120 C/C",
+              "190 C/C",
+              "250 C/C"
+            ]
           }
         },
         {
@@ -517,7 +631,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "200 C/C",
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -529,7 +647,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -541,7 +662,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C",
+              "270 C/C"
+            ]
           }
         },
         {
@@ -553,7 +677,9 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C"
+            ]
           }
         },
         {
@@ -565,7 +691,9 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "200 C/C"
+            ]
           }
         },
         {
@@ -577,7 +705,9 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "250 C/C"
+            ]
           }
         }
       ],
@@ -593,7 +723,13 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "140 C/C",
+                "120 C/C",
+                "170 C/C",
+                "160 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -609,7 +745,13 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C",
+                "130 C/C",
+                "190 C/C",
+                "170 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -625,7 +767,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "130 C/C",
+                "160 C/C",
+                "170 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -641,7 +788,13 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C",
+                "100 C/C",
+                "190 C/C",
+                "200 C/C",
+                "230 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -656,7 +809,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -671,7 +827,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "210 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -686,7 +846,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "190 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -702,7 +866,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "200 C/C",
+                "120 C/C",
+                "250 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -717,7 +886,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -732,7 +904,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -747,7 +922,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -762,7 +940,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -776,10 +957,16 @@
             "reinforcement": {
               "dia": [
                 "T12",
-                "T8",
-                "T10"
+                "T10",
+                "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "130 C/C",
+                "100 C/C",
+                "170 C/C",
+                "250 C/C",
+                "200 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -795,7 +982,13 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C",
+                "180 C/C",
+                "190 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -811,7 +1004,13 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "130 C/C",
+                "150 C/C",
+                "250 C/C",
+                "180 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -826,7 +1025,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -841,7 +1043,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "240 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -857,7 +1063,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "130 C/C",
+                "150 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -872,7 +1083,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "130 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -887,7 +1102,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "210 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -902,7 +1121,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -917,7 +1139,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -932,7 +1157,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "160 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -947,7 +1176,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -962,7 +1194,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -977,7 +1212,9 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -992,7 +1229,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1007,7 +1247,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "200 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1023,7 +1267,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "140 C/C",
+                "130 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1038,7 +1287,12 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "220 C/C",
+                "210 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1054,7 +1308,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "125 C/C",
+                "100 C/C",
+                "170 C/C",
+                "210 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1070,7 +1329,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C",
+                "120 C/C",
+                "190 C/C",
+                "250 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1085,7 +1349,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "200 C/C",
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1100,7 +1368,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1115,7 +1386,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C",
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1130,7 +1404,9 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1145,7 +1421,9 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "200 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1160,25 +1438,23 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "250 C/C"
+              ]
             }
           },
           "source_region_ids": []
         }
       ],
-      "expected_count": 39,
+      "expected_count": 38,
       "actual_count": 38,
-      "warnings": [
-        "expected 39 record(s), collected 38"
-      ]
+      "warnings": []
     }
   },
   "summary": {
     "page_count": 1,
     "record_count": 38,
-    "warning_count": 1,
-    "warnings": [
-      "expected 39 record(s), collected 38"
-    ]
+    "warning_count": 0,
+    "warnings": []
   }
 }

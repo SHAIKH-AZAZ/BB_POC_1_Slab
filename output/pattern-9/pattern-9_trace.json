@@ -4,24 +4,24 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-9\\page_1.png",
-      "generated_at": "2026-05-28T15:47:16.472960+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-9/page_1.png",
+      "generated_at": "2026-06-05T05:40:49.440510+00:00",
       "think": {
-        "image_quality": "high",
+        "image_quality": "good",
         "table_bounds": {
-          "x1": 0,
-          "y1": 0,
-          "x2": 1200,
-          "y2": 1200
+          "x1": 0.02,
+          "y1": 0.1,
+          "x2": 0.98,
+          "y2": 0.9
         },
         "table_columns": [
           "SLAB MARKED",
           "SLAB THICKNESS",
-          "MAIN REINF.",
-          "DISTRIBUTION REINF.",
-          "MAIN REINF.",
-          "DISTRIBUTION REINF.",
-          "IN MID SPAN",
+          "BOTTOM REINFORCEMENT MAIN REINF.",
+          "BOTTOM REINFORCEMENT DISTRIBUTION REINF.",
+          "TOP SUPPORT REINFORCEMENT MAIN REINF.",
+          "TOP SUPPORT REINFORCEMENT DISTRIBUTION REINF.",
+          "IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)",
           "DISTRIBUTION",
           "REMARKS"
         ],
@@ -48,56 +48,60 @@
           "ST11",
           "ST12"
         ],
+        "concrete_grades": [],
+        "steel_grades": [],
         "expected_count": 13,
         "zoom_plan": [
           {
             "region_id": "r1",
             "purpose": "row_label",
             "target": "ST3",
-            "reason": "multi-line slab ID"
+            "x1": 0.02,
+            "y1": 0.3,
+            "x2": 0.07,
+            "y2": 0.35,
+            "reason": "slab ID"
           },
           {
             "region_id": "r2",
             "purpose": "row_label",
             "target": "ST4",
-            "reason": "multi-line slab ID"
+            "x1": 0.02,
+            "y1": 0.35,
+            "x2": 0.07,
+            "y2": 0.4,
+            "reason": "slab ID"
           },
           {
             "region_id": "r3",
             "purpose": "row_label",
             "target": "ST10",
-            "reason": "multi-line slab ID"
+            "x1": 0.02,
+            "y1": 0.7,
+            "x2": 0.07,
+            "y2": 0.75,
+            "reason": "slab ID"
           },
           {
             "region_id": "r4",
             "purpose": "row_label",
             "target": "ST11",
-            "reason": "multi-line slab ID"
+            "x1": 0.02,
+            "y1": 0.75,
+            "x2": 0.07,
+            "y2": 0.8,
+            "reason": "slab ID"
           },
           {
             "region_id": "r5",
             "purpose": "row_label",
             "target": "ST12",
-            "reason": "multi-line slab ID"
+            "x1": 0.02,
+            "y1": 0.8,
+            "x2": 0.07,
+            "y2": 0.85,
+            "reason": "slab ID"
           }
-        ],
-        "normalization_rules": [
-          "spacing always as 'XXX C/C'",
-          "remove duplicates",
-          "ignore '-' and '-------'",
-          "extract diameter exactly as written",
-          "combine multi-line slabs"
-        ],
-        "extraction_order": [
-          "SLAB MARKED",
-          "SLAB THICKNESS",
-          "MAIN REINF. BOTTOM",
-          "DISTRIBUTION REINF. BOTTOM",
-          "MAIN REINF. TOP",
-          "DISTRIBUTION REINF. TOP",
-          "IN MID SPAN",
-          "DISTRIBUTION",
-          "REMARKS"
         ]
       },
       "zoom_regions": [],
@@ -112,7 +116,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "200 C/C",
+              "275 C/C"
+            ]
           }
         },
         {
@@ -124,7 +132,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "125 C/C",
+              "250 C/C",
+              "275 C/C"
+            ]
           }
         },
         {
@@ -134,9 +146,14 @@
           "mix": "",
           "reinforcement": {
             "dia": [
-              "T10"
+              "T10",
+              "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "200 C/C",
+              "210 C/C"
+            ]
           }
         },
         {
@@ -148,7 +165,12 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "200 C/C",
+              "250 C/C",
+              "275 C/C"
+            ]
           }
         },
         {
@@ -160,7 +182,12 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "200 C/C",
+              "125 C/C",
+              "250 C/C"
+            ]
           }
         },
         {
@@ -172,7 +199,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "125 C/C",
+              "250 C/C",
+              "275 C/C"
+            ]
           }
         },
         {
@@ -185,7 +216,12 @@
               "T10",
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "125 C/C",
+              "200 C/C",
+              "230 C/C"
+            ]
           }
         },
         {
@@ -197,7 +233,12 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "115 C/C",
+              "230 C/C",
+              "150 C/C",
+              "275 C/C"
+            ]
           }
         },
         {
@@ -209,7 +250,12 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "125 C/C",
+              "250 C/C",
+              "200 C/C",
+              "275 C/C"
+            ]
           }
         },
         {
@@ -221,7 +267,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "100 C/C",
+              "150 C/C"
+            ]
           }
         },
         {
@@ -233,7 +282,11 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C",
+              "275 C/C",
+              "175 C/C"
+            ]
           }
         },
         {
@@ -245,7 +298,9 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C"
+            ]
           }
         },
         {
@@ -257,7 +312,9 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "275 C/C"
+            ]
           }
         }
       ],
@@ -272,7 +329,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "200 C/C",
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -287,7 +348,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "125 C/C",
+                "250 C/C",
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -300,9 +365,14 @@
             "mix": "",
             "reinforcement": {
               "dia": [
-                "T10"
+                "T10",
+                "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "200 C/C",
+                "210 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -317,7 +387,12 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "200 C/C",
+                "250 C/C",
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -332,7 +407,12 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "200 C/C",
+                "125 C/C",
+                "250 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -347,7 +427,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "125 C/C",
+                "250 C/C",
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -363,7 +447,12 @@
                 "T10",
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "125 C/C",
+                "200 C/C",
+                "230 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -378,7 +467,12 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "115 C/C",
+                "230 C/C",
+                "150 C/C",
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -393,7 +487,12 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "125 C/C",
+                "250 C/C",
+                "200 C/C",
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -408,7 +507,10 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "100 C/C",
+                "150 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -423,7 +525,11 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C",
+                "275 C/C",
+                "175 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -438,7 +544,9 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -453,7 +561,9 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "275 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -461,13 +571,17 @@
       ],
       "expected_count": 13,
       "actual_count": 13,
-      "warnings": []
+      "warnings": [
+        "think missing structured field(s): normalization_rules, extraction_order"
+      ]
     }
   },
   "summary": {
     "page_count": 1,
     "record_count": 13,
-    "warning_count": 0,
-    "warnings": []
+    "warning_count": 1,
+    "warnings": [
+      "think missing structured field(s): normalization_rules, extraction_order"
+    ]
   }
 }

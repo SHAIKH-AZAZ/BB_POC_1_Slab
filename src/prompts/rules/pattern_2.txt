@@ -1,0 +1,38 @@
+==============================
+PATTERN-2 RULES
+==============================
+
+COLUMNS:
+- TYPE → slab_id
+- THICKNESS
+- STEEL ALONG SHORT SPAN
+- STEEL ACROSS SHORT SPAN
+- REMARKS
+
+SLAB ID:
+- TYPE column value is slab_id (S1, S2, S3, S3A, S4, etc).
+- Include EVERY slab_id visible. Do NOT skip any row.
+- Even if reinforcement is empty, include the slab.
+
+TYPE FIELD:
+- Do NOT copy slab_id into "type".
+- Only write into "type" if explicitly written: ONE WAY / TWO WAY / FLAT SLAB / CANTILEVER.
+- Otherwise: ""
+
+THICKNESS:
+- Extract number only. If missing → null.
+
+MIX:
+- Extract if visible. If not present → "".
+
+REINFORCEMENT:
+Extract from BOTH:
+- STEEL ALONG SHORT SPAN
+- STEEL ACROSS SHORT SPAN
+
+Rules:
+1. Text before "@" → diameter (e.g. T8).
+2. Text after "@" → spacing. Format as "150 C/C".
+3. Remove words: ALT. BENT UP / DIST. / ALL STR / TOP / BTM / EVERY.
+4. Remove duplicates. Keep only diameter and spacing.
+5. If no reinforcement → empty arrays.

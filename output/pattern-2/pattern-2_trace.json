@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-2\\page_1.png",
-      "generated_at": "2026-05-28T15:41:13.966471+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-2/page_1.png",
+      "generated_at": "2026-06-05T05:42:43.678988+00:00",
       "think": {
         "image_quality": "good",
         "table_bounds": {
-          "x1": 150,
-          "y1": 200,
-          "x2": 1700,
-          "y2": 900
+          "x1": 0.05,
+          "y1": 0.15,
+          "x2": 0.95,
+          "y2": 0.85
         },
         "table_columns": [
           "TYPE",
@@ -38,12 +38,156 @@
         ],
         "deleted_rows": [],
         "multi_line_cells": [],
+        "concrete_grades": [],
+        "steel_grades": [],
         "expected_count": 13,
-        "zoom_plan": [],
+        "zoom_plan": [
+          {
+            "region_id": "header",
+            "purpose": "header",
+            "target": "table header row",
+            "x1": 0.05,
+            "y1": 0.15,
+            "x2": 0.95,
+            "y2": 0.18,
+            "reason": "extract column headers"
+          },
+          {
+            "region_id": "row_S1",
+            "purpose": "row_label",
+            "target": "row for slab S1",
+            "x1": 0.05,
+            "y1": 0.18,
+            "x2": 0.95,
+            "y2": 0.23,
+            "reason": "extract slab S1 data"
+          },
+          {
+            "region_id": "row_S2",
+            "purpose": "row_label",
+            "target": "row for slab S2",
+            "x1": 0.05,
+            "y1": 0.23,
+            "x2": 0.95,
+            "y2": 0.28,
+            "reason": "extract slab S2 data"
+          },
+          {
+            "region_id": "row_S3",
+            "purpose": "row_label",
+            "target": "row for slab S3",
+            "x1": 0.05,
+            "y1": 0.28,
+            "x2": 0.95,
+            "y2": 0.33,
+            "reason": "extract slab S3 data"
+          },
+          {
+            "region_id": "row_S3A",
+            "purpose": "row_label",
+            "target": "row for slab S3A",
+            "x1": 0.05,
+            "y1": 0.33,
+            "x2": 0.95,
+            "y2": 0.38,
+            "reason": "extract slab S3A data"
+          },
+          {
+            "region_id": "row_S4",
+            "purpose": "row_label",
+            "target": "row for slab S4",
+            "x1": 0.05,
+            "y1": 0.38,
+            "x2": 0.95,
+            "y2": 0.43,
+            "reason": "extract slab S4 data"
+          },
+          {
+            "region_id": "row_S5",
+            "purpose": "row_label",
+            "target": "row for slab S5",
+            "x1": 0.05,
+            "y1": 0.43,
+            "x2": 0.95,
+            "y2": 0.48,
+            "reason": "extract slab S5 data"
+          },
+          {
+            "region_id": "row_S6",
+            "purpose": "row_label",
+            "target": "row for slab S6",
+            "x1": 0.05,
+            "y1": 0.48,
+            "x2": 0.95,
+            "y2": 0.53,
+            "reason": "extract slab S6 data"
+          },
+          {
+            "region_id": "row_S7",
+            "purpose": "row_label",
+            "target": "row for slab S7",
+            "x1": 0.05,
+            "y1": 0.53,
+            "x2": 0.95,
+            "y2": 0.58,
+            "reason": "extract slab S7 data"
+          },
+          {
+            "region_id": "row_S8",
+            "purpose": "row_label",
+            "target": "row for slab S8",
+            "x1": 0.05,
+            "y1": 0.58,
+            "x2": 0.95,
+            "y2": 0.63,
+            "reason": "extract slab S8 data"
+          },
+          {
+            "region_id": "row_S9",
+            "purpose": "row_label",
+            "target": "row for slab S9",
+            "x1": 0.05,
+            "y1": 0.63,
+            "x2": 0.95,
+            "y2": 0.68,
+            "reason": "extract slab S9 data"
+          },
+          {
+            "region_id": "row_S10",
+            "purpose": "row_label",
+            "target": "row for slab S10",
+            "x1": 0.05,
+            "y1": 0.68,
+            "x2": 0.95,
+            "y2": 0.73,
+            "reason": "extract slab S10 data"
+          },
+          {
+            "region_id": "row_S11",
+            "purpose": "row_label",
+            "target": "row for slab S11",
+            "x1": 0.05,
+            "y1": 0.73,
+            "x2": 0.95,
+            "y2": 0.78,
+            "reason": "extract slab S11 data"
+          },
+          {
+            "region_id": "row_S12",
+            "purpose": "row_label",
+            "target": "row for slab S12",
+            "x1": 0.05,
+            "y1": 0.78,
+            "x2": 0.95,
+            "y2": 0.83,
+            "reason": "extract slab S12 data"
+          }
+        ],
         "normalization_rules": [
-          "Remove words: ALT. BENT UP, DIST., DIST, ALL STR, TOP, BTM, EVERY",
-          "Format spacing as '150 C/C'",
-          "Remove duplicates"
+          "Remove words: ALT. BENT UP / DIST. / ALL STR / TOP / BTM / EVERY",
+          "Extract number only from THICKNESS",
+          "Extract diameter and spacing from reinforcement cells",
+          "Remove duplicates in reinforcement"
         ],
         "extraction_order": [
           "TYPE",
@@ -277,7 +421,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S1"
+          ]
         },
         {
           "record": {
@@ -296,7 +442,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S2"
+          ]
         },
         {
           "record": {
@@ -314,7 +462,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S3"
+          ]
         },
         {
           "record": {
@@ -333,7 +483,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S3A"
+          ]
         },
         {
           "record": {
@@ -352,7 +504,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S4"
+          ]
         },
         {
           "record": {
@@ -371,7 +525,9 @@
             },
             "remarks": "PROVIDE EOS AS SHOWN"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S5"
+          ]
         },
         {
           "record": {
@@ -389,7 +545,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S6"
+          ]
         },
         {
           "record": {
@@ -407,7 +565,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S7"
+          ]
         },
         {
           "record": {
@@ -425,7 +585,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S8"
+          ]
         },
         {
           "record": {
@@ -444,7 +606,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S9"
+          ]
         },
         {
           "record": {
@@ -463,7 +627,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S10"
+          ]
         },
         {
           "record": {
@@ -482,7 +648,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S11"
+          ]
         },
         {
           "record": {
@@ -501,7 +669,9 @@
             },
             "remarks": "-"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_S12"
+          ]
         }
       ],
       "expected_count": 13,

@@ -1,0 +1,44 @@
+==============================
+PATTERN-5 RULES
+==============================
+
+This pattern shows a small reinforcement legend table with columns:
+- BAR MARKED → slab_id
+- DIA → diameter
+- SPACING → spacing
+- REMARKS
+
+SLAB ID:
+- Extract from BAR MARKED column (A, B, C, D, E, CS1, ST1, S1 , S2 etc). cab be there
+- Keep exactly as written.
+
+THICKNESS:
+- Can be extracted from the THICKNESS column.
+- if value given, use it; if not, leave it empty.
+
+TYPE / MIX:
+- Can be extracted from the TYPE / MIX column.
+- if value given, use it; if not, leave it empty.
+
+REINFORCEMENT:
+For each row, combine the DIA and SPACING values into one string and pass it
+in steel_along_span. Do NOT pass only the dia or only the spacing.
+
+Example:
+  DIA column = "8T",  SPACING column = "@ 175c/c"
+  → pass steel_along_span = ["8T @ 175c/c"]
+
+Rules:
+1. DIA: extract exactly as written.
+   - 8T → "8T" / T8 → "T8". DO NOT rearrange characters.
+2. SPACING: extract from the SPACING column.
+   - Keep the "@" prefix: "@ 175c/c".
+   - ALWAYS combine with the DIA from the same row into one string.
+3. If a row writes reinforcement in sentence form (e.g. "CS1 – CORNER STEEL 8T@ 150 c/c TOP BOTTOM BOTHWAYS"),
+   extract the slab_id (CS1), and pass the full sentence in steel_along_span.
+   The post-processor will extract dia and spacing from it.
+4. NEVER pass DIA and SPACING as separate unconnected items — combine them.
+5. Remove duplicates.
+
+Do not invent values. If a column is empty, leave it empty.
+Process every visible row.

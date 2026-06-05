@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-7\\page_1.png",
-      "generated_at": "2026-05-28T15:46:16.794397+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-7/page_1.png",
+      "generated_at": "2026-06-05T05:41:48.869863+00:00",
       "think": {
-        "image_quality": "high",
+        "image_quality": "good",
         "table_bounds": {
-          "x1": 0,
-          "y1": 0,
-          "x2": 1920,
-          "y2": 1080
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 1.0,
+          "y2": 1.0
         },
         "table_columns": [
           "SLAB MARKED",
@@ -65,50 +65,29 @@
         ],
         "deleted_rows": [],
         "multi_line_cells": [],
-        "expected_count": 36,
-        "zoom_plan": [
-          {
-            "region_id": "r1",
-            "purpose": "data_cell",
-            "target": "S1 BOTTOM REINFORCEMENT ALONG SHORT SPAN",
-            "reason": "verify reinforcement text"
-          },
-          {
-            "region_id": "r2",
-            "purpose": "data_cell",
-            "target": "S1 BOTTOM REINFORCEMENT ALONG LONG SPAN",
-            "reason": "verify reinforcement text"
-          },
-          {
-            "region_id": "r3",
-            "purpose": "data_cell",
-            "target": "S1 TOP SUPPORT REINFORCEMENT ALONG SHORT SPAN",
-            "reason": "verify reinforcement text"
-          },
-          {
-            "region_id": "r4",
-            "purpose": "data_cell",
-            "target": "S1 TOP SUPPORT REINFORCEMENT ALONG LONG SPAN",
-            "reason": "verify reinforcement text"
-          }
+        "concrete_grades": [],
+        "steel_grades": [
+          "T8",
+          "T10"
         ],
+        "expected_count": 36,
+        "zoom_plan": [],
         "normalization_rules": [
-          "Normalize spacing to 'XXX C/C'",
-          "Remove duplicates",
-          "Ignore '-' and '-------'",
-          "Extract diameter exactly as written",
-          "Extract spacing after '-'"
+          "Remove all dashes except those separating dia and spacing",
+          "Normalize spacing as 'XXX C/C'",
+          "Remove duplicates in reinforcement",
+          "Ignore empty rows"
         ],
         "extraction_order": [
           "SLAB MARKED",
           "SLAB THICKNESS",
-          "REMARKS",
           "BOTTOM REINFORCEMENT ALONG SHORT SPAN",
           "BOTTOM REINFORCEMENT ALONG LONG SPAN",
           "TOP SUPPORT REINFORCEMENT ALONG SHORT SPAN",
           "TOP SUPPORT REINFORCEMENT ALONG LONG SPAN",
           "IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)",
-          "DISTRIBUTION"
+          "DISTRIBUTION",
+          "REMARKS"
         ]
       },
       "zoom_regions": [],
@@ -397,8 +376,8 @@
             ],
             "spacing": [
               "150 C/C",
-              "270 C/C",
-              "190 C/C"
+              "190 C/C",
+              "270 C/C"
             ]
           }
         },
@@ -510,8 +489,12 @@
           "type": "TWO WAY",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "270 C/C"
+            ]
           }
         },
         {
@@ -574,7 +557,8 @@
               "130 C/C",
               "120 C/C",
               "260 C/C",
-              "250 C/C"
+              "250 C/C",
+              "270 C/C"
             ]
           }
         },
@@ -591,7 +575,8 @@
               "100 C/C",
               "120 C/C",
               "210 C/C",
-              "250 C/C"
+              "250 C/C",
+              "270 C/C"
             ]
           }
         },
@@ -661,8 +646,12 @@
           "type": "ONE WAY",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "270 C/C"
+            ]
           }
         }
       ],
@@ -1002,8 +991,8 @@
               ],
               "spacing": [
                 "150 C/C",
-                "270 C/C",
-                "190 C/C"
+                "190 C/C",
+                "270 C/C"
               ]
             }
           },
@@ -1139,8 +1128,12 @@
             "type": "TWO WAY",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []
@@ -1215,7 +1208,8 @@
                 "130 C/C",
                 "120 C/C",
                 "260 C/C",
-                "250 C/C"
+                "250 C/C",
+                "270 C/C"
               ]
             }
           },
@@ -1235,7 +1229,8 @@
                 "100 C/C",
                 "120 C/C",
                 "210 C/C",
-                "250 C/C"
+                "250 C/C",
+                "270 C/C"
               ]
             }
           },
@@ -1320,8 +1315,12 @@
             "type": "ONE WAY",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "270 C/C"
+              ]
             }
           },
           "source_region_ids": []

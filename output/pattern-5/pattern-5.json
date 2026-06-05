@@ -6,9 +6,14 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
-      }
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "175 C/C"
+        ]
+      },
+      "remarks": "ALT-BENT UP"
     },
     {
       "slab_id": "B",
@@ -16,9 +21,14 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
-      }
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "350 C/C"
+        ]
+      },
+      "remarks": "EXTRA AT TOP B/W BENT UP BARS"
     },
     {
       "slab_id": "C",
@@ -26,9 +36,14 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
-      }
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      },
+      "remarks": "ALT-BENT UP"
     },
     {
       "slab_id": "D",
@@ -36,9 +51,14 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
-      }
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "250 C/C"
+        ]
+      },
+      "remarks": "EXTRA AT TOP B/W BENT UP BARS"
     },
     {
       "slab_id": "E",
@@ -46,9 +66,14 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
-      }
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "200 C/C"
+        ]
+      },
+      "remarks": "DIST. BARS AT BOTTOM"
     },
     {
       "slab_id": "CS1",
@@ -56,9 +81,14 @@
       "type": "",
       "mix": "",
       "reinforcement": {
-        "dia": [],
-        "spacing": []
-      }
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C"
+        ]
+      },
+      "remarks": ""
     }
   ]
 }

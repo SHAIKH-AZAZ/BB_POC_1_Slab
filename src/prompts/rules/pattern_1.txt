@@ -1,0 +1,37 @@
+==============================
+PATTERN-1 RULES
+==============================
+
+COLUMNS:
+- TYPE → slab_id (S1, S2, S3, ...)
+- THICKNESS
+- STEEL ALONG SPAN
+- STEEL ACROSS SPAN
+- REMARKS
+
+SLAB ID:
+- TYPE column value is the slab_id.
+- Do NOT copy slab_id into the type field.
+- Include every visible slab_id, including rows marked DELETED.
+- For deleted rows: slab_id present, remarks="DELETED", all other values null/""/[].
+
+THICKNESS:
+- Extract number only.
+- If missing → null.
+
+TYPE:
+- Only write into "type" if structural classification is explicitly written:
+  ONE WAY / TWO WAY / FLAT SLAB / CANTILEVER
+- Otherwise: ""
+
+MIX:
+- Extract if visible (e.g. M20, M25). If not present → "".
+
+REINFORCEMENT:
+- Extract from BOTH Steel Along Span and Steel Across Span columns.
+- Both contribute to reinforcement.dia and reinforcement.spacing.
+- Keep only bar diameter and spacing in the final reinforcement arrays.
+- Remove duplicates.
+- Process every visible slab row.
+
+Do not invent values. If a value is not visible, use null, "", or [].

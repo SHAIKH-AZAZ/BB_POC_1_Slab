@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-5\\page_1.png",
-      "generated_at": "2026-05-28T15:43:11.292886+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-5/page_1.png",
+      "generated_at": "2026-06-05T06:17:27.658020+00:00",
       "think": {
-        "image_quality": "high",
+        "image_quality": "good",
         "table_bounds": {
-          "x1": 0,
-          "y1": 600,
-          "x2": 960,
-          "y2": 900
+          "x1": 0.02,
+          "y1": 0.7,
+          "x2": 0.98,
+          "y2": 0.98
         },
         "table_columns": [
           "BAR MARKED",
@@ -29,116 +29,86 @@
           "CS1"
         ],
         "deleted_rows": [],
-        "multi_line_cells": [],
+        "multi_line_cells": [
+          "CS1 – CORNER STEEL 8T@ 150 c/c TOP BOTTOM BOTHWAYS 900x900"
+        ],
+        "concrete_grades": [],
+        "steel_grades": [],
         "expected_count": 6,
         "zoom_plan": [
           {
-            "region_id": "r1",
+            "region_id": "header",
+            "purpose": "header",
+            "target": "SCHEDULE OF SLABS REINFORCEMENT",
+            "x1": 0.02,
+            "y1": 0.7,
+            "x2": 0.98,
+            "y2": 0.74,
+            "reason": "header text"
+          },
+          {
+            "region_id": "row_label_A",
             "purpose": "row_label",
             "target": "A",
-            "reason": "Extract slab ID A"
+            "x1": 0.02,
+            "y1": 0.74,
+            "x2": 0.1,
+            "y2": 0.78,
+            "reason": "slab ID"
           },
           {
-            "region_id": "r2",
-            "purpose": "data_cell",
-            "target": "8T",
-            "reason": "Extract DIA for slab A"
-          },
-          {
-            "region_id": "r3",
-            "purpose": "data_cell",
-            "target": "@ 175c/c",
-            "reason": "Extract SPACING for slab A"
-          },
-          {
-            "region_id": "r4",
+            "region_id": "row_label_B",
             "purpose": "row_label",
             "target": "B",
-            "reason": "Extract slab ID B"
+            "x1": 0.02,
+            "y1": 0.78,
+            "x2": 0.1,
+            "y2": 0.82,
+            "reason": "slab ID"
           },
           {
-            "region_id": "r5",
-            "purpose": "data_cell",
-            "target": "8T",
-            "reason": "Extract DIA for slab B"
-          },
-          {
-            "region_id": "r6",
-            "purpose": "data_cell",
-            "target": "@ 350c/c",
-            "reason": "Extract SPACING for slab B"
-          },
-          {
-            "region_id": "r7",
+            "region_id": "row_label_C",
             "purpose": "row_label",
             "target": "C",
-            "reason": "Extract slab ID C"
+            "x1": 0.02,
+            "y1": 0.82,
+            "x2": 0.1,
+            "y2": 0.86,
+            "reason": "slab ID"
           },
           {
-            "region_id": "r8",
-            "purpose": "data_cell",
-            "target": "8T",
-            "reason": "Extract DIA for slab C"
-          },
-          {
-            "region_id": "r9",
-            "purpose": "data_cell",
-            "target": "@ 125c/c",
-            "reason": "Extract SPACING for slab C"
-          },
-          {
-            "region_id": "r10",
+            "region_id": "row_label_D",
             "purpose": "row_label",
             "target": "D",
-            "reason": "Extract slab ID D"
+            "x1": 0.02,
+            "y1": 0.86,
+            "x2": 0.1,
+            "y2": 0.9,
+            "reason": "slab ID"
           },
           {
-            "region_id": "r11",
-            "purpose": "data_cell",
-            "target": "8T",
-            "reason": "Extract DIA for slab D"
-          },
-          {
-            "region_id": "r12",
-            "purpose": "data_cell",
-            "target": "@ 250c/c",
-            "reason": "Extract SPACING for slab D"
-          },
-          {
-            "region_id": "r13",
+            "region_id": "row_label_E",
             "purpose": "row_label",
             "target": "E",
-            "reason": "Extract slab ID E"
+            "x1": 0.02,
+            "y1": 0.9,
+            "x2": 0.1,
+            "y2": 0.94,
+            "reason": "slab ID"
           },
           {
-            "region_id": "r14",
-            "purpose": "data_cell",
-            "target": "8T",
-            "reason": "Extract DIA for slab E"
-          },
-          {
-            "region_id": "r15",
-            "purpose": "data_cell",
-            "target": "@ 200c/c",
-            "reason": "Extract SPACING for slab E"
-          },
-          {
-            "region_id": "r16",
+            "region_id": "row_label_CS1",
             "purpose": "row_label",
             "target": "CS1",
-            "reason": "Extract slab ID CS1"
-          },
-          {
-            "region_id": "r17",
-            "purpose": "data_cell",
-            "target": "8T@ 150 c/c",
-            "reason": "Extract DIA and SPACING for slab CS1"
+            "x1": 0.02,
+            "y1": 0.94,
+            "x2": 0.1,
+            "y2": 0.98,
+            "reason": "slab ID"
           }
         ],
         "normalization_rules": [
-          "Remove '@' from spacing",
-          "Convert spacing to format 'number C/C'",
-          "Remove duplicates"
+          "Combine DIA and SPACING columns into one string for reinforcement."
         ],
         "extraction_order": [
           "BAR MARKED",
@@ -156,9 +126,14 @@
           "type": "",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
-          }
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "175 C/C"
+            ]
+          },
+          "remarks": "ALT-BENT UP"
         },
         {
           "slab_id": "B",
@@ -166,9 +141,14 @@
           "type": "",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
-          }
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "350 C/C"
+            ]
+          },
+          "remarks": "EXTRA AT TOP B/W BENT UP BARS"
         },
         {
           "slab_id": "C",
@@ -176,9 +156,14 @@
           "type": "",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
-          }
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "125 C/C"
+            ]
+          },
+          "remarks": "ALT-BENT UP"
         },
         {
           "slab_id": "D",
@@ -186,9 +171,14 @@
           "type": "",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
-          }
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "250 C/C"
+            ]
+          },
+          "remarks": "EXTRA AT TOP B/W BENT UP BARS"
         },
         {
           "slab_id": "E",
@@ -196,9 +186,14 @@
           "type": "",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
-          }
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "200 C/C"
+            ]
+          },
+          "remarks": "DIST. BARS AT BOTTOM"
         },
         {
           "slab_id": "CS1",
@@ -206,9 +201,14 @@
           "type": "",
           "mix": "",
           "reinforcement": {
-            "dia": [],
-            "spacing": []
-          }
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C"
+            ]
+          },
+          "remarks": ""
         }
       ],
       "added_records": [
@@ -219,11 +219,18 @@
             "type": "",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
-            }
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "175 C/C"
+              ]
+            },
+            "remarks": "ALT-BENT UP"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_label_A"
+          ]
         },
         {
           "record": {
@@ -232,11 +239,18 @@
             "type": "",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
-            }
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "350 C/C"
+              ]
+            },
+            "remarks": "EXTRA AT TOP B/W BENT UP BARS"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_label_B"
+          ]
         },
         {
           "record": {
@@ -245,11 +259,18 @@
             "type": "",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
-            }
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "125 C/C"
+              ]
+            },
+            "remarks": "ALT-BENT UP"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_label_C"
+          ]
         },
         {
           "record": {
@@ -258,11 +279,18 @@
             "type": "",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
-            }
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "250 C/C"
+              ]
+            },
+            "remarks": "EXTRA AT TOP B/W BENT UP BARS"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_label_D"
+          ]
         },
         {
           "record": {
@@ -271,11 +299,18 @@
             "type": "",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
-            }
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "200 C/C"
+              ]
+            },
+            "remarks": "DIST. BARS AT BOTTOM"
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_label_E"
+          ]
         },
         {
           "record": {
@@ -284,11 +319,18 @@
             "type": "",
             "mix": "",
             "reinforcement": {
-              "dia": [],
-              "spacing": []
-            }
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C"
+              ]
+            },
+            "remarks": ""
           },
-          "source_region_ids": []
+          "source_region_ids": [
+            "row_label_CS1"
+          ]
         }
       ],
       "expected_count": 6,

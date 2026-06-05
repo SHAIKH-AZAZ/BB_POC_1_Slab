@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-8\\page_1.png",
-      "generated_at": "2026-05-28T15:46:33.336476+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-8/page_1.png",
+      "generated_at": "2026-06-05T05:43:45.586045+00:00",
       "think": {
         "image_quality": "good",
         "table_bounds": {
-          "x1": 20,
-          "y1": 600,
-          "x2": 1000,
-          "y2": 720
+          "x1": 0.0,
+          "y1": 0.8,
+          "x2": 1.0,
+          "y2": 1.0
         },
         "table_columns": [
           "NOS.",
@@ -26,43 +26,75 @@
         ],
         "deleted_rows": [],
         "multi_line_cells": [],
+        "concrete_grades": [],
+        "steel_grades": [],
         "expected_count": 1,
         "zoom_plan": [
           {
-            "region_id": "r1",
+            "region_id": "header",
+            "purpose": "header",
+            "target": "table header",
+            "x1": 0.0,
+            "y1": 0.8,
+            "x2": 1.0,
+            "y2": 0.85,
+            "reason": "extract column headers"
+          },
+          {
+            "region_id": "row_label_S1",
             "purpose": "row_label",
-            "target": "S1",
-            "reason": "Confirm slab ID S1"
+            "target": "slab ID S1",
+            "x1": 0.05,
+            "y1": 0.85,
+            "x2": 0.15,
+            "y2": 0.9,
+            "reason": "extract slab ID"
           },
           {
-            "region_id": "r2",
+            "region_id": "thickness_S1",
             "purpose": "data_cell",
-            "target": "150",
-            "reason": "Confirm thickness 150"
+            "target": "thickness for slab S1",
+            "x1": 0.15,
+            "y1": 0.85,
+            "x2": 0.25,
+            "y2": 0.9,
+            "reason": "extract thickness"
           },
           {
-            "region_id": "r3",
+            "region_id": "main_reinf_S1",
             "purpose": "data_cell",
-            "target": "T8-150",
-            "reason": "Confirm main reinforcement T8-150"
+            "target": "main reinforcement for slab S1",
+            "x1": 0.25,
+            "y1": 0.85,
+            "x2": 0.5,
+            "y2": 0.9,
+            "reason": "extract main reinforcement"
           },
           {
-            "region_id": "r4",
+            "region_id": "dist_reinf_S1",
             "purpose": "data_cell",
-            "target": "T8-200",
-            "reason": "Confirm distribution reinforcement T8-200"
+            "target": "distribution reinforcement for slab S1",
+            "x1": 0.5,
+            "y1": 0.85,
+            "x2": 0.75,
+            "y2": 0.9,
+            "reason": "extract distribution reinforcement"
           },
           {
-            "region_id": "r5",
+            "region_id": "remarks_S1",
             "purpose": "data_cell",
-            "target": "TWO WAY SLAB",
-            "reason": "Confirm slab type TWO WAY SLAB"
+            "target": "remarks for slab S1",
+            "x1": 0.75,
+            "y1": 0.85,
+            "x2": 1.0,
+            "y2": 0.9,
+            "reason": "extract remarks"
           }
         ],
         "normalization_rules": [
-          "Convert reinforcement spacing to 'XXX C/C' format",
-          "Ignore invalid reinforcement entries like '-' or empty",
-          "Remove duplicate reinforcement entries"
+          "Remove extra spaces",
+          "Trim text",
+          "Standardize reinforcement spacing to 'XXX C/C'"
         ],
         "extraction_order": [
           "NOS.",
@@ -84,7 +116,10 @@
             "dia": [
               "T8"
             ],
-            "spacing": []
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
           }
         }
       ],
@@ -99,15 +134,18 @@
               "dia": [
                 "T8"
               ],
-              "spacing": []
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
             }
           },
           "source_region_ids": [
-            "r1",
-            "r2",
-            "r3",
-            "r4",
-            "r5"
+            "row_label_S1",
+            "thickness_S1",
+            "main_reinf_S1",
+            "dist_reinf_S1",
+            "remarks_S1"
           ]
         }
       ],

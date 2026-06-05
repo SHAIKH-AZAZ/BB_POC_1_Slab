@@ -1,0 +1,38 @@
+==============================
+PATTERN-3 RULES
+==============================
+
+COLUMNS:
+- SLAB MARKED → slab_id
+- THICK. → thickness
+- TYPE
+- SHORT BAR → reinforcement
+- LONG BAR → reinforcement
+- REMARKS
+
+SLAB ID:
+- Take value from SLAB MARKED column.
+- Keep exactly as written (S2, S3, S4, S5, S6, S7, ST, etc).
+- Include every visible slab row.
+
+THICKNESS:
+- Extract number only. If missing → null.
+
+TYPE:
+- Extract exactly as written: ONE WAY / TWO WAY.
+- Do not modify text.
+
+MIX:
+- Extract if visible. If not present → "".
+
+REINFORCEMENT:
+Extract from BOTH:
+- SHORT BAR column
+- LONG BAR column
+
+Rules:
+1. Text before "@" → diameter (e.g. T10).
+2. Text after "@" → spacing. Format as "100 C/C".
+3. Remove bracket text: (ALT. BENT UP) / (ALL STRAIGHT) / (DIST.) / (MAIN).
+4. Remove duplicates. Keep only diameter and spacing.
+5. If no reinforcement → empty arrays.

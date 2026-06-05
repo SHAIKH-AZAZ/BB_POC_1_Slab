@@ -1,0 +1,50 @@
+==============================
+PATTERN-7 RULES
+==============================
+
+COLUMNS:
+- SLAB MARKED → slab_id
+- SLAB THICKNESS → thickness
+- BOTTOM REINFORCEMENT
+    • ALONG SHORT SPAN
+    • ALONG LONG SPAN
+- TOP SUPPORT REINFORCEMENT
+    • ALONG SHORT SPAN
+    • ALONG LONG SPAN
+- IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)
+- DISTRIBUTION
+- REMARKS → TYPE
+
+SLAB ID:
+- Extract from SLAB MARKED (e.g. S1, S2, S10, S22, S7).
+- Keep exactly as written.
+
+THICKNESS:
+- Extract number only. If missing → null.
+
+TYPE:
+- Extract from REMARKS column: ONE WAY / TWO WAY / GRADE SLAB.
+- Keep exactly as written.
+
+MIX:
+- Not present → return "".
+
+REINFORCEMENT:
+Extract from ALL reinforcement areas:
+- BOTTOM REINFORCEMENT (Short Span + Long Span)
+- TOP SUPPORT REINFORCEMENT (Short Span + Long Span)
+- IN MID SPAN
+- DISTRIBUTION
+
+Rules:
+1. Extract diameter EXACTLY as written (T10 → "T10", 10T → "10T").
+2. DO NOT rearrange format.
+3. Spacing after "-": T10 - 150 C/C → "150 C/C".
+4. Normalize spacing as "XXX C/C".
+5. Ignore: "-", "-------", label text.
+6. Remove duplicates. If no reinforcement → empty arrays.
+
+SPECIAL CASES:
+- Some slabs span multiple lines → combine them.
+- Some slabs share rows → group correctly by slab_id.
+- Ignore empty slab rows.

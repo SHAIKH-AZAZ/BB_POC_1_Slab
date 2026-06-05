@@ -4,25 +4,25 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-4\\page_1.png",
-      "generated_at": "2026-05-28T15:42:44.946316+00:00",
+      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-4/page_1.png",
+      "generated_at": "2026-06-05T06:18:39.897844+00:00",
       "think": {
         "image_quality": "good",
         "table_bounds": {
-          "x1": 120,
-          "y1": 150,
-          "x2": 1100,
-          "y2": 350
+          "x1": 0.06,
+          "y1": 0.15,
+          "x2": 0.94,
+          "y2": 0.55
         },
         "table_columns": [
           "SLAB NO.",
           "SLAB THK.",
           "MIX",
-          "TYPE",
-          "11 TO SHORT SPAN",
-          "11 TO LONG SPAN",
-          "11 TO SHORT SPAN EX. TOP OVER SUPPORT",
-          "11 TO LONG SPAN EX. TOP OVER SUPPORT",
+          "TYPE.",
+          "MAIN STEEL ll TO SHORT SPAN",
+          "MAIN STEEL ll TO LONG SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT ll TO SHORT SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT ll TO LONG SPAN",
           "DIST. STEEL"
         ],
         "slab_ids": [
@@ -33,76 +33,145 @@
         ],
         "deleted_rows": [],
         "multi_line_cells": [
-          "11 TO SHORT SPAN",
-          "11 TO LONG SPAN",
-          "11 TO SHORT SPAN EX. TOP OVER SUPPORT",
-          "11 TO LONG SPAN EX. TOP OVER SUPPORT"
+          "EX. TOP OVER AT L/4 SUPPORT ll TO SHORT SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT ll TO LONG SPAN"
         ],
+        "concrete_grades": [
+          "M25"
+        ],
+        "steel_grades": [],
         "expected_count": 4,
         "zoom_plan": [
           {
-            "region_id": "header",
+            "region_id": "header_1",
             "purpose": "header",
-            "x1": 120,
-            "y1": 150,
-            "x2": 1100,
-            "y2": 190,
-            "reason": "Table header"
+            "target": "SLAB NO.",
+            "x1": 0.06,
+            "y1": 0.15,
+            "x2": 0.14,
+            "y2": 0.2,
+            "reason": "Identify slab ID column header"
           },
           {
-            "region_id": "row_S1",
-            "purpose": "row_label",
-            "x1": 120,
-            "y1": 190,
-            "x2": 1100,
-            "y2": 220,
-            "reason": "Row S1 data"
+            "region_id": "header_2",
+            "purpose": "header",
+            "target": "SLAB THK.",
+            "x1": 0.14,
+            "y1": 0.15,
+            "x2": 0.22,
+            "y2": 0.2,
+            "reason": "Identify thickness column header"
           },
           {
-            "region_id": "row_S2",
-            "purpose": "row_label",
-            "x1": 120,
-            "y1": 220,
-            "x2": 1100,
-            "y2": 250,
-            "reason": "Row S2 data"
+            "region_id": "header_3",
+            "purpose": "header",
+            "target": "MIX",
+            "x1": 0.22,
+            "y1": 0.15,
+            "x2": 0.28,
+            "y2": 0.2,
+            "reason": "Identify mix column header"
           },
           {
-            "region_id": "row_S3",
-            "purpose": "row_label",
-            "x1": 120,
-            "y1": 250,
-            "x2": 1100,
-            "y2": 280,
-            "reason": "Row S3 data"
+            "region_id": "header_4",
+            "purpose": "header",
+            "target": "TYPE.",
+            "x1": 0.28,
+            "y1": 0.15,
+            "x2": 0.36,
+            "y2": 0.2,
+            "reason": "Identify type column header"
           },
           {
-            "region_id": "row_S4",
+            "region_id": "header_5",
+            "purpose": "header",
+            "target": "MAIN STEEL ll TO SHORT SPAN",
+            "x1": 0.36,
+            "y1": 0.15,
+            "x2": 0.52,
+            "y2": 0.2,
+            "reason": "Identify main steel short span header"
+          },
+          {
+            "region_id": "header_6",
+            "purpose": "header",
+            "target": "MAIN STEEL ll TO LONG SPAN",
+            "x1": 0.52,
+            "y1": 0.15,
+            "x2": 0.68,
+            "y2": 0.2,
+            "reason": "Identify main steel long span header"
+          },
+          {
+            "region_id": "header_7",
+            "purpose": "header",
+            "target": "EX. TOP OVER AT L/4 SUPPORT ll TO SHORT SPAN",
+            "x1": 0.68,
+            "y1": 0.15,
+            "x2": 0.84,
+            "y2": 0.2,
+            "reason": "Identify extra top over short span header"
+          },
+          {
+            "region_id": "header_8",
+            "purpose": "header",
+            "target": "EX. TOP OVER AT L/4 SUPPORT ll TO LONG SPAN",
+            "x1": 0.84,
+            "y1": 0.15,
+            "x2": 0.94,
+            "y2": 0.2,
+            "reason": "Identify extra top over long span header"
+          },
+          {
+            "region_id": "header_9",
+            "purpose": "header",
+            "target": "DIST. STEEL",
+            "x1": 0.94,
+            "y1": 0.15,
+            "x2": 1.0,
+            "y2": 0.2,
+            "reason": "Identify dist steel header"
+          },
+          {
+            "region_id": "rowlabel_1",
             "purpose": "row_label",
-            "x1": 120,
-            "y1": 280,
-            "x2": 1100,
-            "y2": 310,
-            "reason": "Row S4 data"
+            "target": "S1",
+            "x1": 0.06,
+            "y1": 0.2,
+            "x2": 0.14,
+            "y2": 0.27,
+            "reason": "Identify slab ID S1"
+          },
+          {
+            "region_id": "rowlabel_2",
+            "purpose": "row_label",
+            "target": "S2",
+            "x1": 0.06,
+            "y1": 0.27,
+            "x2": 0.14,
+            "y2": 0.34,
+            "reason": "Identify slab ID S2"
+          },
+          {
+            "region_id": "rowlabel_3",
+            "purpose": "row_label",
+            "target": "S3",
+            "x1": 0.06,
+            "y1": 0.34,
+            "x2": 0.14,
+            "y2": 0.41,
+            "reason": "Identify slab ID S3"
+          },
+          {
+            "region_id": "rowlabel_4",
+            "purpose": "row_label",
+            "target": "S4",
+            "x1": 0.06,
+            "y1": 0.41,
+            "x2": 0.14,
+            "y2": 0.48,
+            "reason": "Identify slab ID S4"
           }
-        ],
-        "normalization_rules": [
-          "Remove ALT. BENT UP",
-          "Remove DIST.",
-          "Remove extra text descriptions",
-          "Ignore '-' cells",
-          "Remove duplicates"
-        ],
-        "extraction_order": [
-          "SLAB NO.",
-          "SLAB THK.",
-          "MIX",
-          "TYPE",
-          "11 TO SHORT SPAN",
-          "11 TO LONG SPAN",
-          "11 TO SHORT SPAN EX. TOP OVER SUPPORT",
-          "11 TO LONG SPAN EX. TOP OVER SUPPORT",
-          "DIST. STEEL"
         ]
       },
       "zoom_regions": [],
@@ -114,10 +183,14 @@
           "type": "ONE WAY",
           "mix": "M25",
           "reinforcement": {
-            "dia": [],
+            "dia": [
+              "T10",
+              "T8"
+            ],
             "spacing": [
               "150 C/C",
-              "300 C/C"
+              "300 C/C",
+              "200 C/C"
             ]
           }
         },
@@ -127,7 +200,9 @@
           "type": "TWO WAY",
           "mix": "M25",
           "reinforcement": {
-            "dia": [],
+            "dia": [
+              "T10"
+            ],
             "spacing": [
               "150 C/C",
               "300 C/C"
@@ -140,7 +215,10 @@
           "type": "ONE WAY",
           "mix": "M25",
           "reinforcement": {
-            "dia": [],
+            "dia": [
+              "T10",
+              "T8"
+            ],
             "spacing": [
               "100 C/C",
               "200 C/C"
@@ -153,7 +231,9 @@
           "type": "TWO WAY",
           "mix": "M25",
           "reinforcement": {
-            "dia": [],
+            "dia": [
+              "T10"
+            ],
             "spacing": [
               "100 C/C",
               "200 C/C"
@@ -169,16 +249,18 @@
             "type": "ONE WAY",
             "mix": "M25",
             "reinforcement": {
-              "dia": [],
+              "dia": [
+                "T10",
+                "T8"
+              ],
               "spacing": [
                 "150 C/C",
-                "300 C/C"
+                "300 C/C",
+                "200 C/C"
               ]
             }
           },
-          "source_region_ids": [
-            "row_S1"
-          ]
+          "source_region_ids": []
         },
         {
           "record": {
@@ -187,16 +269,16 @@
             "type": "TWO WAY",
             "mix": "M25",
             "reinforcement": {
-              "dia": [],
+              "dia": [
+                "T10"
+              ],
               "spacing": [
                 "150 C/C",
                 "300 C/C"
               ]
             }
           },
-          "source_region_ids": [
-            "row_S2"
-          ]
+          "source_region_ids": []
         },
         {
           "record": {
@@ -205,16 +287,17 @@
             "type": "ONE WAY",
             "mix": "M25",
             "reinforcement": {
-              "dia": [],
+              "dia": [
+                "T10",
+                "T8"
+              ],
               "spacing": [
                 "100 C/C",
                 "200 C/C"
               ]
             }
           },
-          "source_region_ids": [
-            "row_S3"
-          ]
+          "source_region_ids": []
         },
         {
           "record": {
@@ -223,27 +306,31 @@
             "type": "TWO WAY",
             "mix": "M25",
             "reinforcement": {
-              "dia": [],
+              "dia": [
+                "T10"
+              ],
               "spacing": [
                 "100 C/C",
                 "200 C/C"
               ]
             }
           },
-          "source_region_ids": [
-            "row_S4"
-          ]
+          "source_region_ids": []
         }
       ],
       "expected_count": 4,
       "actual_count": 4,
-      "warnings": []
+      "warnings": [
+        "think missing structured field(s): normalization_rules, extraction_order"
+      ]
     }
   },
   "summary": {
     "page_count": 1,
     "record_count": 4,
-    "warning_count": 0,
-    "warnings": []
+    "warning_count": 1,
+    "warnings": [
+      "think missing structured field(s): normalization_rules, extraction_order"
+    ]
   }
 }

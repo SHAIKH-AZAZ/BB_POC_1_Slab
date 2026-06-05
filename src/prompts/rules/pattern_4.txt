@@ -1,0 +1,49 @@
+==============================
+PATTERN-4 RULES
+==============================
+
+COLUMNS:
+- SLAB NO. → slab_id
+- THK. → thickness
+- MIX → mix
+- TYPE
+- MAIN STEEL (// TO SHORT SPAN, // TO LONG SPAN)
+- EX. TOP OVER SUPPORT (// TO SHORT SPAN, // TO LONG SPAN)
+- DIST. STEEL
+
+SLAB ID:
+- Extract from SLAB NO. Keep exactly as written.
+
+THICKNESS:
+- Extract number only. If missing → null.
+
+TYPE:
+- Extract exactly as written (ONE WAY / TWO WAY). Do NOT modify case.
+
+MIX:
+- Extract exactly as written (M20, M25, etc). If missing → "".
+
+REINFORCEMENT:
+Map each column to the tool fields as follows:
+
+  steel_along_span  ← append ALL of:
+    - MAIN STEEL // TO SHORT SPAN
+    - EX. TOP OVER SUPPORT // TO SHORT SPAN  (or "EX. TOP OVER AT L/4 SUPPORT // TO SHORT SPAN")
+    - DIST. STEEL   ← ALWAYS include this column in steel_along_span
+
+  steel_across_span ← append ALL of:
+    - MAIN STEEL // TO LONG SPAN
+    - EX. TOP OVER SUPPORT // TO LONG SPAN   (or "EX. TOP OVER AT L/4 SUPPORT // TO LONG SPAN")
+
+IMPORTANT: DIST. STEEL is the LAST column. Do NOT skip it.
+Even if DIST. STEEL is a simple value like "8T @ 200 c/c", it MUST be passed in steel_along_span.
+
+Rules:
+1. Extract the diameter EXACTLY as written in the image.
+   If image shows 10T → return "10T". If image shows T10 → return "T10".
+   DO NOT rearrange characters. DO NOT convert 10T to T10.
+2. Text after "@" → spacing. Format as "100 C/C".
+3. Remove: ALT. BENT UP / extra text descriptions.
+4. Ignore "-" cells (treat as empty, skip that cell only).
+5. Remove duplicates. If no reinforcement → empty arrays.
+5. Remove duplicates. If no reinforcement → empty arrays.

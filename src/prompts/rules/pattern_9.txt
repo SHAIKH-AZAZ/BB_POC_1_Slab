@@ -1,0 +1,49 @@
+==============================
+PATTERN-9 RULES
+==============================
+
+COLUMNS:
+- SLAB MARKED → slab_id
+- SLAB THICKNESS → thickness
+- BOTTOM REINFORCEMENT
+    • MAIN REINF.
+    • DISTRIBUTION REINF.
+- TOP SUPPORT REINFORCEMENT
+    • MAIN REINF.
+    • DISTRIBUTION REINF.
+- IN MID SPAN (TO BE LAPPED WITH SUPPORT REINF.)
+- DISTRIBUTION
+- REMARKS → TYPE
+
+SLAB ID:
+- Extract from SLAB MARKED (e.g. ST1, ST2, ST4, ST12, ST25, SC1, SC6).
+- Keep exactly as written.
+
+THICKNESS:
+- Extract number only. If missing → null.
+
+TYPE:
+- Extract from REMARKS: ONE WAY / TWO WAY / GRADE SLAB / CANTILEVER SLAB.
+- Keep exactly as written.
+
+MIX:
+- Not present → return "".
+
+REINFORCEMENT:
+Extract from ALL reinforcement areas:
+- BOTTOM REINFORCEMENT (Main + Distribution)
+- TOP SUPPORT REINFORCEMENT (Main + Distribution)
+- IN MID SPAN
+- DISTRIBUTION
+
+Rules:
+1. Extract diameter EXACTLY as written (T10 → "T10", 10T → "10T").
+2. DO NOT rearrange format.
+3. Spacing after "-": T10 - 150 C/C → "150 C/C".
+4. Normalize spacing as "XXX C/C".
+5. Ignore: "-", "-------", label text.
+6. Remove duplicates. If no reinforcement → empty arrays.
+
+SPECIAL CASES:
+- Some slabs span multiple lines → combine them.
+- Ignore empty slab rows.
