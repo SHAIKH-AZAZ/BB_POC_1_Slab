@@ -7,3 +7,4 @@ tqdm
 Pillow
 pydantic
 scipy
+python-opencv

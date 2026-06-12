@@ -543,8 +543,12 @@ def extract_from_image(image_path, prompt_text, retries=3):
             return clean_json_string(response.choices[0].message.content)
         except Exception as exc:
             last_error = exc
+            # Surface the REAL cause (auth, model name, rate limit, image size...)
+            print(
+                f"  Fallback extraction failed ({attempt}/{retries}): "
+                f"{type(exc).__name__}: {exc}"
+            )
             if attempt < retries:
-                print(f"  Fallback extraction failed, retrying ({attempt}/{retries})...")
                 time.sleep(5)
     raise RuntimeError(f"Extraction failed after {retries} retries: {last_error}")
 

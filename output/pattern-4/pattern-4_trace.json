@@ -4,25 +4,25 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-4/page_1.png",
-      "generated_at": "2026-06-05T06:18:39.897844+00:00",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-4\\page_1.png",
+      "generated_at": "2026-06-12T17:02:51.467519+00:00",
       "think": {
         "image_quality": "good",
         "table_bounds": {
           "x1": 0.06,
-          "y1": 0.15,
+          "y1": 0.18,
           "x2": 0.94,
-          "y2": 0.55
+          "y2": 0.44
         },
         "table_columns": [
           "SLAB NO.",
           "SLAB THK.",
           "MIX",
           "TYPE.",
-          "MAIN STEEL ll TO SHORT SPAN",
-          "MAIN STEEL ll TO LONG SPAN",
-          "EX. TOP OVER AT L/4 SUPPORT ll TO SHORT SPAN",
-          "EX. TOP OVER AT L/4 SUPPORT ll TO LONG SPAN",
+          "MAIN STEEL // TO SHORT SPAN",
+          "MAIN STEEL // TO LONG SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT // TO SHORT SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT // TO LONG SPAN",
           "DIST. STEEL"
         ],
         "slab_ids": [
@@ -33,8 +33,11 @@
         ],
         "deleted_rows": [],
         "multi_line_cells": [
-          "EX. TOP OVER AT L/4 SUPPORT ll TO SHORT SPAN",
-          "EX. TOP OVER AT L/4 SUPPORT ll TO LONG SPAN"
+          "MAIN STEEL // TO SHORT SPAN",
+          "MAIN STEEL // TO LONG SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT // TO SHORT SPAN",
+          "EX. TOP OVER AT L/4 SUPPORT // TO LONG SPAN",
+          "DIST. STEEL"
         ],
         "concrete_grades": [
           "M25"
@@ -43,134 +46,374 @@
         "expected_count": 4,
         "zoom_plan": [
           {
-            "region_id": "header_1",
+            "region_id": "header1",
             "purpose": "header",
-            "target": "SLAB NO.",
+            "target": "table header",
             "x1": 0.06,
-            "y1": 0.15,
-            "x2": 0.14,
-            "y2": 0.2,
-            "reason": "Identify slab ID column header"
-          },
-          {
-            "region_id": "header_2",
-            "purpose": "header",
-            "target": "SLAB THK.",
-            "x1": 0.14,
-            "y1": 0.15,
-            "x2": 0.22,
-            "y2": 0.2,
-            "reason": "Identify thickness column header"
-          },
-          {
-            "region_id": "header_3",
-            "purpose": "header",
-            "target": "MIX",
-            "x1": 0.22,
-            "y1": 0.15,
-            "x2": 0.28,
-            "y2": 0.2,
-            "reason": "Identify mix column header"
-          },
-          {
-            "region_id": "header_4",
-            "purpose": "header",
-            "target": "TYPE.",
-            "x1": 0.28,
-            "y1": 0.15,
-            "x2": 0.36,
-            "y2": 0.2,
-            "reason": "Identify type column header"
-          },
-          {
-            "region_id": "header_5",
-            "purpose": "header",
-            "target": "MAIN STEEL ll TO SHORT SPAN",
-            "x1": 0.36,
-            "y1": 0.15,
-            "x2": 0.52,
-            "y2": 0.2,
-            "reason": "Identify main steel short span header"
-          },
-          {
-            "region_id": "header_6",
-            "purpose": "header",
-            "target": "MAIN STEEL ll TO LONG SPAN",
-            "x1": 0.52,
-            "y1": 0.15,
-            "x2": 0.68,
-            "y2": 0.2,
-            "reason": "Identify main steel long span header"
-          },
-          {
-            "region_id": "header_7",
-            "purpose": "header",
-            "target": "EX. TOP OVER AT L/4 SUPPORT ll TO SHORT SPAN",
-            "x1": 0.68,
-            "y1": 0.15,
-            "x2": 0.84,
-            "y2": 0.2,
-            "reason": "Identify extra top over short span header"
-          },
-          {
-            "region_id": "header_8",
-            "purpose": "header",
-            "target": "EX. TOP OVER AT L/4 SUPPORT ll TO LONG SPAN",
-            "x1": 0.84,
-            "y1": 0.15,
+            "y1": 0.18,
             "x2": 0.94,
-            "y2": 0.2,
-            "reason": "Identify extra top over long span header"
+            "y2": 0.22,
+            "reason": "extract column headers"
           },
           {
-            "region_id": "header_9",
-            "purpose": "header",
-            "target": "DIST. STEEL",
-            "x1": 0.94,
-            "y1": 0.15,
-            "x2": 1.0,
-            "y2": 0.2,
-            "reason": "Identify dist steel header"
-          },
-          {
-            "region_id": "rowlabel_1",
+            "region_id": "rowlabel1",
             "purpose": "row_label",
-            "target": "S1",
+            "target": "slab id S1",
             "x1": 0.06,
-            "y1": 0.2,
-            "x2": 0.14,
-            "y2": 0.27,
-            "reason": "Identify slab ID S1"
+            "y1": 0.22,
+            "x2": 0.12,
+            "y2": 0.26,
+            "reason": "extract slab id"
           },
           {
-            "region_id": "rowlabel_2",
+            "region_id": "rowlabel2",
             "purpose": "row_label",
-            "target": "S2",
+            "target": "slab id S2",
             "x1": 0.06,
-            "y1": 0.27,
-            "x2": 0.14,
+            "y1": 0.26,
+            "x2": 0.12,
+            "y2": 0.3,
+            "reason": "extract slab id"
+          },
+          {
+            "region_id": "rowlabel3",
+            "purpose": "row_label",
+            "target": "slab id S3",
+            "x1": 0.06,
+            "y1": 0.3,
+            "x2": 0.12,
             "y2": 0.34,
-            "reason": "Identify slab ID S2"
+            "reason": "extract slab id"
           },
           {
-            "region_id": "rowlabel_3",
+            "region_id": "rowlabel4",
             "purpose": "row_label",
-            "target": "S3",
+            "target": "slab id S4",
             "x1": 0.06,
             "y1": 0.34,
-            "x2": 0.14,
-            "y2": 0.41,
-            "reason": "Identify slab ID S3"
+            "x2": 0.12,
+            "y2": 0.38,
+            "reason": "extract slab id"
           },
           {
-            "region_id": "rowlabel_4",
-            "purpose": "row_label",
-            "target": "S4",
-            "x1": 0.06,
-            "y1": 0.41,
-            "x2": 0.14,
-            "y2": 0.48,
-            "reason": "Identify slab ID S4"
+            "region_id": "thickness1",
+            "purpose": "data_cell",
+            "target": "thickness S1",
+            "x1": 0.12,
+            "y1": 0.22,
+            "x2": 0.18,
+            "y2": 0.26,
+            "reason": "extract thickness"
+          },
+          {
+            "region_id": "thickness2",
+            "purpose": "data_cell",
+            "target": "thickness S2",
+            "x1": 0.12,
+            "y1": 0.26,
+            "x2": 0.18,
+            "y2": 0.3,
+            "reason": "extract thickness"
+          },
+          {
+            "region_id": "thickness3",
+            "purpose": "data_cell",
+            "target": "thickness S3",
+            "x1": 0.12,
+            "y1": 0.3,
+            "x2": 0.18,
+            "y2": 0.34,
+            "reason": "extract thickness"
+          },
+          {
+            "region_id": "thickness4",
+            "purpose": "data_cell",
+            "target": "thickness S4",
+            "x1": 0.12,
+            "y1": 0.34,
+            "x2": 0.18,
+            "y2": 0.38,
+            "reason": "extract thickness"
+          },
+          {
+            "region_id": "mix1",
+            "purpose": "data_cell",
+            "target": "mix S1",
+            "x1": 0.18,
+            "y1": 0.22,
+            "x2": 0.24,
+            "y2": 0.26,
+            "reason": "extract mix"
+          },
+          {
+            "region_id": "mix2",
+            "purpose": "data_cell",
+            "target": "mix S2",
+            "x1": 0.18,
+            "y1": 0.26,
+            "x2": 0.24,
+            "y2": 0.3,
+            "reason": "extract mix"
+          },
+          {
+            "region_id": "mix3",
+            "purpose": "data_cell",
+            "target": "mix S3",
+            "x1": 0.18,
+            "y1": 0.3,
+            "x2": 0.24,
+            "y2": 0.34,
+            "reason": "extract mix"
+          },
+          {
+            "region_id": "mix4",
+            "purpose": "data_cell",
+            "target": "mix S4",
+            "x1": 0.18,
+            "y1": 0.34,
+            "x2": 0.24,
+            "y2": 0.38,
+            "reason": "extract mix"
+          },
+          {
+            "region_id": "type1",
+            "purpose": "data_cell",
+            "target": "type S1",
+            "x1": 0.24,
+            "y1": 0.22,
+            "x2": 0.34,
+            "y2": 0.26,
+            "reason": "extract type"
+          },
+          {
+            "region_id": "type2",
+            "purpose": "data_cell",
+            "target": "type S2",
+            "x1": 0.24,
+            "y1": 0.26,
+            "x2": 0.34,
+            "y2": 0.3,
+            "reason": "extract type"
+          },
+          {
+            "region_id": "type3",
+            "purpose": "data_cell",
+            "target": "type S3",
+            "x1": 0.24,
+            "y1": 0.3,
+            "x2": 0.34,
+            "y2": 0.34,
+            "reason": "extract type"
+          },
+          {
+            "region_id": "type4",
+            "purpose": "data_cell",
+            "target": "type S4",
+            "x1": 0.24,
+            "y1": 0.34,
+            "x2": 0.34,
+            "y2": 0.38,
+            "reason": "extract type"
+          },
+          {
+            "region_id": "mainshort1",
+            "purpose": "data_cell",
+            "target": "main steel short span S1",
+            "x1": 0.34,
+            "y1": 0.22,
+            "x2": 0.48,
+            "y2": 0.26,
+            "reason": "extract main steel short span"
+          },
+          {
+            "region_id": "mainshort2",
+            "purpose": "data_cell",
+            "target": "main steel short span S2",
+            "x1": 0.34,
+            "y1": 0.26,
+            "x2": 0.48,
+            "y2": 0.3,
+            "reason": "extract main steel short span"
+          },
+          {
+            "region_id": "mainshort3",
+            "purpose": "data_cell",
+            "target": "main steel short span S3",
+            "x1": 0.34,
+            "y1": 0.3,
+            "x2": 0.48,
+            "y2": 0.34,
+            "reason": "extract main steel short span"
+          },
+          {
+            "region_id": "mainshort4",
+            "purpose": "data_cell",
+            "target": "main steel short span S4",
+            "x1": 0.34,
+            "y1": 0.34,
+            "x2": 0.48,
+            "y2": 0.38,
+            "reason": "extract main steel short span"
+          },
+          {
+            "region_id": "mainlong1",
+            "purpose": "data_cell",
+            "target": "main steel long span S1",
+            "x1": 0.48,
+            "y1": 0.22,
+            "x2": 0.62,
+            "y2": 0.26,
+            "reason": "extract main steel long span"
+          },
+          {
+            "region_id": "mainlong2",
+            "purpose": "data_cell",
+            "target": "main steel long span S2",
+            "x1": 0.48,
+            "y1": 0.26,
+            "x2": 0.62,
+            "y2": 0.3,
+            "reason": "extract main steel long span"
+          },
+          {
+            "region_id": "mainlong3",
+            "purpose": "data_cell",
+            "target": "main steel long span S3",
+            "x1": 0.48,
+            "y1": 0.3,
+            "x2": 0.62,
+            "y2": 0.34,
+            "reason": "extract main steel long span"
+          },
+          {
+            "region_id": "mainlong4",
+            "purpose": "data_cell",
+            "target": "main steel long span S4",
+            "x1": 0.48,
+            "y1": 0.34,
+            "x2": 0.62,
+            "y2": 0.38,
+            "reason": "extract main steel long span"
+          },
+          {
+            "region_id": "extopshort1",
+            "purpose": "data_cell",
+            "target": "ex top short span S1",
+            "x1": 0.62,
+            "y1": 0.22,
+            "x2": 0.76,
+            "y2": 0.26,
+            "reason": "extract ex top short span"
+          },
+          {
+            "region_id": "extopshort2",
+            "purpose": "data_cell",
+            "target": "ex top short span S2",
+            "x1": 0.62,
+            "y1": 0.26,
+            "x2": 0.76,
+            "y2": 0.3,
+            "reason": "extract ex top short span"
+          },
+          {
+            "region_id": "extopshort3",
+            "purpose": "data_cell",
+            "target": "ex top short span S3",
+            "x1": 0.62,
+            "y1": 0.3,
+            "x2": 0.76,
+            "y2": 0.34,
+            "reason": "extract ex top short span"
+          },
+          {
+            "region_id": "extopshort4",
+            "purpose": "data_cell",
+            "target": "ex top short span S4",
+            "x1": 0.62,
+            "y1": 0.34,
+            "x2": 0.76,
+            "y2": 0.38,
+            "reason": "extract ex top short span"
+          },
+          {
+            "region_id": "extoplong1",
+            "purpose": "data_cell",
+            "target": "ex top long span S1",
+            "x1": 0.76,
+            "y1": 0.22,
+            "x2": 0.9,
+            "y2": 0.26,
+            "reason": "extract ex top long span"
+          },
+          {
+            "region_id": "extoplong2",
+            "purpose": "data_cell",
+            "target": "ex top long span S2",
+            "x1": 0.76,
+            "y1": 0.26,
+            "x2": 0.9,
+            "y2": 0.3,
+            "reason": "extract ex top long span"
+          },
+          {
+            "region_id": "extoplong3",
+            "purpose": "data_cell",
+            "target": "ex top long span S3",
+            "x1": 0.76,
+            "y1": 0.3,
+            "x2": 0.9,
+            "y2": 0.34,
+            "reason": "extract ex top long span"
+          },
+          {
+            "region_id": "extoplong4",
+            "purpose": "data_cell",
+            "target": "ex top long span S4",
+            "x1": 0.76,
+            "y1": 0.34,
+            "x2": 0.9,
+            "y2": 0.38,
+            "reason": "extract ex top long span"
+          },
+          {
+            "region_id": "diststeel1",
+            "purpose": "data_cell",
+            "target": "dist steel S1",
+            "x1": 0.9,
+            "y1": 0.22,
+            "x2": 0.94,
+            "y2": 0.26,
+            "reason": "extract dist steel"
+          },
+          {
+            "region_id": "diststeel2",
+            "purpose": "data_cell",
+            "target": "dist steel S2",
+            "x1": 0.9,
+            "y1": 0.26,
+            "x2": 0.94,
+            "y2": 0.3,
+            "reason": "extract dist steel"
+          },
+          {
+            "region_id": "diststeel3",
+            "purpose": "data_cell",
+            "target": "dist steel S3",
+            "x1": 0.9,
+            "y1": 0.3,
+            "x2": 0.94,
+            "y2": 0.34,
+            "reason": "extract dist steel"
+          },
+          {
+            "region_id": "diststeel4",
+            "purpose": "data_cell",
+            "target": "dist steel S4",
+            "x1": 0.9,
+            "y1": 0.34,
+            "x2": 0.94,
+            "y2": 0.38,
+            "reason": "extract dist steel"
           }
         ]
       },
