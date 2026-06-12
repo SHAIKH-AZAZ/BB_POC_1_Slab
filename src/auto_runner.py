@@ -18,6 +18,8 @@ import os
 import json
 import importlib
 
+import fitz  # PyMuPDF
+
 from config import INPUT_DIR, OUTPUT_DIR
 import vector_extractor
 import sliding_window
@@ -65,6 +67,20 @@ def _out_dir(base):
     d = os.path.join(OUTPUT_DIR, base)
     os.makedirs(d, exist_ok=True)
     return d
+
+
+def _capped_page_png(pdf_path, out_png, max_long_px=4000):
+    """
+    Render the page to PNG with its long side capped at max_long_px. Used as the
+    base image for OpenCV table-snapping. Avoids the multi-hundred-megapixel raster
+    that a 400-DPI render of an A0 sheet would produce (PIL/cv2 choke on those).
+    """
+    doc = fitz.open(pdf_path)
+    page = doc[0]
+    long_pts = max(page.rect.width, page.rect.height) or 1.0
+    dpi = max(72, min(300, int(72.0 * max_long_px / long_pts)))
+    page.get_pixmap(dpi=dpi).save(out_png)
+    return out_png
 
 
 def _write_json(path, obj):
@@ -126,15 +142,27 @@ def run_scanned(pdf, pdf_path):
 
     print(f"   ✅ {len(found)} candidate region(s) — cropping + extracting each.")
     record = {"engine": "scanned", "targets": []}
-    page_image = os.path.join(OUTPUT_DIR, "page_1.png")
+    # size-capped page image just for OpenCV snapping (full-DPI A0 would be ~1e9 px)
+    try:
+        page_image = _capped_page_png(pdf_path, os.path.join(_out_dir(base), "_snapbase.png"))
+    except Exception:
+        page_image = None
+
+    pg = fitz.open(pdf_path)[0]
+    Wp, Hp = pg.rect.width, pg.rect.height
 
     for i, hit in enumerate(found, start=1):
         region = hit["region"]
-        snapped = snap_region(page_image, region) if os.path.exists(page_image) else None
+        snapped = snap_region(page_image, region) if page_image else None
         crop_region = snapped or region
+        # cap crop DPI so even a large (un-snapped) region on an A0 sheet stays
+        # well under PIL's decompression-bomb limit while staying crisp.
+        long_pts = max((crop_region["x2"] - crop_region["x1"]) * Wp,
+                       (crop_region["y2"] - crop_region["y1"]) * Hp) or 1.0
+        crop_dpi = max(150, min(400, int(72.0 * 3500 / long_pts)))
         crop_png, crop_pdf = crop_region_to_pdf(
             pdf_path, crop_region, f"{base}__slab_{i}", OUTPUT_DIR,
-            pad=0.006 if snapped else 0.04,
+            pad=0.006 if snapped else 0.04, dpi=crop_dpi,
         )
 
         ink = _ink_fraction(crop_png)

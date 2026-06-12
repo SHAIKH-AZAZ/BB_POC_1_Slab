@@ -16,10 +16,16 @@ Public API:
 
 import os
 
+import fitz  # PyMuPDF
 from pydantic import BaseModel, Field
 
-from pdf_to_images import convert_pdf_to_images
 from vision_extractor import extract_structured
+
+
+# Each rendered tile is capped to this many pixels on its long side. Big enough
+# for the model to read a small table, small enough to never hit PIL's
+# decompression-bomb limit on A0/A1 sheets (which at 400 DPI are ~1e9 pixels).
+TILE_LONG_PX = 1600
 
 
 # ---- tiling parameters ----
@@ -136,17 +142,29 @@ def _detect_tile(tile_png_path):
 # TOP-LEVEL
 # ===============================================================
 
-def locate_slab_schedules(pdf_path, temp_folder, dpi=300, detect=None):
+def _render_tile(page, box, out_path):
+    """Render ONE normalized tile straight from the PDF at a bounded resolution."""
+    W, H = page.rect.width, page.rect.height
+    clip = fitz.Rect(box[0] * W, box[1] * H, box[2] * W, box[3] * H)
+    long_pts = max(clip.width, clip.height) or 1.0
+    # dpi chosen so the tile's long side is ~TILE_LONG_PX pixels
+    dpi = int(72.0 * TILE_LONG_PX / long_pts)
+    dpi = max(72, min(400, dpi))
+    pix = page.get_pixmap(dpi=dpi, clip=clip)
+    pix.save(out_path)
+    return out_path
+
+
+def locate_slab_schedules(pdf_path, temp_folder, detect=None):
     """
-    Tile the (rendered) page, detect slab-schedule tiles, merge to regions.
+    Tile the page (rendering each tile DIRECTLY from the PDF so we never build a
+    giant full-page raster), detect slab-schedule tiles, merge to regions.
     `detect` can be injected for testing; defaults to the live vision detector.
     Returns a list of {region, confidence}.
     """
-    from PIL import Image
-
     detect = detect or _detect_tile
-    page_img = convert_pdf_to_images(pdf_path, temp_folder)[0]
-    img = Image.open(page_img).convert("RGB")
+    doc = fitz.open(pdf_path)
+    page = doc[0]
 
     tiles_dir = os.path.join(temp_folder, "_tiles")
     os.makedirs(tiles_dir, exist_ok=True)
@@ -154,9 +172,7 @@ def locate_slab_schedules(pdf_path, temp_folder, dpi=300, detect=None):
     hits = []
     confs = []
     for i, box in enumerate(_tile_boxes()):
-        tile = _crop_tile(img, box)
-        tile_path = os.path.join(tiles_dir, f"tile_{i}.png")
-        tile.save(tile_path)
+        tile_path = _render_tile(page, box, os.path.join(tiles_dir, f"tile_{i}.png"))
         ok, conf = detect(tile_path)
         if ok and conf >= MIN_TILE_CONF:
             hits.append(box)
@@ -165,6 +181,42 @@ def locate_slab_schedules(pdf_path, temp_folder, dpi=300, detect=None):
     if not hits:
         return []
 
-    regions = _merge_boxes(hits)
-    avg = round(sum(confs) / len(confs), 3)
-    return [{"region": r, "confidence": avg} for r in regions]
+    # Do NOT merge every hit into one bounding box — on a big sheet that produces
+    # a giant mostly-empty region. Instead merge only tiles that overlap a LOT
+    # (same table seen in adjacent tiles), and return each cluster separately so
+    # the caller can ink-guard + pattern-classify each one and drop false positives.
+    clusters = _cluster_tight(hits)
+    out = []
+    for c in clusters:
+        out.append({
+            "region": {
+                "x1": round(min(b[0] for b in c), 4),
+                "y1": round(min(b[1] for b in c), 4),
+                "x2": round(max(b[2] for b in c), 4),
+                "y2": round(max(b[3] for b in c), 4),
+            },
+            "confidence": round(sum(confs) / len(confs), 3),
+        })
+    return out
+
+
+def _cluster_tight(boxes, min_iou=0.4):
+    """Group boxes that overlap heavily (same table in adjacent tiles)."""
+    def iou(a, b):
+        ix = max(0, min(a[2], b[2]) - max(a[0], b[0]))
+        iy = max(0, min(a[3], b[3]) - max(a[1], b[1]))
+        inter = ix * iy
+        if inter <= 0:
+            return 0.0
+        ua = (a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - inter
+        return inter / ua if ua else 0.0
+
+    clusters = []
+    for box in boxes:
+        for c in clusters:
+            if any(iou(box, m) >= min_iou for m in c):
+                c.append(box)
+                break
+        else:
+            clusters.append([box])
+    return clusters
