@@ -1,5 +1,6 @@
-import fitz  # PyMuPDF
 import os
+
+import fitz  # PyMuPDF
 
 
 def convert_pdf_to_images(pdf_path, output_folder):
@@ -8,8 +9,8 @@ def convert_pdf_to_images(pdf_path, output_folder):
     image_paths = []
 
     for i, page in enumerate(doc):
-        pix = page.get_pixmap(dpi=300)
-        img_path = os.path.join(output_folder, f"page_{i+1}.png")
+        pix = page.get_pixmap(dpi=400)
+        img_path = os.path.join(output_folder, f"page_{i + 1}.png")
         pix.save(img_path)
         image_paths.append(img_path)
 
@@ -24,8 +25,9 @@ def _clamp01(v):
     return max(0.0, min(1.0, v))
 
 
-def render_pdf_region_to_png(pdf_path, region, out_png,
-                             page_index=0, pad=0.03, dpi=400):
+def render_pdf_region_to_png(
+    pdf_path, region, out_png, page_index=0, pad=0.03, dpi=400
+):
     """
     Crop a NORMALIZED (0.0-1.0) region of a PDF page and render it to PNG.
 
@@ -67,8 +69,9 @@ def png_to_pdf(png_path, out_pdf):
     return out_pdf
 
 
-def crop_region_to_pdf(pdf_path, region, out_basename, temp_folder,
-                       page_index=0, pad=0.03, dpi=400):
+def crop_region_to_pdf(
+    pdf_path, region, out_basename, temp_folder, page_index=0, pad=0.03, dpi=400
+):
     """
     Convenience: crop a normalized region of a PDF and produce BOTH a PNG (for
     vision feature/pattern detection) and a one-page PDF (for extraction).
@@ -77,7 +80,8 @@ def crop_region_to_pdf(pdf_path, region, out_basename, temp_folder,
     os.makedirs(temp_folder, exist_ok=True)
     png_path = os.path.join(temp_folder, f"{out_basename}.png")
     pdf_out = os.path.join(temp_folder, f"{out_basename}.pdf")
-    render_pdf_region_to_png(pdf_path, region, png_path,
-                             page_index=page_index, pad=pad, dpi=dpi)
+    render_pdf_region_to_png(
+        pdf_path, region, png_path, page_index=page_index, pad=pad, dpi=dpi
+    )
     png_to_pdf(png_path, pdf_out)
     return png_path, pdf_out

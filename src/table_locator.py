@@ -14,8 +14,12 @@ Falls back gracefully (returns None) when no ruled table is found - e.g. a scann
 or border-less table - so the caller can use the padded model region instead.
 """
 
-import cv2
-import numpy as np
+try:
+    import cv2
+    import numpy as np
+    _CV_OK = True
+except Exception:  # cv2 not installed -> snapping disabled, caller falls back
+    _CV_OK = False
 
 
 def detect_table_boxes(image_path):
@@ -23,10 +27,24 @@ def detect_table_boxes(image_path):
     Find ruled-table rectangles in a page image.
     Returns a list of normalized boxes [{x1,y1,x2,y2}, ...] (0.0-1.0), leaf tables
     only (the outer sheet frame and big enclosing rectangles are removed).
+    Returns [] if OpenCV is unavailable or the image can't be read.
     """
+    if not _CV_OK:
+        return []
     img = cv2.imread(image_path)
     if img is None:
         return []
+
+    # Normalize to a fixed working width so the morphology kernels behave the same
+    # regardless of source DPI (at very high res the kernels erode thin table rules
+    # and small tables disappear). Output is normalized, so the resize is lossless
+    # for our purposes.
+    TARGET_W = 2200
+    h0, w0 = img.shape[:2]
+    if w0 > TARGET_W:
+        img = cv2.resize(img, (TARGET_W, int(h0 * TARGET_W / w0)),
+                         interpolation=cv2.INTER_AREA)
+
     H, W = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     th = cv2.adaptiveThreshold(

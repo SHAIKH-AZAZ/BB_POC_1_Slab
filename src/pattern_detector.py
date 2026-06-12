@@ -33,6 +33,7 @@ from pydantic import BaseModel, Field
 
 from pdf_to_images import convert_pdf_to_images, crop_region_to_pdf
 from vision_extractor import extract_structured
+from table_locator import snap_region
 
 
 # ===============================================================
@@ -103,7 +104,14 @@ Allowed document_type values:
 Rules:
   - List a schedule even if it is small or in a corner. Do NOT report only the
     largest one.
-  - A floor PLAN drawing, section, or detail sketch is NOT a schedule; skip it.
+  - A schedule is a TABLE with a header row and multiple data ROWS (e.g. S1, S2,
+    S3 ...). It is NOT a drawing.
+  - A reinforcement LAYOUT / PLAN drawing — bars drawn on a floor plan, slab
+    panels with rebar callouts, sections, or detail sketches — is NOT a schedule.
+    If the sheet's "slab" content is a layout drawing rather than a row/column
+    table, do NOT report it as SLAB_SCHEDULE (use GENERAL_TABLE or omit it).
+  - Only report SLAB_SCHEDULE when you can actually see a gridded table whose rows
+    are individual slab marks with columns of values.
   - If the same schedule continues in two stacked blocks, report each block."""
 
 
@@ -168,7 +176,12 @@ _FEATURE_FLAGS = [
 
 
 _FEATURE_PROMPT = """Analyze the LAYOUT of this slab reinforcement schedule table.
-Report only what you can actually see in the header.
+
+CRITICAL: Report ONLY columns and words that are LITERALLY PRINTED in this image.
+Do NOT guess a "typical" slab schedule. Do NOT invent columns such as DIRECTION,
+BOTTOM REINFORCEMENT or TOP SUPPORT REINFORCEMENT unless those exact words appear.
+Read the header text left to right and transcribe it verbatim. If a flag's words
+are not visibly present, that flag MUST be false.
 
 Flag meanings:
   mentions_along_across_span    -> header says "ALONG SPAN" / "ACROSS SPAN" (no short/long).
@@ -497,20 +510,69 @@ def detect_document(pdf_path, temp_folder, slab_pad=0.03):
     slab_schedules = [s for s in schedules if s["document_type"] == SLAB_FAMILY]
     for idx, s in enumerate(slab_schedules, start=1):
         crop_name = f"{base}__slab_{idx}"
+
+        # Snap the model's approximate box to the real ruled-table rectangle so the
+        # crop captures EVERY row. Fall back to a generously padded model box if no
+        # ruled table is found (e.g. borderless/scanned tables, or no OpenCV).
+        snapped = snap_region(page_image, s["region"])
+        crop_region = snapped if snapped else s["region"]
+        crop_pad = 0.006 if snapped else max(slab_pad, 0.05)
+
         crop_png, crop_pdf = crop_region_to_pdf(
-            pdf_path, s["region"], crop_name, temp_folder, pad=slab_pad
+            pdf_path, crop_region, crop_name, temp_folder, pad=crop_pad
         )
+
+        # GUARD: a blank / near-empty crop means the model pointed at a layout
+        # drawing or empty strip, not a real schedule table. Extracting from it
+        # makes the vision model fabricate rows (e.g. S1..S100 cloned). Skip it.
+        ink = _ink_fraction(crop_png)
+        valid = (ink is None) or (ink >= MIN_TABLE_INK)
+
+        if not valid:
+            slab_targets.append({
+                "index": idx,
+                "title": s["title"],
+                "confidence": s["confidence"],
+                "model_region": s["region"],
+                "region": crop_region,
+                "snapped_to_table": bool(snapped),
+                "image_path": crop_png,
+                "pdf_path": crop_pdf,
+                "ink_fraction": ink,
+                "valid": False,
+                "skip_reason": (
+                    f"crop is near-empty (ink={ink}); likely a layout drawing or "
+                    "mislocated region, not a real schedule table"
+                ),
+                "pattern": None,
+                "pattern_confidence": 0.0,
+                "method": "skipped_blank",
+                "matched_label": None,
+                "features": None,
+                "pattern_scores": [],
+            })
+            continue
 
         features = extract_layout_features(crop_png)
         classification = classify_slab_pattern(features)
+
+        # GUARD: Stage 2 must actually see a table; otherwise treat as not-a-schedule.
+        if not features.get("has_table", True):
+            classification = {"pattern": None, "confidence": 0.0,
+                              "method": "no_table", "matched_label": None, "scores": []}
 
         slab_targets.append({
             "index": idx,
             "title": s["title"],
             "confidence": s["confidence"],
-            "region": s["region"],
+            "model_region": s["region"],
+            "region": crop_region,
+            "snapped_to_table": bool(snapped),
             "image_path": crop_png,
             "pdf_path": crop_pdf,
+            "ink_fraction": ink,
+            "valid": True,
+            "skip_reason": None,
             "pattern": classification["pattern"],
             "pattern_confidence": classification["confidence"],
             "method": classification["method"],
@@ -610,3 +672,26 @@ def _jaccard(a, b):
     inter = len(a & b)
     union = len(a | b)
     return inter / union if union else 0.0
+
+
+# A real schedule-table crop has several percent dark pixels; a blank/near-empty
+# crop is ~0. Anything below this is treated as "no table here".
+MIN_TABLE_INK = 0.01
+
+
+def _ink_fraction(image_path):
+    """
+    Fraction of dark (ink) pixels in an image, 0.0-1.0. Uses PIL so it works even
+    without OpenCV. Returns None if the image can't be read (guard then no-ops).
+    """
+    try:
+        from PIL import Image
+        img = Image.open(image_path).convert("L")
+        # downsample for speed on large crops
+        img.thumbnail((1000, 1000))
+        hist = img.histogram()          # 256 luminance bins
+        dark = sum(hist[:160])          # pixels darker than 160 = ink
+        total = sum(hist)
+        return round(dark / total, 4) if total else None
+    except Exception:
+        return None

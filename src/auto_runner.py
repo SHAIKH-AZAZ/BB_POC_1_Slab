@@ -1,19 +1,41 @@
+"""
+auto_runner.py - Slab project
+
+Router with two extraction engines:
+
+  ENGINE A (vector)  -> vector_extractor.py  : AutoCAD-exported / plotted PDFs.
+                        Reads the schedule straight from the PDF text. No vision,
+                        no hallucination. (main_1..9 not needed.)
+
+  ENGINE B (scanned) -> sliding_window.py    : scanned/raster PDFs. Tiles the
+                        high-DPI page, finds the slab-schedule region by vision,
+                        crops it, then runs the normal classify -> main_1..9 path.
+
+Routing is automatic: a page with real selectable text -> Engine A, else Engine B.
+"""
+
 import os
 import json
 import importlib
 
 from config import INPUT_DIR, OUTPUT_DIR
-from pattern_detector import detect_document
+import vector_extractor
+import sliding_window
+from table_locator import snap_region
+from pdf_to_images import crop_region_to_pdf
+from pattern_detector import (
+    extract_layout_features, classify_slab_pattern, _ink_fraction, MIN_TABLE_INK,
+)
 
+
+# ===============================================================
+# SHARED HELPERS
+# ===============================================================
 
 def run_pattern(pattern_number, pdf_path):
-    """
-    Dynamically import the correct main_X.py extractor (left untouched) and run it
-    on the given PDF (which, for multi-schedule sheets, is the cropped slab-only PDF).
-    """
+    """Run the (untouched) main_X.py extractor on a slab-only PDF crop."""
     module_name = f"main_{pattern_number}"
     print(f"🚀 Running {module_name}.py on {os.path.basename(pdf_path)}")
-
     try:
         module = importlib.import_module(module_name)
         module.process_pdf(pdf_path)
@@ -21,21 +43,138 @@ def run_pattern(pattern_number, pdf_path):
         print(f"❌ Failed to run {module_name}: {e}")
 
 
-def _write_detection_record(pdf, detection):
-    """Persist the full detection result for auditing (what was found / skipped)."""
-    file_name = os.path.splitext(os.path.basename(pdf))[0]
-    folder = os.path.join(OUTPUT_DIR, file_name)
-    os.makedirs(folder, exist_ok=True)
-    out_path = os.path.join(folder, "detection.json")
-    # features can be bulky; keep the record readable but complete.
-    with open(out_path, "w", encoding="utf-8") as fh:
-        json.dump(detection, fh, indent=2)
-    print(f"📝 Detection record saved to {out_path}")
+def _looks_fabricated(slabs):
+    """Flag the hallucination signature: many identical rows / perfect S1..SN run."""
+    n = len(slabs)
+    if n < 8:
+        return None
 
+    def sig(s):
+        return (s.get("thickness"), str(s.get("type", "")).strip().upper(),
+                json.dumps(s.get("reinforcement", {}), sort_keys=True))
+
+    if len({sig(s) for s in slabs}) == 1:
+        return f"all {n} rows are identical"
+    ids = [str(s.get("slab_id", "")).strip().upper() for s in slabs]
+    if n >= 20 and all(ids[i] == f"S{i + 1}" for i in range(n)):
+        return f"perfect S1..S{n} sequence ({n} rows)"
+    return None
+
+
+def _out_dir(base):
+    d = os.path.join(OUTPUT_DIR, base)
+    os.makedirs(d, exist_ok=True)
+    return d
+
+
+def _write_json(path, obj):
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(obj, fh, indent=2)
+
+
+# ===============================================================
+# ENGINE A - VECTOR
+# ===============================================================
+
+def run_vector(pdf, pdf_path):
+    schedules = vector_extractor.extract_pdf(pdf_path)
+    base = os.path.splitext(pdf)[0]
+
+    if not schedules:
+        print("   ⏭  No slab schedule text found on this vector sheet.")
+        _write_json(os.path.join(_out_dir(base), "detection.json"),
+                    {"engine": "vector", "schedules": []})
+        return
+
+    print(f"   ✅ {len(schedules)} slab schedule(s) read directly from PDF text.")
+    record = {"engine": "vector", "schedules": []}
+    for i, sched in enumerate(schedules, start=1):
+        slabs = sched["slabs"]
+        sub = f"{base}__slab_{i}"
+        out_dir = _out_dir(sub)
+        _write_json(os.path.join(out_dir, f"{sub}.json"), {"slabs": slabs})
+
+        fake = _looks_fabricated(slabs)
+        flag = f"  🚨 {fake}" if fake else ""
+        print(f"   📄 schedule #{i} '{sched['title']}': {len(slabs)} slabs "
+              f"({', '.join(s['slab_id'] for s in slabs)}){flag}")
+        record["schedules"].append({
+            "title": sched["title"], "region": sched["region"],
+            "slab_count": len(slabs), "suspect": fake,
+        })
+    _write_json(os.path.join(_out_dir(base), "detection.json"), record)
+
+
+# ===============================================================
+# ENGINE B - SCANNED (vision sliding window)
+# ===============================================================
+
+def run_scanned(pdf, pdf_path):
+    print("   🛰  Scanned sheet — locating slab schedule by sliding-window vision...")
+    try:
+        found = sliding_window.locate_slab_schedules(pdf_path, OUTPUT_DIR)
+    except Exception as e:
+        print(f"   ❌ Sliding-window localization failed: {e}")
+        return
+
+    base = os.path.splitext(pdf)[0]
+    if not found:
+        print("   ⏭  No slab schedule found on the scanned sheet.")
+        _write_json(os.path.join(_out_dir(base), "detection.json"),
+                    {"engine": "scanned", "regions": []})
+        return
+
+    print(f"   ✅ {len(found)} candidate region(s) — cropping + extracting each.")
+    record = {"engine": "scanned", "targets": []}
+    page_image = os.path.join(OUTPUT_DIR, "page_1.png")
+
+    for i, hit in enumerate(found, start=1):
+        region = hit["region"]
+        snapped = snap_region(page_image, region) if os.path.exists(page_image) else None
+        crop_region = snapped or region
+        crop_png, crop_pdf = crop_region_to_pdf(
+            pdf_path, crop_region, f"{base}__slab_{i}", OUTPUT_DIR,
+            pad=0.006 if snapped else 0.04,
+        )
+
+        ink = _ink_fraction(crop_png)
+        if ink is not None and ink < MIN_TABLE_INK:
+            print(f"   ⏭  region #{i}: near-empty crop (ink={ink}) — skipping.")
+            record["targets"].append({"region": crop_region, "ink": ink, "skipped": True})
+            continue
+
+        features = extract_layout_features(crop_png)
+        cls = classify_slab_pattern(features)
+        print(f"   🔎 region #{i} → Pattern {cls['pattern']} "
+              f"(method={cls['method']}, conf={cls['confidence']}, ink={ink})")
+        if cls["pattern"] is None:
+            record["targets"].append({"region": crop_region, "pattern": None})
+            continue
+
+        run_pattern(cls["pattern"], crop_pdf)
+        sub = os.path.splitext(os.path.basename(crop_pdf))[0]
+        out_json = os.path.join(OUTPUT_DIR, sub, f"{sub}.json")
+        if os.path.exists(out_json):
+            try:
+                data = json.load(open(out_json, encoding="utf-8"))
+                fake = _looks_fabricated(data.get("slabs", []))
+                if fake:
+                    print(f"   🚨 SUSPECT OUTPUT — {fake}.")
+                    open(os.path.join(OUTPUT_DIR, sub, f"{sub}.SUSPECT.txt"), "w").write(fake)
+            except Exception:
+                pass
+        record["targets"].append({"region": crop_region, "pattern": cls["pattern"],
+                                  "confidence": cls["confidence"]})
+
+    _write_json(os.path.join(_out_dir(base), "detection.json"), record)
+
+
+# ===============================================================
+# MAIN
+# ===============================================================
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-
     pdf_files = [f for f in os.listdir(INPUT_DIR) if f.lower().endswith(".pdf")]
     if not pdf_files:
         print("⚠ No PDF files found in input folder.")
@@ -43,36 +182,17 @@ def main():
 
     for pdf in pdf_files:
         pdf_path = os.path.join(INPUT_DIR, pdf)
-        print(f"\n📄 Detecting schedules in {pdf}...")
+        is_vector = vector_extractor.pdf_is_vector(pdf_path)
+        engine = "VECTOR (pdf text)" if is_vector else "SCANNED (vision)"
+        print(f"\n📄 {pdf}\n   Engine: {engine}")
 
         try:
-            detection = detect_document(pdf_path, OUTPUT_DIR)
+            if is_vector:
+                run_vector(pdf, pdf_path)
+            else:
+                run_scanned(pdf, pdf_path)
         except Exception as e:
-            print(f"❌ Detection failed for {pdf}: {e}")
-            continue
-
-        found = [f"{s['document_type']}" for s in detection["schedules"]]
-        print(f"   Schedules on sheet: {found or 'none'}")
-
-        slab_targets = detection["slab_targets"]
-        if not slab_targets:
-            print(f"⏭  No slab schedule on {pdf} — nothing to extract.")
-            _write_detection_record(pdf, detection)
-            continue
-
-        print(f"   ✅ {len(slab_targets)} slab schedule(s) found — extracting each.")
-        for tgt in slab_targets:
-            label = f"slab #{tgt['index']} ('{tgt['title'] or 'untitled'}')"
-            if tgt["pattern"] is None:
-                print(f"   ⚠ {label}: no pattern (1-9) matched — skipping. See detection.json.")
-                continue
-            print(
-                f"   🔎 {label} → Pattern {tgt['pattern']} "
-                f"(method={tgt['method']}, confidence={tgt['pattern_confidence']})"
-            )
-            run_pattern(tgt["pattern"], tgt["pdf_path"])
-
-        _write_detection_record(pdf, detection)
+            print(f"   ❌ Failed for {pdf}: {e}")
 
 
 if __name__ == "__main__":

@@ -12,6 +12,7 @@ httpx
 idna
 jiter
 numpy
+opencv-python
 openai
 pandas
 pdfminer.six

@@ -1,0 +1,16 @@
+{
+  "engine": "vector",
+  "schedules": [
+    {
+      "title": "SCHEDULE OF SLAB",
+      "region": {
+        "x1": 0.2627,
+        "y1": 0.6594,
+        "x2": 0.7077,
+        "y2": 0.783
+      },
+      "slab_count": 4,
+      "suspect": null
+    }
+  ]
+}
