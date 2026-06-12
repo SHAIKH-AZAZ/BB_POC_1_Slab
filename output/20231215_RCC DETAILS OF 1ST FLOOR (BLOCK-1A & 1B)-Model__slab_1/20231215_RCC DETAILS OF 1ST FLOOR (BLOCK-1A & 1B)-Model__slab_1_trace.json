@@ -1,0 +1,411 @@
+{
+  "project": "slab",
+  "pdf_stem": "20231215_RCC DETAILS OF 1ST FLOOR (BLOCK-1A & 1B)-Model__slab_1",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\20231215_RCC DETAILS OF 1ST FLOOR (BLOCK-1A & 1B)-Model__slab_1\\page_1.png",
+      "generated_at": "2026-06-12T18:06:24.048975+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 0.6,
+          "y2": 0.4
+        },
+        "table_columns": [
+          "SLAB MARKED",
+          "SLAB THICKNESS",
+          "REMARKS",
+          "BOTTOM REINFORCEMENT MAIN REINF.",
+          "BOTTOM REINFORCEMENT DISTRIBUTION REINF.",
+          "TOP SUPPORT REINFORCEMENT MAIN REINF.",
+          "TOP SUPPORT REINFORCEMENT DISTRIBUTION REINF.",
+          "IN MID SPAN",
+          "DISTRIBUTION"
+        ],
+        "slab_ids": [
+          "S6",
+          "S7",
+          "ST"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [
+          "BOTTOM REINFORCEMENT MAIN REINF.",
+          "TOP SUPPORT REINFORCEMENT MAIN REINF."
+        ],
+        "concrete_grades": [],
+        "steel_grades": [],
+        "expected_count": 3,
+        "zoom_plan": [
+          {
+            "region_id": "header_1",
+            "purpose": "header",
+            "target": "SLAB MARKED",
+            "x1": 0.0,
+            "y1": 0.0,
+            "x2": 0.1,
+            "y2": 0.05,
+            "reason": "Identify slab ID column header"
+          },
+          {
+            "region_id": "header_2",
+            "purpose": "header",
+            "target": "SLAB THICKNESS",
+            "x1": 0.1,
+            "y1": 0.0,
+            "x2": 0.2,
+            "y2": 0.05,
+            "reason": "Identify slab thickness column header"
+          },
+          {
+            "region_id": "header_3",
+            "purpose": "header",
+            "target": "REMARKS",
+            "x1": 0.5,
+            "y1": 0.0,
+            "x2": 0.6,
+            "y2": 0.05,
+            "reason": "Identify remarks column header"
+          },
+          {
+            "region_id": "row_S6_bottom_main",
+            "purpose": "data_cell",
+            "target": "BOTTOM REINFORCEMENT MAIN REINF.",
+            "x1": 0.3,
+            "y1": 0.1,
+            "x2": 0.4,
+            "y2": 0.15,
+            "reason": "Read bottom main reinforcement for slab S6"
+          },
+          {
+            "region_id": "row_S6_bottom_dist",
+            "purpose": "data_cell",
+            "target": "BOTTOM REINFORCEMENT DISTRIBUTION REINF.",
+            "x1": 0.4,
+            "y1": 0.1,
+            "x2": 0.5,
+            "y2": 0.15,
+            "reason": "Read bottom distribution reinforcement for slab S6"
+          },
+          {
+            "region_id": "row_S6_top_main",
+            "purpose": "data_cell",
+            "target": "TOP SUPPORT REINFORCEMENT MAIN REINF.",
+            "x1": 0.3,
+            "y1": 0.15,
+            "x2": 0.4,
+            "y2": 0.2,
+            "reason": "Read top main reinforcement for slab S6"
+          },
+          {
+            "region_id": "row_S6_top_dist",
+            "purpose": "data_cell",
+            "target": "TOP SUPPORT REINFORCEMENT DISTRIBUTION REINF.",
+            "x1": 0.4,
+            "y1": 0.15,
+            "x2": 0.5,
+            "y2": 0.2,
+            "reason": "Read top distribution reinforcement for slab S6"
+          },
+          {
+            "region_id": "row_S6_mid_span",
+            "purpose": "data_cell",
+            "target": "IN MID SPAN",
+            "x1": 0.5,
+            "y1": 0.1,
+            "x2": 0.6,
+            "y2": 0.15,
+            "reason": "Read mid span reinforcement for slab S6"
+          },
+          {
+            "region_id": "row_S6_distribution",
+            "purpose": "data_cell",
+            "target": "DISTRIBUTION",
+            "x1": 0.6,
+            "y1": 0.1,
+            "x2": 0.7,
+            "y2": 0.15,
+            "reason": "Read distribution reinforcement for slab S6"
+          },
+          {
+            "region_id": "row_S7_bottom_main",
+            "purpose": "data_cell",
+            "target": "BOTTOM REINFORCEMENT MAIN REINF.",
+            "x1": 0.3,
+            "y1": 0.2,
+            "x2": 0.4,
+            "y2": 0.25,
+            "reason": "Read bottom main reinforcement for slab S7"
+          },
+          {
+            "region_id": "row_S7_bottom_dist",
+            "purpose": "data_cell",
+            "target": "BOTTOM REINFORCEMENT DISTRIBUTION REINF.",
+            "x1": 0.4,
+            "y1": 0.2,
+            "x2": 0.5,
+            "y2": 0.25,
+            "reason": "Read bottom distribution reinforcement for slab S7"
+          },
+          {
+            "region_id": "row_S7_top_main",
+            "purpose": "data_cell",
+            "target": "TOP SUPPORT REINFORCEMENT MAIN REINF.",
+            "x1": 0.3,
+            "y1": 0.25,
+            "x2": 0.4,
+            "y2": 0.3,
+            "reason": "Read top main reinforcement for slab S7"
+          },
+          {
+            "region_id": "row_S7_top_dist",
+            "purpose": "data_cell",
+            "target": "TOP SUPPORT REINFORCEMENT DISTRIBUTION REINF.",
+            "x1": 0.4,
+            "y1": 0.25,
+            "x2": 0.5,
+            "y2": 0.3,
+            "reason": "Read top distribution reinforcement for slab S7"
+          },
+          {
+            "region_id": "row_S7_mid_span",
+            "purpose": "data_cell",
+            "target": "IN MID SPAN",
+            "x1": 0.5,
+            "y1": 0.2,
+            "x2": 0.6,
+            "y2": 0.25,
+            "reason": "Read mid span reinforcement for slab S7"
+          },
+          {
+            "region_id": "row_S7_distribution",
+            "purpose": "data_cell",
+            "target": "DISTRIBUTION",
+            "x1": 0.6,
+            "y1": 0.2,
+            "x2": 0.7,
+            "y2": 0.25,
+            "reason": "Read distribution reinforcement for slab S7"
+          },
+          {
+            "region_id": "row_ST_bottom_main",
+            "purpose": "data_cell",
+            "target": "BOTTOM REINFORCEMENT MAIN REINF.",
+            "x1": 0.3,
+            "y1": 0.3,
+            "x2": 0.4,
+            "y2": 0.35,
+            "reason": "Read bottom main reinforcement for slab ST"
+          },
+          {
+            "region_id": "row_ST_bottom_dist",
+            "purpose": "data_cell",
+            "target": "BOTTOM REINFORCEMENT DISTRIBUTION REINF.",
+            "x1": 0.4,
+            "y1": 0.3,
+            "x2": 0.5,
+            "y2": 0.35,
+            "reason": "Read bottom distribution reinforcement for slab ST"
+          },
+          {
+            "region_id": "row_ST_top_main",
+            "purpose": "data_cell",
+            "target": "TOP SUPPORT REINFORCEMENT MAIN REINF.",
+            "x1": 0.3,
+            "y1": 0.35,
+            "x2": 0.4,
+            "y2": 0.4,
+            "reason": "Read top main reinforcement for slab ST"
+          },
+          {
+            "region_id": "row_ST_top_dist",
+            "purpose": "data_cell",
+            "target": "TOP SUPPORT REINFORCEMENT DISTRIBUTION REINF.",
+            "x1": 0.4,
+            "y1": 0.35,
+            "x2": 0.5,
+            "y2": 0.4,
+            "reason": "Read top distribution reinforcement for slab ST"
+          },
+          {
+            "region_id": "row_ST_mid_span",
+            "purpose": "data_cell",
+            "target": "IN MID SPAN",
+            "x1": 0.5,
+            "y1": 0.3,
+            "x2": 0.6,
+            "y2": 0.35,
+            "reason": "Read mid span reinforcement for slab ST"
+          },
+          {
+            "region_id": "row_ST_distribution",
+            "purpose": "data_cell",
+            "target": "DISTRIBUTION",
+            "x1": 0.6,
+            "y1": 0.3,
+            "x2": 0.7,
+            "y2": 0.35,
+            "reason": "Read distribution reinforcement for slab ST"
+          }
+        ],
+        "normalization_rules": [
+          "Normalize spacing as 'XXX C/C'",
+          "Remove duplicates",
+          "Ignore '-', '-------', label text",
+          "Extract diameter exactly as written",
+          "Combine multi-line cells"
+        ],
+        "extraction_order": [
+          "SLAB MARKED",
+          "SLAB THICKNESS",
+          "REMARKS",
+          "BOTTOM REINFORCEMENT MAIN REINF.",
+          "BOTTOM REINFORCEMENT DISTRIBUTION REINF.",
+          "TOP SUPPORT REINFORCEMENT MAIN REINF.",
+          "TOP SUPPORT REINFORCEMENT DISTRIBUTION REINF.",
+          "IN MID SPAN",
+          "DISTRIBUTION"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "S6",
+          "thickness": 115,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
+          }
+        },
+        {
+          "slab_id": "S7",
+          "thickness": 175,
+          "type": "TWO WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": [
+              "150 C/C",
+              "200 C/C"
+            ]
+          }
+        },
+        {
+          "slab_id": "ST",
+          "thickness": 225,
+          "type": "ONE WAY",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T12"
+            ],
+            "spacing": [
+              "100 C/C",
+              "200 C/C"
+            ]
+          },
+          "remarks": "STAIRCASE SLAB"
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "S6",
+            "thickness": 115,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
+            }
+          },
+          "source_region_ids": [
+            "row_S6_bottom_main",
+            "row_S6_bottom_dist",
+            "row_S6_top_main",
+            "row_S6_top_dist",
+            "row_S6_mid_span",
+            "row_S6_distribution"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "S7",
+            "thickness": 175,
+            "type": "TWO WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": [
+                "150 C/C",
+                "200 C/C"
+              ]
+            }
+          },
+          "source_region_ids": [
+            "row_S7_bottom_main",
+            "row_S7_bottom_dist",
+            "row_S7_top_main",
+            "row_S7_top_dist",
+            "row_S7_mid_span",
+            "row_S7_distribution"
+          ]
+        },
+        {
+          "record": {
+            "slab_id": "ST",
+            "thickness": 225,
+            "type": "ONE WAY",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T12"
+              ],
+              "spacing": [
+                "100 C/C",
+                "200 C/C"
+              ]
+            },
+            "remarks": "STAIRCASE SLAB"
+          },
+          "source_region_ids": [
+            "row_ST_bottom_main",
+            "row_ST_bottom_dist",
+            "row_ST_top_main",
+            "row_ST_top_dist",
+            "row_ST_mid_span",
+            "row_ST_distribution"
+          ]
+        }
+      ],
+      "expected_count": 3,
+      "actual_count": 3,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 3,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

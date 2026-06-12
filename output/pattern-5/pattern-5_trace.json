@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-5/page_1.png",
-      "generated_at": "2026-06-05T06:17:27.658020+00:00",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-5\\page_1.png",
+      "generated_at": "2026-06-12T17:14:34.137157+00:00",
       "think": {
         "image_quality": "good",
         "table_bounds": {
           "x1": 0.02,
-          "y1": 0.7,
+          "y1": 0.3,
           "x2": 0.98,
-          "y2": 0.98
+          "y2": 0.9
         },
         "table_columns": [
           "BAR MARKED",
@@ -39,76 +39,78 @@
           {
             "region_id": "header",
             "purpose": "header",
-            "target": "SCHEDULE OF SLABS REINFORCEMENT",
+            "target": "table header",
+            "x1": 0.02,
+            "y1": 0.3,
+            "x2": 0.98,
+            "y2": 0.35,
+            "reason": "extract column headers"
+          },
+          {
+            "region_id": "row_A",
+            "purpose": "row_label",
+            "target": "slab ID A row",
+            "x1": 0.02,
+            "y1": 0.35,
+            "x2": 0.98,
+            "y2": 0.42,
+            "reason": "extract slab A reinforcement"
+          },
+          {
+            "region_id": "row_B",
+            "purpose": "row_label",
+            "target": "slab ID B row",
+            "x1": 0.02,
+            "y1": 0.42,
+            "x2": 0.98,
+            "y2": 0.49,
+            "reason": "extract slab B reinforcement"
+          },
+          {
+            "region_id": "row_C",
+            "purpose": "row_label",
+            "target": "slab ID C row",
+            "x1": 0.02,
+            "y1": 0.49,
+            "x2": 0.98,
+            "y2": 0.56,
+            "reason": "extract slab C reinforcement"
+          },
+          {
+            "region_id": "row_D",
+            "purpose": "row_label",
+            "target": "slab ID D row",
+            "x1": 0.02,
+            "y1": 0.56,
+            "x2": 0.98,
+            "y2": 0.63,
+            "reason": "extract slab D reinforcement"
+          },
+          {
+            "region_id": "row_E",
+            "purpose": "row_label",
+            "target": "slab ID E row",
+            "x1": 0.02,
+            "y1": 0.63,
+            "x2": 0.98,
+            "y2": 0.7,
+            "reason": "extract slab E reinforcement"
+          },
+          {
+            "region_id": "row_CS1",
+            "purpose": "row_label",
+            "target": "slab ID CS1 row",
             "x1": 0.02,
             "y1": 0.7,
             "x2": 0.98,
-            "y2": 0.74,
-            "reason": "header text"
-          },
-          {
-            "region_id": "row_label_A",
-            "purpose": "row_label",
-            "target": "A",
-            "x1": 0.02,
-            "y1": 0.74,
-            "x2": 0.1,
-            "y2": 0.78,
-            "reason": "slab ID"
-          },
-          {
-            "region_id": "row_label_B",
-            "purpose": "row_label",
-            "target": "B",
-            "x1": 0.02,
-            "y1": 0.78,
-            "x2": 0.1,
-            "y2": 0.82,
-            "reason": "slab ID"
-          },
-          {
-            "region_id": "row_label_C",
-            "purpose": "row_label",
-            "target": "C",
-            "x1": 0.02,
-            "y1": 0.82,
-            "x2": 0.1,
-            "y2": 0.86,
-            "reason": "slab ID"
-          },
-          {
-            "region_id": "row_label_D",
-            "purpose": "row_label",
-            "target": "D",
-            "x1": 0.02,
-            "y1": 0.86,
-            "x2": 0.1,
-            "y2": 0.9,
-            "reason": "slab ID"
-          },
-          {
-            "region_id": "row_label_E",
-            "purpose": "row_label",
-            "target": "E",
-            "x1": 0.02,
-            "y1": 0.9,
-            "x2": 0.1,
-            "y2": 0.94,
-            "reason": "slab ID"
-          },
-          {
-            "region_id": "row_label_CS1",
-            "purpose": "row_label",
-            "target": "CS1",
-            "x1": 0.02,
-            "y1": 0.94,
-            "x2": 0.1,
-            "y2": 0.98,
-            "reason": "slab ID"
+            "y2": 0.77,
+            "reason": "extract slab CS1 reinforcement"
           }
         ],
         "normalization_rules": [
-          "Combine DIA and SPACING columns into one string for reinforcement."
+          "DIA and SPACING combined into one string for steel_along_span",
+          "No thickness or mix column present, leave empty",
+          "Pass full sentence for CS1 row"
         ],
         "extraction_order": [
           "BAR MARKED",
@@ -229,7 +231,7 @@
             "remarks": "ALT-BENT UP"
           },
           "source_region_ids": [
-            "row_label_A"
+            "row_A"
           ]
         },
         {
@@ -249,7 +251,7 @@
             "remarks": "EXTRA AT TOP B/W BENT UP BARS"
           },
           "source_region_ids": [
-            "row_label_B"
+            "row_B"
           ]
         },
         {
@@ -269,7 +271,7 @@
             "remarks": "ALT-BENT UP"
           },
           "source_region_ids": [
-            "row_label_C"
+            "row_C"
           ]
         },
         {
@@ -289,7 +291,7 @@
             "remarks": "EXTRA AT TOP B/W BENT UP BARS"
           },
           "source_region_ids": [
-            "row_label_D"
+            "row_D"
           ]
         },
         {
@@ -309,7 +311,7 @@
             "remarks": "DIST. BARS AT BOTTOM"
           },
           "source_region_ids": [
-            "row_label_E"
+            "row_E"
           ]
         },
         {
@@ -329,7 +331,7 @@
             "remarks": ""
           },
           "source_region_ids": [
-            "row_label_CS1"
+            "row_CS1"
           ]
         }
       ],

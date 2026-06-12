@@ -1,0 +1,200 @@
+{
+  "schedules": [
+    {
+      "document_type": "BEAM_SCHEDULE",
+      "title": "SCHEDULE OF \"Z\" BEAMS AT 1ST FLOOR LEVEL",
+      "confidence": 0.95,
+      "region": {
+        "x1": 0.62,
+        "y1": 0.07,
+        "x2": 0.95,
+        "y2": 0.55
+      }
+    },
+    {
+      "document_type": "BEAM_SCHEDULE",
+      "title": "SCHEDULE OF BEAMS AT 1ST FLOOR LEVEL :- BEAM AB3,4,5,14,15,16,18,22,23,25,29,30,32,36,42,60,62,A,63,64,65,66,67,68,84,85,86,93,94,96,95,HB & HB1 ARE DELETED.",
+      "confidence": 0.95,
+      "region": {
+        "x1": 0.62,
+        "y1": 0.55,
+        "x2": 0.95,
+        "y2": 0.75
+      }
+    },
+    {
+      "document_type": "SLAB_SCHEDULE",
+      "title": "SCHEDULE OF SLABS AT 1ST FLOOR LEVEL :- SLAB S1 ARE DELETED.",
+      "confidence": 0.9,
+      "region": {
+        "x1": 0.62,
+        "y1": 0.75,
+        "x2": 0.95,
+        "y2": 0.9
+      }
+    }
+  ],
+  "document_type": "BEAM_SCHEDULE",
+  "family_confidence": 0.95,
+  "slab_targets": [
+    {
+      "index": 1,
+      "title": "SCHEDULE OF SLABS AT 1ST FLOOR LEVEL :- SLAB S1 ARE DELETED.",
+      "confidence": 0.9,
+      "region": {
+        "x1": 0.62,
+        "y1": 0.75,
+        "x2": 0.95,
+        "y2": 0.9
+      },
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\20231215_RCC DETAILS OF 1ST FLOOR (BLOCK-1A & 1B)-Model__slab_1.png",
+      "pdf_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\20231215_RCC DETAILS OF 1ST FLOOR (BLOCK-1A & 1B)-Model__slab_1.pdf",
+      "pattern": 9,
+      "pattern_confidence": 0.154,
+      "method": "columns",
+      "matched_label": "BOTTOM/TOP SUPPORT each split into MAIN + DIST",
+      "features": {
+        "table_columns": [
+          "SLAB NO.",
+          "THICKNESS (mm)",
+          "DIRECTION",
+          "BOTTOM REINFORCEMENT",
+          "TOP SUPPORT REINFORCEMENT",
+          "REMARKS"
+        ],
+        "header_keywords": [
+          "SLAB",
+          "NO.",
+          "THICKNESS",
+          "mm",
+          "DIRECTION",
+          "BOTTOM",
+          "REINFORCEMENT",
+          "TOP",
+          "SUPPORT",
+          "REMARKS"
+        ],
+        "has_table": true,
+        "has_cross_sections": false,
+        "has_elevations": false,
+        "has_floor_labels": false,
+        "has_type_groups": false,
+        "has_column_marks": false,
+        "mentions_along_across_span": false,
+        "mentions_short_long_span": false,
+        "mentions_main_dist_labels": false,
+        "mentions_bottom_top_support": true,
+        "mentions_mid_span": false,
+        "mentions_short_long_bar": false,
+        "mentions_main_steel_group": false,
+        "mentions_ex_top_over_support": false,
+        "mentions_dia_spacing_columns": false,
+        "mentions_bar_marked": false,
+        "mentions_mix_column": false
+      },
+      "pattern_scores": [
+        {
+          "pattern": 9,
+          "label": "BOTTOM/TOP SUPPORT each split into MAIN + DIST",
+          "hard_ok": false,
+          "req_hits": 1,
+          "req_total": 2,
+          "forb_hits": 0,
+          "column_score": 0.385,
+          "flag_score": 1,
+          "total": 1.385
+        },
+        {
+          "pattern": 7,
+          "label": "BOTTOM/TOP SUPPORT, SHORT/LONG SPAN, NO MAIN/DIST labels",
+          "hard_ok": false,
+          "req_hits": 1,
+          "req_total": 2,
+          "forb_hits": 0,
+          "column_score": 0.333,
+          "flag_score": 1,
+          "total": 1.333
+        },
+        {
+          "pattern": 6,
+          "label": "BOTTOM/TOP SUPPORT, SHORT/LONG SPAN, with MAIN+DIST labels",
+          "hard_ok": false,
+          "req_hits": 1,
+          "req_total": 3,
+          "forb_hits": 0,
+          "column_score": 0.312,
+          "flag_score": 1,
+          "total": 1.312
+        },
+        {
+          "pattern": 4,
+          "label": "SLAB NO / THK / MIX / MAIN STEEL / EX. TOP OVER SUPPORT / DIST. STEEL",
+          "hard_ok": false,
+          "req_hits": 0,
+          "req_total": 2,
+          "forb_hits": 1,
+          "column_score": 0.25,
+          "flag_score": -1,
+          "total": -0.75
+        },
+        {
+          "pattern": 1,
+          "label": "TYPE / THICKNESS / ALONG SPAN / ACROSS SPAN",
+          "hard_ok": false,
+          "req_hits": 0,
+          "req_total": 1,
+          "forb_hits": 1,
+          "column_score": 0.077,
+          "flag_score": -1,
+          "total": -0.923
+        },
+        {
+          "pattern": 2,
+          "label": "TYPE / THICKNESS / ALONG SHORT SPAN / ACROSS SHORT SPAN",
+          "hard_ok": false,
+          "req_hits": 0,
+          "req_total": 1,
+          "forb_hits": 1,
+          "column_score": 0.071,
+          "flag_score": -1,
+          "total": -0.929
+        },
+        {
+          "pattern": 3,
+          "label": "SLAB MARKED / THK / TYPE / REINFORCEMENT(SHORT BAR, LONG BAR)",
+          "hard_ok": false,
+          "req_hits": 0,
+          "req_total": 1,
+          "forb_hits": 1,
+          "column_score": 0.071,
+          "flag_score": -1,
+          "total": -0.929
+        },
+        {
+          "pattern": 5,
+          "label": "BAR MARKED / DIA / SPACING",
+          "hard_ok": false,
+          "req_hits": 0,
+          "req_total": 1,
+          "forb_hits": 1,
+          "column_score": 0.0,
+          "flag_score": -1,
+          "total": -1.0
+        },
+        {
+          "pattern": 8,
+          "label": "NOS / THK / MAIN REINF / DISTRIBUTION REINF",
+          "hard_ok": false,
+          "req_hits": 0,
+          "req_total": 1,
+          "forb_hits": 1,
+          "column_score": 0.0,
+          "flag_score": -1,
+          "total": -1.0
+        }
+      ]
+    }
+  ],
+  "page_image": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\page_1.png",
+  "pdf_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\input\\20231215_RCC DETAILS OF 1ST FLOOR (BLOCK-1A & 1B)-Model.pdf"
+}

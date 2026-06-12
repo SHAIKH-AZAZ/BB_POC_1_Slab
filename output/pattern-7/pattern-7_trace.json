@@ -4,15 +4,15 @@
   "pages": {
     "page_1.png": {
       "project": "slab",
-      "image_path": "/home/azaz/Desktop/code/POC ZIP FILES/POC-1/BB_POC_1_Slab/output/pattern-7/page_1.png",
-      "generated_at": "2026-06-05T05:41:48.869863+00:00",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pattern-7\\page_1.png",
+      "generated_at": "2026-06-12T17:24:34.260416+00:00",
       "think": {
         "image_quality": "good",
         "table_bounds": {
-          "x1": 0.0,
-          "y1": 0.0,
-          "x2": 1.0,
-          "y2": 1.0
+          "x1": 0.02,
+          "y1": 0.02,
+          "x2": 0.98,
+          "y2": 0.98
         },
         "table_columns": [
           "SLAB MARKED",
@@ -66,17 +66,17 @@
         "deleted_rows": [],
         "multi_line_cells": [],
         "concrete_grades": [],
-        "steel_grades": [
-          "T8",
-          "T10"
-        ],
+        "steel_grades": [],
         "expected_count": 36,
         "zoom_plan": [],
         "normalization_rules": [
-          "Remove all dashes except those separating dia and spacing",
-          "Normalize spacing as 'XXX C/C'",
-          "Remove duplicates in reinforcement",
-          "Ignore empty rows"
+          "Remove all '-' characters before spacing, normalize spacing as 'XXX C/C'",
+          "Remove duplicates in reinforcement lists",
+          "Combine all reinforcement columns into one list per slab",
+          "Extract thickness as number only",
+          "Extract slab ID exactly as written",
+          "Extract type exactly as written from REMARKS",
+          "No MIX column present, so mix is empty string"
         ],
         "extraction_order": [
           "SLAB MARKED",

@@ -6,18 +6,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "120 C/C",
-          "140 C/C",
-          "160 C/C",
-          "170 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["120 C/C", "140 C/C", "160 C/C", "170 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S2",
@@ -25,18 +17,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "130 C/C",
-          "150 C/C",
-          "170 C/C",
-          "190 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["130 C/C", "150 C/C", "170 C/C", "190 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S3",
@@ -44,17 +28,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "130 C/C",
-          "160 C/C",
-          "170 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["130 C/C", "160 C/C", "170 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S4",
@@ -62,18 +39,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "150 C/C",
-          "190 C/C",
-          "200 C/C",
-          "230 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["100 C/C", "150 C/C", "190 C/C", "200 C/C", "230 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S5",
@@ -81,14 +50,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S6",
@@ -96,15 +61,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "210 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["210 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S7",
@@ -112,15 +72,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "190 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["190 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S8",
@@ -128,17 +83,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "120 C/C",
-          "200 C/C",
-          "250 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["100 C/C", "120 C/C", "200 C/C", "250 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S9",
@@ -146,14 +94,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S10",
@@ -161,14 +105,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S11",
@@ -176,14 +116,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S12",
@@ -191,14 +127,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S13",
@@ -206,19 +138,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T12",
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "130 C/C",
-          "170 C/C",
-          "200 C/C",
-          "250 C/C"
-        ]
-      }
+        "dia": ["T10", "T12", "T8"],
+        "spacing": ["100 C/C", "130 C/C", "170 C/C", "200 C/C", "250 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S14",
@@ -226,18 +149,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "150 C/C",
-          "180 C/C",
-          "190 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["150 C/C", "180 C/C", "190 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S15",
@@ -245,18 +160,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "130 C/C",
-          "150 C/C",
-          "180 C/C",
-          "250 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["100 C/C", "130 C/C", "150 C/C", "180 C/C", "250 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S16",
@@ -264,14 +171,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S17",
@@ -279,15 +182,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "240 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["240 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S18",
@@ -295,17 +193,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "130 C/C",
-          "150 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["130 C/C", "150 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S19",
@@ -313,15 +204,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "130 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["130 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S20",
@@ -329,15 +215,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "210 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["210 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S21",
@@ -345,14 +226,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S22",
@@ -360,14 +237,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S23",
@@ -375,15 +248,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "160 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["160 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S24",
@@ -391,14 +259,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S25",
@@ -406,14 +270,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S26",
@@ -421,13 +281,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S27",
@@ -435,14 +292,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S28",
@@ -450,15 +303,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "200 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["200 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S29",
@@ -466,18 +314,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "130 C/C",
-          "140 C/C",
-          "180 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["100 C/C", "130 C/C", "140 C/C", "180 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S30",
@@ -485,16 +325,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "210 C/C",
-          "220 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["100 C/C", "210 C/C", "220 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S31",
@@ -502,18 +336,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "100 C/C",
-          "125 C/C",
-          "170 C/C",
-          "210 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["100 C/C", "125 C/C", "170 C/C", "210 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S32",
@@ -521,18 +347,10 @@
       "type": "TWO WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T10",
-          "T8"
-        ],
-        "spacing": [
-          "120 C/C",
-          "150 C/C",
-          "190 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T10", "T8"],
+        "spacing": ["120 C/C", "150 C/C", "190 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "TWO WAY"
     },
     {
       "slab_id": "S33",
@@ -540,15 +358,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "200 C/C",
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["200 C/C", "250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S34",
@@ -556,14 +369,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S35",
@@ -571,14 +380,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C",
-          "270 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C", "270 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S36",
@@ -586,13 +391,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "S37",
@@ -600,13 +402,10 @@
       "type": "ONE WAY",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "200 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["200 C/C"]
+      },
+      "remarks": "ONE WAY"
     },
     {
       "slab_id": "SG",
@@ -614,13 +413,10 @@
       "type": "GRADE SLAB",
       "mix": "",
       "reinforcement": {
-        "dia": [
-          "T8"
-        ],
-        "spacing": [
-          "250 C/C"
-        ]
-      }
+        "dia": ["T8"],
+        "spacing": ["250 C/C"]
+      },
+      "remarks": "GRADE SLAB"
     }
   ]
 }

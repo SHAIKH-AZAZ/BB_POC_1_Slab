@@ -554,6 +554,75 @@ def extract_from_image(image_path, prompt_text, retries=3):
 
 
 # ===============================================================
+# EXTRACT STRUCTURED  (schema-guaranteed JSON via Pydantic)
+# ===============================================================
+
+def extract_structured(image_path, prompt_text, response_model, retries=3):
+    """
+    Vision call that returns a validated Pydantic model instance.
+
+    Uses OpenAI structured outputs (json_schema / strict) so the model output is
+    guaranteed to match `response_model`'s schema — no manual JSON parsing or
+    _safe_* guards needed. Falls back to a plain json_object call + Pydantic
+    validation on older SDKs that lack the .parse helper.
+    """
+    base64_image = encode_image(image_path)
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {"type": "text", "text": prompt_text},
+                _image_content(base64_image),
+            ],
+        }
+    ]
+
+    last_error = None
+    for attempt in range(1, retries + 1):
+        try:
+            # Preferred path: SDK helper that builds the strict schema + parses.
+            parse_fn = getattr(
+                getattr(getattr(client, "beta", None), "chat", None),
+                "completions", None,
+            )
+            if parse_fn is not None and hasattr(parse_fn, "parse"):
+                completion = client.beta.chat.completions.parse(
+                    model=OPENAI_MODEL,
+                    messages=messages,
+                    response_format=response_model,
+                    temperature=0,
+                )
+                msg = completion.choices[0].message
+                if getattr(msg, "refusal", None):
+                    raise RuntimeError(f"Model refused: {msg.refusal}")
+                if msg.parsed is None:
+                    raise RuntimeError("Structured parse returned no object.")
+                return msg.parsed
+
+            # Fallback path: json_object mode + Pydantic validation.
+            response = client.chat.completions.create(
+                model=OPENAI_MODEL,
+                messages=messages,
+                temperature=0,
+                response_format={"type": "json_object"},
+            )
+            text = clean_json_string(response.choices[0].message.content)
+            return response_model.model_validate_json(text)
+
+        except Exception as exc:
+            last_error = exc
+            print(
+                f"  Structured extraction failed ({attempt}/{retries}): "
+                f"{type(exc).__name__}: {exc}"
+            )
+            if attempt < retries:
+                time.sleep(4)
+    raise RuntimeError(
+        f"Structured extraction failed after {retries} retries: {last_error}"
+    )
+
+
+# ===============================================================
 # MULTI-PASS: focused extraction helpers
 # ===============================================================
 
