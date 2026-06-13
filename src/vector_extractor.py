@@ -161,6 +161,18 @@ def _first_slab_id(tokens):
     return None, None
 
 
+def _count_slab_ids(text):
+    """Count slab-mark tokens in one row. >=2 on a single row => transposed table."""
+    n = 0
+    for tok in text.split():
+        up = tok.upper().strip(".:,")
+        if up in _HEADER_WORDS:
+            continue
+        if _SLAB_ID_RE.match(up):
+            n += 1
+    return n
+
+
 def _parse_reinforcement(text):
     """
     Pull bar dia + spacing from a row. Handles '10T @ 150 c/c' and 'T10 @ 150 c/c'
@@ -224,6 +236,100 @@ def parse_slab_row(text):
 
 
 # ===============================================================
+# TRANSPOSED TABLES (slab marks are COLUMN headers, not rows)
+# ===============================================================
+
+def _word_rows_in_band(page, band, y_tol=3.5):
+    """Group words inside `band` into visual rows; return a list of word-lists."""
+    words = [w for w in page.get_text("words")
+             if band.x0 <= w[0] <= band.x1 and band.y0 <= w[1] <= band.y1]
+    words.sort(key=lambda w: (w[1], w[0]))
+    rows, cur, last_y = [], [], None
+    for w in words:
+        if last_y is None or abs(w[1] - last_y) <= y_tol:
+            cur.append(w)
+        else:
+            rows.append(cur); cur = [w]
+        last_y = w[1]
+    if cur:
+        rows.append(cur)
+    return rows
+
+
+def _slab_marks_in_row(word_row):
+    """Return [(mark, x_center, word)] for the slab-mark words in one row."""
+    out = []
+    for w in word_row:
+        up = w[4].upper().strip(".:,")
+        if up in _HEADER_WORDS:
+            continue
+        if _SLAB_ID_RE.match(up):
+            out.append((up, (w[0] + w[2]) / 2.0, w))
+    return out
+
+
+def _parse_transposed_blob(slab_id, tokens):
+    """Parse one column's stacked value tokens (top-to-bottom) into a slab record."""
+    text = " ".join(tokens)
+    mix = re.search(r"\bM\s?(\d{2,3})\b", text)
+    typ = re.search(r"\b(ONE|TWO|TOW)\s*WAY\b", text, re.I)
+    dia, spacing = _parse_reinforcement(text)
+    # thickness: first 2-4 digit number in slab range that isn't a bar spacing
+    thickness = None
+    for i, tok in enumerate(tokens):
+        if re.fullmatch(r"\d{2,4}", tok):
+            v = int(tok)
+            prev = tokens[i - 1] if i else ""
+            nxt = tokens[i + 1] if i + 1 < len(tokens) else ""
+            if 75 <= v <= 400 and prev != "@" and nxt.lower() not in ("c/c", "cc"):
+                thickness = v
+                break
+    return {
+        "slab_id": slab_id,
+        "thickness": thickness,
+        "type": (typ.group(0).upper().replace("TOW", "TWO") if typ else ""),
+        "mix": (f"M{mix.group(1)}" if mix else ""),
+        "reinforcement": {"dia": dia, "spacing": spacing},
+    }
+
+
+def _parse_transposed(page, header_words, page_h):
+    """
+    Read a TRANSPOSED schedule: slab marks are column headers and each property
+    (THK, MIX, TYPE, reinforcement) runs DOWN its column. Every value word is
+    assigned to its nearest slab column by x; each column becomes one slab.
+    Row labels (to the right of the last column) are excluded.
+    """
+    marks = _slab_marks_in_row(header_words)
+    if len(marks) < 2:
+        return []
+    marks.sort(key=lambda m: m[1])
+    xs = [m[1] for m in marks]
+    gap = (xs[-1] - xs[0]) / (len(xs) - 1) if len(xs) > 1 else 1.0
+    label_x = xs[-1] + gap * 0.5             # labels sit just right of the last column
+    header_bottom = max(m[2][3] for m in marks)
+    y_limit = header_bottom + 0.22 * page_h  # generous table height below the header
+
+    cols = {i: [] for i in range(len(marks))}
+    for w in page.get_text("words"):
+        cx = (w[0] + w[2]) / 2.0
+        cy = (w[1] + w[3]) / 2.0
+        if cx >= label_x or cy <= header_bottom or cy > y_limit:
+            continue
+        if not (xs[0] - gap <= cx <= xs[-1] + gap * 0.4):
+            continue
+        i = min(range(len(xs)), key=lambda j: abs(cx - xs[j]))
+        if abs(cx - xs[i]) <= gap * 0.6:
+            cols[i].append(w)
+
+    slabs = []
+    for i, (mark, _, _) in enumerate(marks):
+        toks = [w[4] for w in sorted(cols[i], key=lambda w: (w[1], w[0]))]
+        slabs.append(_parse_transposed_blob(mark, toks))
+    return slabs
+
+
+# ===============================================================
 # TOP-LEVEL
 # ===============================================================
 
@@ -240,8 +346,22 @@ def extract_pdf(pdf_path):
         W, H = page.rect.width, page.rect.height
         for sched in locate_slab_schedules(page):
             band = sched["band"]
-            rows = _rows_in_band(page, band)
-            slabs = [s for s in (parse_slab_row(t) for t in rows) if s]
+            word_rows = _word_rows_in_band(page, band)
+
+            # A row carrying several slab marks (S1 S2 S3 S4 ...) means the slabs
+            # are COLUMN headers -> read the table the transposed way (down each
+            # column). Otherwise read it the normal way (one slab per row).
+            header = next(
+                (r for r in word_rows if len(_slab_marks_in_row(r)) >= 2), None
+            )
+            if header is not None:
+                slabs = _parse_transposed(page, header, H)
+            else:
+                rows = [" ".join(t[4] for t in sorted(r, key=lambda w: w[0]))
+                        for r in word_rows]
+                slabs = [parse_slab_row(t) for t in rows]
+
+            slabs = [s for s in slabs if s]
             if not slabs:
                 continue
             # de-dup by slab_id, keep first occurrence order
