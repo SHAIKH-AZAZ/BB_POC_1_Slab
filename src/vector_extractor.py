@@ -27,7 +27,16 @@ import fitz  # PyMuPDF
 _MIN_WORDS_FOR_VECTOR = 40
 
 # Titles that introduce a slab schedule table.
-_TITLE_RE = re.compile(r"SCHEDULE\s+OF\s+SLAB|SLAB\s+SCHEDULE", re.I)
+# A slab-schedule title is any heading line that mentions a SLAB together with a
+# SCHEDULE/DETAILS/REINFORCEMENT word, in either order, with anything in between
+# (RCC, R.C.C., TWO-WAY, OF, etc.). Far more robust than an exact-string list.
+_SLAB_WORD = r"\bSLABS?\b"
+_SCHED_WORD = r"\b(?:SCHEDULE|DETAILS|REINF(?:ORCEMENT)?)\b"
+_TITLE_RE = re.compile(
+    rf"(?:{_SLAB_WORD}.*{_SCHED_WORD}|{_SCHED_WORD}.*{_SLAB_WORD})", re.I
+)
+# Don't mistake a beam/column/footing schedule line for a slab one.
+_OTHER_FAMILY_RE = re.compile(r"\b(BEAM|COLUMN|FOOTING|STAIR|LINTEL|PILE)S?\b", re.I)
 
 # A slab mark: starts with S, mostly short, must look like a label (has a digit
 # or is a 2-char code), and is not a header word.
@@ -65,29 +74,56 @@ def pdf_is_vector(pdf_path):
 
 def locate_slab_schedules(page):
     """
-    Find slab-schedule titles on the page. Returns a list of dicts:
-        {"title": str, "anchor": (x, y), "band": fitz.Rect}
-    `band` is a generous region below/around the title that should contain the
-    whole table; row filtering (below) discards anything that isn't a slab row.
+    Find slab-schedule titles on the page by FUZZY matching, not an exact list.
+
+    Words are grouped into visual lines; any line whose text matches _TITLE_RE
+    (mentions a SLAB + a SCHEDULE/DETAILS/REINF word, in any order) is treated as
+    a title — unless it clearly belongs to another family (beam/column/footing...).
+    This catches 'SCHEDULE OF RCC SLABS', 'SLAB REINFORCEMENT SCHEDULE',
+    'R.C.C. SLAB DETAILS', 'TWO WAY SLAB SCHEDULE', etc.
+
+    Returns [{"title": str, "anchor": (x, y), "band": fitz.Rect}, ...].
     """
     W, H = page.rect.width, page.rect.height
-    words = page.get_text("words")  # (x0,y0,x1,y1, text, block, line, wordno)
+    words = page.get_text("words")  # (x0,y0,x1,y1,text,block,line,wordno)
+    if not words:
+        return titles_via_search(page)  # fallback for odd text encodings
 
-    # reconstruct title phrases by scanning text; use search_for for robustness
+    # group words into visual lines by y
+    rows = {}
+    for w in words:
+        rows.setdefault(round(w[1] / 3.0), []).append(w)
+
     titles = []
-    for m in _TITLE_RE.finditer(page.get_text("text") or ""):
-        pass  # text order is unreliable on CAD sheets; use search_for instead
-
-    hits = page.search_for("SCHEDULE OF SLAB") or page.search_for("SLAB SCHEDULE")
-    for r in hits:
+    for key in sorted(rows):
+        line_words = sorted(rows[key], key=lambda w: w[0])
+        text = " ".join(t[4] for t in line_words).strip()
+        # Must read like a slab schedule heading. (Combined 'SLAB & BEAM SCHEDULE'
+        # is fine — the row parser only accepts S-prefixed slab marks, so beam
+        # rows can never be mis-parsed as slabs.) Keep it short to avoid matching
+        # a long note sentence that happens to contain both words.
+        if len(text) > 60 or not _TITLE_RE.search(text):
+            continue
+        x0 = min(t[0] for t in line_words)
+        y0 = min(t[1] for t in line_words)
         band = fitz.Rect(
-            max(0, r.x0 - 60),
-            max(0, r.y0 - 6),
-            min(W, r.x0 + 470),
-            min(H, r.y0 + 0.12 * H),
+            max(0, x0 - 60), max(0, y0 - 6),
+            min(W, x0 + 470), min(H, y0 + 0.12 * H),
         )
-        titles.append({"title": "SCHEDULE OF SLAB", "anchor": (r.x0, r.y0), "band": band})
+        titles.append({"title": text[:60], "anchor": (x0, y0), "band": band})
     return titles
+
+
+def titles_via_search(page):
+    """Fallback title finder using search_for for a few common spellings."""
+    W, H = page.rect.width, page.rect.height
+    out = []
+    for needle in ("SCHEDULE OF SLAB", "SLAB SCHEDULE", "SCHEDULE OF RCC SLABS"):
+        for r in page.search_for(needle):
+            band = fitz.Rect(max(0, r.x0 - 60), max(0, r.y0 - 6),
+                             min(W, r.x0 + 470), min(H, r.y0 + 0.12 * H))
+            out.append({"title": needle, "anchor": (r.x0, r.y0), "band": band})
+    return out
 
 
 # ===============================================================

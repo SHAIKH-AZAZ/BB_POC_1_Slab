@@ -49,10 +49,11 @@ def detect_table_boxes(image_path):
 
     H, W = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    # Background-relative ink mask: catches LIGHT-GRAY table lines that the old
-    # adaptiveThreshold(-2) missed entirely (many CAD plots draw faint gray rules,
-    # which made this return 0 tables). Robust to off-white scan backgrounds too.
-    th, _thr = ink_mask(gray, delta=30)
+    # Background-relative ink mask, tuned SENSITIVE (delta=10): some CAD plots draw
+    # their tables in ULTRA-light gray (~242 on a 255 background) — a coarser cut
+    # missed them entirely. Isolated noise this admits is removed by the long-line
+    # morphology below, so only real ruled lines survive.
+    th, _thr = ink_mask(gray, delta=10)
 
     # isolate long horizontal and vertical rules
     hk = cv2.getStructuringElement(cv2.MORPH_RECT, (max(20, W // 40), 1))

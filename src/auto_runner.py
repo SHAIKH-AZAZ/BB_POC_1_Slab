@@ -111,14 +111,15 @@ def _write_json(path, obj):
 # ===============================================================
 
 def run_vector(pdf, pdf_path):
+    """Returns True if a slab schedule was read from the PDF text, else False."""
     schedules = vector_extractor.extract_pdf(pdf_path)
     base = os.path.splitext(pdf)[0]
 
     if not schedules:
-        print("   ⏭  No slab schedule text found on this vector sheet.")
-        _write_json(os.path.join(_out_dir(base), "detection.json"),
-                    {"engine": "vector", "schedules": []})
-        return
+        # Mixed sheet: real text exists (notes/title block) but the schedule itself
+        # is outline-curve graphics, or uses an unrecognised title. Signal the
+        # caller to fall back to the vision engine instead of giving up.
+        return False
 
     print(f"   ✅ {len(schedules)} slab schedule(s) read directly from PDF text.")
     record = {"engine": "vector", "schedules": []}
@@ -137,6 +138,7 @@ def run_vector(pdf, pdf_path):
             "slab_count": len(slabs), "suspect": fake,
         })
     _write_json(os.path.join(_out_dir(base), "detection.json"), record)
+    return True
 
 
 # ===============================================================
@@ -322,7 +324,12 @@ def main():
         print(f"\n📄 {pdf}\n   Engine: {'VECTOR (pdf text)' if is_vector else 'SCANNED (vision)'}")
         try:
             if is_vector:
-                run_vector(pdf, pdf_path)
+                if run_vector(pdf, pdf_path):
+                    continue
+                # Mixed sheet: real text but the schedule is graphics / odd title.
+                # Don't give up — fall back to the vision engine.
+                print("   ↪ No slab schedule in the PDF text — falling back to vision (Engine B).")
+                run_scanned(pdf, pdf_path)
             else:
                 run_scanned(pdf, pdf_path)
         except Exception as e:

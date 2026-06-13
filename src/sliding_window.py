@@ -157,8 +157,14 @@ def _render_tile(page, box, out_path):
     return out_path
 
 
-def _capped_page_png(pdf_path, temp_folder, max_long=3000):
-    """Render the full page with its long side capped (for OpenCV table detection)."""
+def _capped_page_png(pdf_path, temp_folder, max_long=7000):
+    """
+    Render the full page for OpenCV table detection. The long side is capped at
+    max_long px (a few hundred MB worst case, which cv2 handles — unlike PIL).
+    A higher cap than the crop renders matters here: faint hairline table rules
+    only survive downsampling if the source was rendered at enough DPI. 3000 px
+    (~32 dpi on an A0 sheet) lost them; 7000 px keeps far more.
+    """
     doc = fitz.open(pdf_path)
     page = doc[0]
     long_pts = max(page.rect.width, page.rect.height) or 1.0
