@@ -1,0 +1,368 @@
+{
+  "project": "slab",
+  "pdf_stem": "pdfimage__slab_1",
+  "pages": {
+    "page_1.png": {
+      "project": "slab",
+      "image_path": "C:\\Users\\AZAZ\\Desktop\\POC _ Subh\\POC-1\\Slab\\output\\pdfimage__slab_1\\page_1.png",
+      "generated_at": "2026-06-13T07:29:55.575855+00:00",
+      "think": {
+        "image_quality": "good",
+        "table_bounds": {
+          "x1": 0.0,
+          "y1": 0.0,
+          "x2": 1.0,
+          "y2": 1.0
+        },
+        "table_columns": [
+          "BAR MARKED",
+          "THICKNESS",
+          "TYPE / MIX",
+          "DIA",
+          "SPACING",
+          "REMARKS"
+        ],
+        "slab_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "CS1",
+          "ST1",
+          "S1",
+          "S2"
+        ],
+        "deleted_rows": [],
+        "multi_line_cells": [],
+        "concrete_grades": [],
+        "steel_grades": [],
+        "expected_count": 9,
+        "zoom_plan": [],
+        "normalization_rules": [
+          "Combine DIA and SPACING columns into one reinforcement string for steel_along_span."
+        ],
+        "extraction_order": [
+          "BAR MARKED",
+          "THICKNESS",
+          "TYPE / MIX",
+          "DIA",
+          "SPACING",
+          "REMARKS"
+        ]
+      },
+      "zoom_regions": [],
+      "confirmed_reads": [],
+      "records": [
+        {
+          "slab_id": "A",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "175 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "B",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": [
+              "150 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "C",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T12"
+            ],
+            "spacing": [
+              "200 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "D",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "E",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": [
+              "100 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "CS1",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "150 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "ST1",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T10"
+            ],
+            "spacing": [
+              "100 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S1",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T6"
+            ],
+            "spacing": [
+              "200 C/C"
+            ]
+          },
+          "remarks": ""
+        },
+        {
+          "slab_id": "S2",
+          "thickness": null,
+          "type": "",
+          "mix": "",
+          "reinforcement": {
+            "dia": [
+              "T8"
+            ],
+            "spacing": [
+              "175 C/C"
+            ]
+          },
+          "remarks": ""
+        }
+      ],
+      "added_records": [
+        {
+          "record": {
+            "slab_id": "A",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "175 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "B",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": [
+                "150 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "C",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T12"
+              ],
+              "spacing": [
+                "200 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "D",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "E",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": [
+                "100 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "CS1",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "150 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "ST1",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T10"
+              ],
+              "spacing": [
+                "100 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S1",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T6"
+              ],
+              "spacing": [
+                "200 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        },
+        {
+          "record": {
+            "slab_id": "S2",
+            "thickness": null,
+            "type": "",
+            "mix": "",
+            "reinforcement": {
+              "dia": [
+                "T8"
+              ],
+              "spacing": [
+                "175 C/C"
+              ]
+            },
+            "remarks": ""
+          },
+          "source_region_ids": []
+        }
+      ],
+      "expected_count": 9,
+      "actual_count": 9,
+      "warnings": []
+    }
+  },
+  "summary": {
+    "page_count": 1,
+    "record_count": 9,
+    "warning_count": 0,
+    "warnings": []
+  }
+}

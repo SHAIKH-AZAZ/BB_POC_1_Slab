@@ -206,22 +206,16 @@ def locate_slab_schedules(pdf_path, temp_folder, detect=None):
         candidates = []
 
     if candidates:
-        page = fitz.open(pdf_path)[0]
-        cand_dir = os.path.join(temp_folder, "_cand")
-        os.makedirs(cand_dir, exist_ok=True)
-        hits = []
-        for i, region in enumerate(candidates):
-            png = _render_region_png(page, region, os.path.join(cand_dir, f"cand_{i}.png"))
-            try:
-                ok, conf = detect(png)
-            except Exception:
-                ok, conf = False, 0.0
-            if ok and conf >= MIN_TILE_CONF:
-                hits.append({"region": region, "confidence": round(float(conf), 3)})
-        if hits:
-            return hits
+        # Return EVERY ruled-table candidate and let the caller's Stage-2/Stage-3
+        # classifier be the discriminator: it reads the actual column headers, so
+        # it accepts a slab table (-> a pattern) and rejects beam/plan tables
+        # (-> pattern None). We deliberately do NOT use a vision yes/no gate here:
+        # on scanned sheets it was unreliable — it passed a BEAM table (whose crop
+        # happened to include the 'SCHEDULE OF SLABS' title at its bottom edge) and
+        # rejected the real slab table. Reading the columns is the robust filter.
+        return [{"region": r, "confidence": 1.0} for r in candidates]
 
-    # ---- FALLBACK: sliding-window tiling ----
+    # ---- FALLBACK: sliding-window tiling (no ruled borders, e.g. faint scans) ----
     return _tiling_locate(pdf_path, temp_folder, detect)
 
 
