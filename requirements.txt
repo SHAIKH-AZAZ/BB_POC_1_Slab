@@ -22,6 +22,7 @@ pycparser
 pydantic
 pydantic_core
 PyMuPDF
+pytesseract
 pypdfium2
 python-dateutil
 python-dotenv

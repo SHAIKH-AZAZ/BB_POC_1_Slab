@@ -24,10 +24,28 @@ from config import INPUT_DIR, OUTPUT_DIR
 import vector_extractor
 import sliding_window
 from table_locator import snap_region
-from pdf_to_images import crop_region_to_pdf
+from pdf_to_images import render_pdf_region_to_png, png_to_pdf
+from image_enhance import enhance_for_vision
+from ocr import region_text
 from pattern_detector import (
     extract_layout_features, classify_slab_pattern, _ink_fraction, MIN_TABLE_INK,
 )
+
+
+def _crop_enhanced(pdf_path, region, out_basename, temp_folder, pad=0.012, dpi=300):
+    """
+    Render a region, DARKEN faint gray content (so the vision model and main_1..9
+    can read pale CAD plots), and wrap it into a one-page PDF. Returns (png, pdf).
+    The enhanced PNG is what becomes the mini-PDF, so every downstream consumer
+    sees the crisp version.
+    """
+    os.makedirs(temp_folder, exist_ok=True)
+    png_path = os.path.join(temp_folder, f"{out_basename}.png")
+    pdf_out = os.path.join(temp_folder, f"{out_basename}.pdf")
+    render_pdf_region_to_png(pdf_path, region, png_path, pad=pad, dpi=dpi)
+    enhance_for_vision(png_path)
+    png_to_pdf(png_path, pdf_out)
+    return png_path, pdf_out
 
 
 # ===============================================================
@@ -160,7 +178,7 @@ def run_scanned(pdf, pdf_path):
         long_pts = max((crop_region["x2"] - crop_region["x1"]) * Wp,
                        (crop_region["y2"] - crop_region["y1"]) * Hp) or 1.0
         crop_dpi = max(150, min(400, int(72.0 * 3500 / long_pts)))
-        crop_png, crop_pdf = crop_region_to_pdf(
+        crop_png, crop_pdf = _crop_enhanced(
             pdf_path, crop_region, f"{base}__slab_{i}", OUTPUT_DIR,
             pad=0.006 if snapped else 0.04, dpi=crop_dpi,
         )
@@ -171,7 +189,9 @@ def run_scanned(pdf, pdf_path):
             record["targets"].append({"region": crop_region, "ink": ink, "skipped": True})
             continue
 
-        features = extract_layout_features(crop_png)
+        # multimodal: give Stage 2 the OCR/vector text from this crop alongside the image
+        ocr_text, ocr_src = region_text(pdf_path, crop_region, crop_png)
+        features = extract_layout_features(crop_png, ocr_text=ocr_text)
         cls = classify_slab_pattern(features)
         print(f"   🔎 region #{i} → Pattern {cls['pattern']} "
               f"(method={cls['method']}, conf={cls['confidence']}, ink={ink})")
@@ -198,6 +218,82 @@ def run_scanned(pdf, pdf_path):
 
 
 # ===============================================================
+# MANUAL REGION HINT  (guaranteed path for hard sheets)
+# ===============================================================
+
+def _load_region_hint(pdf):
+    """
+    Look for input/regions/<base>.json giving the slab table location(s) as
+    normalized fractions. Accepts a single {x1,y1,x2,y2} or a list of them.
+    Returns a list of region dicts, or None if no hint exists.
+    """
+    base = os.path.splitext(pdf)[0]
+    path = os.path.join(INPUT_DIR, "regions", f"{base}.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        data = json.load(open(path, encoding="utf-8"))
+    except Exception as e:
+        print(f"   ⚠ region hint {path} unreadable: {e}")
+        return None
+    regions = data if isinstance(data, list) else [data]
+    out = []
+    for r in regions:
+        try:
+            out.append({"x1": float(r["x1"]), "y1": float(r["y1"]),
+                        "x2": float(r["x2"]), "y2": float(r["y2"])})
+        except Exception:
+            continue
+    return out or None
+
+
+def run_manual(pdf, pdf_path, regions):
+    """Crop user-specified region(s) and extract — bypasses auto-localization."""
+    base = os.path.splitext(pdf)[0]
+    pg = fitz.open(pdf_path)[0]
+    Wp, Hp = pg.rect.width, pg.rect.height
+    print(f"   📍 Using {len(regions)} manual region hint(s).")
+    record = {"engine": "manual-region", "targets": []}
+
+    for i, region in enumerate(regions, start=1):
+        long_pts = max((region["x2"] - region["x1"]) * Wp,
+                       (region["y2"] - region["y1"]) * Hp) or 1.0
+        crop_dpi = max(150, min(400, int(72.0 * 3500 / long_pts)))
+        crop_png, crop_pdf = _crop_enhanced(
+            pdf_path, region, f"{base}__slab_{i}", OUTPUT_DIR, pad=0.01, dpi=crop_dpi)
+
+        ink = _ink_fraction(crop_png)
+        if ink is not None and ink < MIN_TABLE_INK:
+            print(f"   ⏭  region #{i}: near-empty crop (ink={ink}); check the coords.")
+            record["targets"].append({"region": region, "ink": ink, "skipped": True})
+            continue
+
+        # multimodal: OCR/vector text from this crop alongside the image
+        ocr_text, ocr_src = region_text(pdf_path, region, crop_png)
+        features = extract_layout_features(crop_png, ocr_text=ocr_text)
+        cls = classify_slab_pattern(features)
+        print(f"   🔎 region #{i} → Pattern {cls['pattern']} "
+              f"(method={cls['method']}, conf={cls['confidence']}, ink={ink}, text={ocr_src})")
+        if cls["pattern"] is None:
+            record["targets"].append({"region": region, "pattern": None})
+            continue
+
+        run_pattern(cls["pattern"], crop_pdf)
+        sub = os.path.splitext(os.path.basename(crop_pdf))[0]
+        out_json = os.path.join(OUTPUT_DIR, sub, f"{sub}.json")
+        if os.path.exists(out_json):
+            try:
+                fake = _looks_fabricated(json.load(open(out_json, encoding="utf-8")).get("slabs", []))
+                if fake:
+                    print(f"   🚨 SUSPECT OUTPUT — {fake}.")
+            except Exception:
+                pass
+        record["targets"].append({"region": region, "pattern": cls["pattern"]})
+
+    _write_json(os.path.join(_out_dir(base), "detection.json"), record)
+
+
+# ===============================================================
 # MAIN
 # ===============================================================
 
@@ -210,10 +306,20 @@ def main():
 
     for pdf in pdf_files:
         pdf_path = os.path.join(INPUT_DIR, pdf)
-        is_vector = vector_extractor.pdf_is_vector(pdf_path)
-        engine = "VECTOR (pdf text)" if is_vector else "SCANNED (vision)"
-        print(f"\n📄 {pdf}\n   Engine: {engine}")
 
+        # 1) manual region hint wins (guaranteed path for hard sheets)
+        hint = _load_region_hint(pdf)
+        if hint:
+            print(f"\n📄 {pdf}\n   Engine: MANUAL REGION")
+            try:
+                run_manual(pdf, pdf_path, hint)
+            except Exception as e:
+                print(f"   ❌ Failed for {pdf}: {e}")
+            continue
+
+        # 2) otherwise auto-route: vector text -> Engine A, else vision -> Engine B
+        is_vector = vector_extractor.pdf_is_vector(pdf_path)
+        print(f"\n📄 {pdf}\n   Engine: {'VECTOR (pdf text)' if is_vector else 'SCANNED (vision)'}")
         try:
             if is_vector:
                 run_vector(pdf, pdf_path)

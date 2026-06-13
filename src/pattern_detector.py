@@ -200,12 +200,27 @@ Set table_columns to the top-level column headers left-to-right, and
 header_keywords to the distinct words you see in the header area."""
 
 
-def extract_layout_features(image_path):
+def extract_layout_features(image_path, ocr_text=None):
     """
     Stage 2. Returns a plain dict (every flag guaranteed present) so the Stage 3
     matcher can rely on it. Uses schema-guaranteed structured output.
+
+    `ocr_text` (optional) is text recovered from the SAME crop (PDF vector text or
+    Tesseract). It is passed as a CORROBORATING hint so the model can resolve faint
+    or ambiguous characters it might misread from a pale image. The image stays
+    authoritative; the text is explicitly flagged as possibly noisy.
     """
-    parsed = extract_structured(image_path, _FEATURE_PROMPT, LayoutFeatures)
+    prompt = _FEATURE_PROMPT
+    if ocr_text and ocr_text.strip():
+        prompt = (
+            _FEATURE_PROMPT
+            + "\n\nTEXT RECOVERED FROM THIS IMAGE (vector text or OCR — may be "
+            "noisy; the IMAGE is authoritative, use this only to resolve faint or "
+            "ambiguous characters):\n\"\"\"\n"
+            + ocr_text.strip()[:1500]
+            + "\n\"\"\""
+        )
+    parsed = extract_structured(image_path, prompt, LayoutFeatures)
     return parsed.model_dump()
 
 
@@ -681,17 +696,12 @@ MIN_TABLE_INK = 0.01
 
 def _ink_fraction(image_path):
     """
-    Fraction of dark (ink) pixels in an image, 0.0-1.0. Uses PIL so it works even
-    without OpenCV. Returns None if the image can't be read (guard then no-ops).
+    Fraction of non-background (ink) pixels, 0.0-1.0. Delegates to the shared,
+    background-relative measure so faint light-gray CAD tables register as content
+    (a fixed 'dark' cutoff treated them as blank). Returns None on read failure.
     """
     try:
-        from PIL import Image
-        img = Image.open(image_path).convert("L")
-        # downsample for speed on large crops
-        img.thumbnail((1000, 1000))
-        hist = img.histogram()          # 256 luminance bins
-        dark = sum(hist[:160])          # pixels darker than 160 = ink
-        total = sum(hist)
-        return round(dark / total, 4) if total else None
+        from image_enhance import ink_fraction
+        return ink_fraction(image_path)
     except Exception:
         return None

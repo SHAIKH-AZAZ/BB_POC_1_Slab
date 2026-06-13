@@ -19,6 +19,8 @@ import os
 import fitz  # PyMuPDF
 from pydantic import BaseModel, Field
 
+import table_locator
+from image_enhance import enhance_for_vision
 from vision_extractor import extract_structured
 
 
@@ -155,22 +157,81 @@ def _render_tile(page, box, out_path):
     return out_path
 
 
+def _capped_page_png(pdf_path, temp_folder, max_long=3000):
+    """Render the full page with its long side capped (for OpenCV table detection)."""
+    doc = fitz.open(pdf_path)
+    page = doc[0]
+    long_pts = max(page.rect.width, page.rect.height) or 1.0
+    dpi = max(72, min(300, int(72.0 * max_long / long_pts)))
+    out = os.path.join(temp_folder, "_page_for_tables.png")
+    page.get_pixmap(dpi=dpi).save(out)
+    return out
+
+
+def _render_region_png(page, region, out_path, max_long=2000, pad=0.012):
+    """Render a normalized region from the PDF at a bounded resolution, enhanced."""
+    W, H = page.rect.width, page.rect.height
+    x1 = max(0.0, region["x1"] - pad); y1 = max(0.0, region["y1"] - pad)
+    x2 = min(1.0, region["x2"] + pad); y2 = min(1.0, region["y2"] + pad)
+    clip = fitz.Rect(x1 * W, y1 * H, x2 * W, y2 * H)
+    long_pts = max(clip.width, clip.height) or 1.0
+    dpi = max(72, min(300, int(72.0 * max_long / long_pts)))
+    page.get_pixmap(dpi=dpi, clip=clip).save(out_path)
+    enhance_for_vision(out_path)   # darken faint gray so the model can read it
+    return out_path
+
+
 def locate_slab_schedules(pdf_path, temp_folder, detect=None):
     """
-    Tile the page (rendering each tile DIRECTLY from the PDF so we never build a
-    giant full-page raster), detect slab-schedule tiles, merge to regions.
-    `detect` can be injected for testing; defaults to the live vision detector.
+    Locate slab-schedule region(s) on a sheet with no usable text.
+
+    PRIMARY (deterministic): detect ruled table rectangles with OpenCV (now
+    light-gray aware), then ask the model a cheap yes/no per candidate table.
+    This is precise and cheap on the common case (ruled CAD tables).
+
+    FALLBACK (vision only): if no ruled tables are found (border-less or noisy
+    scan), tile the page and detect per tile.
+
+    `detect` (tile -> (bool, conf)) is injectable for testing.
     Returns a list of {region, confidence}.
     """
     detect = detect or _detect_tile
-    doc = fitz.open(pdf_path)
-    page = doc[0]
+    os.makedirs(temp_folder, exist_ok=True)
 
+    # ---- PRIMARY: OpenCV ruled-table candidates ----
+    try:
+        page_png = _capped_page_png(pdf_path, temp_folder)
+        candidates = table_locator.detect_table_boxes(page_png)
+    except Exception:
+        candidates = []
+
+    if candidates:
+        page = fitz.open(pdf_path)[0]
+        cand_dir = os.path.join(temp_folder, "_cand")
+        os.makedirs(cand_dir, exist_ok=True)
+        hits = []
+        for i, region in enumerate(candidates):
+            png = _render_region_png(page, region, os.path.join(cand_dir, f"cand_{i}.png"))
+            try:
+                ok, conf = detect(png)
+            except Exception:
+                ok, conf = False, 0.0
+            if ok and conf >= MIN_TILE_CONF:
+                hits.append({"region": region, "confidence": round(float(conf), 3)})
+        if hits:
+            return hits
+
+    # ---- FALLBACK: sliding-window tiling ----
+    return _tiling_locate(pdf_path, temp_folder, detect)
+
+
+def _tiling_locate(pdf_path, temp_folder, detect):
+    """Render overlapping tiles directly from the PDF and detect per tile."""
+    page = fitz.open(pdf_path)[0]
     tiles_dir = os.path.join(temp_folder, "_tiles")
     os.makedirs(tiles_dir, exist_ok=True)
 
-    hits = []
-    confs = []
+    hits, confs = [], []
     for i, box in enumerate(_tile_boxes()):
         tile_path = _render_tile(page, box, os.path.join(tiles_dir, f"tile_{i}.png"))
         ok, conf = detect(tile_path)
@@ -181,10 +242,9 @@ def locate_slab_schedules(pdf_path, temp_folder, detect=None):
     if not hits:
         return []
 
-    # Do NOT merge every hit into one bounding box — on a big sheet that produces
-    # a giant mostly-empty region. Instead merge only tiles that overlap a LOT
-    # (same table seen in adjacent tiles), and return each cluster separately so
-    # the caller can ink-guard + pattern-classify each one and drop false positives.
+    # Merge only tiles that overlap heavily (same table seen twice); return each
+    # cluster separately so the caller ink-guards + pattern-classifies each and
+    # drops false positives, instead of collapsing into one giant empty region.
     clusters = _cluster_tight(hits)
     out = []
     for c in clusters:

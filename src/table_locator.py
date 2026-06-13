@@ -21,6 +21,8 @@ try:
 except Exception:  # cv2 not installed -> snapping disabled, caller falls back
     _CV_OK = False
 
+from image_enhance import ink_mask
+
 
 def detect_table_boxes(image_path):
     """
@@ -47,9 +49,10 @@ def detect_table_boxes(image_path):
 
     H, W = img.shape[:2]
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    th = cv2.adaptiveThreshold(
-        gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 15, -2
-    )
+    # Background-relative ink mask: catches LIGHT-GRAY table lines that the old
+    # adaptiveThreshold(-2) missed entirely (many CAD plots draw faint gray rules,
+    # which made this return 0 tables). Robust to off-white scan backgrounds too.
+    th, _thr = ink_mask(gray, delta=30)
 
     # isolate long horizontal and vertical rules
     hk = cv2.getStructuringElement(cv2.MORPH_RECT, (max(20, W // 40), 1))
